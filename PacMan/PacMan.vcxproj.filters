@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Maths">
+      <UniqueIdentifier>{6bc15193-8b6b-44c5-ae50-a245f6eaef36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Exceptions">
+      <UniqueIdentifier>{bb0a8ea9-4a84-4b0c-858d-52991908f099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts">
+      <UniqueIdentifier>{c51ad188-700e-440c-aaef-6ec6cc1fd4e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements">
+      <UniqueIdentifier>{c98d489f-f41b-494e-b4a7-eead7c523ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements\Fermeture">
+      <UniqueIdentifier>{759df571-7b74-4ae6-a9f1-1ef222bc6745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements\Redimension">
+      <UniqueIdentifier>{414397b5-8a88-4d74-ad87-6185f2ac4927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements\Touches">
+      <UniqueIdentifier>{f7bd259a-d3eb-4b02-acac-1beceb7acc15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Ecran">
+      <UniqueIdentifier>{d9afaf9a-6735-466e-b5e9-334171ac5975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Ecran\Fenetre">
+      <UniqueIdentifier>{bd2043ad-532c-4d7f-b3dc-f206dcd5c79d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Ecran\Formes">
+      <UniqueIdentifier>{c601c01f-1b57-48c1-9d88-90264d595834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Maths">
+      <UniqueIdentifier>{1f73647d-b514-4a17-8868-e4f520cad4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Exceptions">
+      <UniqueIdentifier>{8d4cef52-a302-48eb-82ff-fd47ff5e7dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts">
+      <UniqueIdentifier>{c4d40bed-446c-46f0-855c-bf3ecd667728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Ecran">
+      <UniqueIdentifier>{e0058c4d-2bd7-4133-9ae0-06f6cba5ee48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements">
+      <UniqueIdentifier>{ccd2b717-b221-420e-9d7a-d002c3079b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements\Fermeture">
+      <UniqueIdentifier>{c74377cb-bdd3-4b6c-b556-e37ea5d8cfa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements\Redimension">
+      <UniqueIdentifier>{e8b3de5b-a97a-4950-a40a-818320aa5080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements\Touches">
+      <UniqueIdentifier>{674ccac4-4377-48fd-b5f7-b8bdee6f7578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Ecran\Fenetre">
+      <UniqueIdentifier>{70fcfe21-4df7-4df9-a99c-d49b14978f69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Ecran\Formes">
+      <UniqueIdentifier>{804b55c2-bd66-46e9-826c-1b7debb64cc1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FormeEcran.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="FenetreEcran.cpp">
+      <Filter>Fichiers sources\Ecran\Fenetre</Filter>
+    </ClCompile>
+    <ClCompile Include="FermetureCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Fermeture</Filter>
+    </ClCompile>
+    <ClCompile Include="RedimensionCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Redimension</Filter>
+    </ClCompile>
+    <ClCompile Include="EvenementCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements</Filter>
+    </ClCompile>
+    <ClCompile Include="GestionnaireEvenement.cpp">
+      <Filter>Fichiers sources\Experts\Évènements</Filter>
+    </ClCompile>
+    <ClCompile Include="ToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Reels.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="TransfoAffine2D.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="AlgebreLineaire.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Erreur.h">
+      <Filter>Fichiers d%27en-tête\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FenetreEcran.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Fenetre</Filter>
+    </ClInclude>
+    <ClInclude Include="FormeEcran.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrice22.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Vecteur2D.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="FermetureCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Fermeture</Filter>
+    </ClInclude>
+    <ClInclude Include="RedimensionCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Redimension</Filter>
+    </ClInclude>
+    <ClInclude Include="EvenementCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements</Filter>
+    </ClInclude>
+    <ClInclude Include="GestionnaireEvenement.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements</Filter>
+    </ClInclude>
+    <ClInclude Include="ToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
