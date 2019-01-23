@@ -15,7 +15,7 @@ const bool EvenementCOR::peutGerer(const sf::Event::EventType & typeEvenement) c
 const bool EvenementCOR::gerer(const sf::Event & evenement) {
 	if (peutGerer(evenement.type)) {
 		this->evenement = evenement;
-		return appliquer();
+		if (appliquer()) return true;
 	}
 	if (suivant != NULL)
 		return suivant->gerer(evenement);

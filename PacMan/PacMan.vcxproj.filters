@@ -73,6 +73,18 @@
     <Filter Include="Fichiers sources\Ecran\Formes">
       <UniqueIdentifier>{804b55c2-bd66-46e9-826c-1b7debb64cc1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements\Touches\Déplacement">
+      <UniqueIdentifier>{9003e1d6-38e4-47d7-915e-63afa3534127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements\Touches\Déplacement">
+      <UniqueIdentifier>{88fa623f-70a3-4a15-9a9b-15bdecfa783f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Évènements\Touches\Femeture">
+      <UniqueIdentifier>{b49e2540-3075-4871-92c9-2ca84a406348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Évènements\Touches\Fermeture">
+      <UniqueIdentifier>{3ed7fa88-86b6-4110-8353-be4f6aa2002a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -98,6 +110,12 @@
     </ClCompile>
     <ClCompile Include="ToucheCOR.cpp">
       <Filter>Fichiers sources\Experts\Évènements\Touches</Filter>
+    </ClCompile>
+    <ClCompile Include="DeplacementToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches\Déplacement</Filter>
+    </ClCompile>
+    <ClCompile Include="FermetureToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches\Femeture</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="ToucheCOR.h">
       <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches</Filter>
+    </ClInclude>
+    <ClInclude Include="DeplacementToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Déplacement</Filter>
+    </ClInclude>
+    <ClInclude Include="FermetureToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Fermeture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

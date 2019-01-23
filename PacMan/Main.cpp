@@ -2,7 +2,8 @@
 #include "FormeEcran.h"
 #include "RedimensionCOR.h"
 #include "FermetureCOR.h"
-#include "ToucheCOR.h"
+#include "FermetureToucheCOR.h"
+#include "DeplacementToucheCOR.h"
 #include <Windows.h> // Pour les accents dans la console sous Windows
 
 int main() {
@@ -26,9 +27,10 @@ int main() {
 	}
 
 	GestionnaireEvenement * experts =
-		new ToucheCOR(&fenetre,
-			new RedimensionCOR(&fenetre,
-				new FermetureCOR(&fenetre)));
+		new DeplacementToucheCOR(&fenetre,
+			new FermetureToucheCOR(&fenetre, 
+				new RedimensionCOR(&fenetre,
+					new FermetureCOR(&fenetre))));
 
 	while (fenetre.isOpen()) {
 		sf::Event event;
@@ -42,5 +44,6 @@ int main() {
 			it->dessine();
 		fenetre.display();
 	}
+	system("pause");
 	return 0;
 }

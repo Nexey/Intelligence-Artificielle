@@ -2,13 +2,13 @@
 #include "EvenementCOR.h"
 class ToucheCOR :
 	public EvenementCOR {
+protected:
+	sf::Keyboard::Key touchePressee;
 	std::map<int, std::string> touches;
-	void initMap();
+	virtual void initMap() = 0;
 public:
 	ToucheCOR(FenetreEcran * fenetre);
 	ToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 	~ToucheCOR();
-
-	const bool appliquer();
+	virtual const bool appliquer();
 };
-

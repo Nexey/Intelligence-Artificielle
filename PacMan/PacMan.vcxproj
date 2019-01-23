@@ -125,8 +125,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeplacementToucheCOR.cpp" />
     <ClCompile Include="FermetureCOR.cpp" />
     <ClCompile Include="EvenementCOR.cpp" />
+    <ClCompile Include="FermetureToucheCOR.cpp" />
     <ClCompile Include="GestionnaireEvenement.cpp" />
     <ClCompile Include="FenetreEcran.cpp" />
     <ClCompile Include="FormeEcran.cpp" />
@@ -136,9 +138,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlgebreLineaire.h" />
+    <ClInclude Include="DeplacementToucheCOR.h" />
     <ClInclude Include="FermetureCOR.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="EvenementCOR.h" />
+    <ClInclude Include="FermetureToucheCOR.h" />
     <ClInclude Include="GestionnaireEvenement.h" />
     <ClInclude Include="FenetreEcran.h" />
     <ClInclude Include="FormeEcran.h" />
