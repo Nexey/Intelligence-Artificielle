@@ -1,0 +1,73 @@
+\hypertarget{class_matrice22}{}\section{Référence de la classe Matrice22}
+\label{class_matrice22}\index{Matrice22@{Matrice22}}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrice22_a05473e81b46ebd75f840a947019b4814}\label{class_matrice22_a05473e81b46ebd75f840a947019b4814}} 
+{\bfseries Matrice22} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&ligne\+Haut, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&ligne\+Bas)
+\item 
+\mbox{\Hypertarget{class_matrice22_a6013299afa7055f8b9b7be40274aef3f}\label{class_matrice22_a6013299afa7055f8b9b7be40274aef3f}} 
+{\bfseries Matrice22} (const double \&a00=1, const double \&a01=0, const double \&a10=0, const double \&a11=1)
+\item 
+\mbox{\Hypertarget{class_matrice22_a7f370bc2352837f9ee5e236bd645edcf}\label{class_matrice22_a7f370bc2352837f9ee5e236bd645edcf}} 
+double {\bfseries det} () const
+\item 
+\mbox{\Hypertarget{class_matrice22_afe136f8083aee3568432c340aec444a3}\label{class_matrice22_afe136f8083aee3568432c340aec444a3}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries transposee} () const
+\item 
+\mbox{\Hypertarget{class_matrice22_aa0e87a3bd385b90300ff0b3cdb495bd5}\label{class_matrice22_aa0e87a3bd385b90300ff0b3cdb495bd5}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries cofacteur} () const
+\item 
+\mbox{\Hypertarget{class_matrice22_ad90563f7dfd2d7bcb928ae3e8c3390fb}\label{class_matrice22_ad90563f7dfd2d7bcb928ae3e8c3390fb}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries operator $\ast$} (const double \&a) const
+\item 
+\mbox{\Hypertarget{class_matrice22_a25a230bb5e41aaf17cb564fe79276327}\label{class_matrice22_a25a230bb5e41aaf17cb564fe79276327}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries operator -\/} () const
+\item 
+\mbox{\Hypertarget{class_matrice22_a28155e014afa1b26548eda5026c986e1}\label{class_matrice22_a28155e014afa1b26548eda5026c986e1}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries inverse} () const
+\item 
+\mbox{\Hypertarget{class_matrice22_a59f341d6e3e61982eff5b7e591192e5a}\label{class_matrice22_a59f341d6e3e61982eff5b7e591192e5a}} 
+const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries operator $\ast$} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u) const
+\item 
+\mbox{\Hypertarget{class_matrice22_a40fee4f5300385282c7321d7019d84bd}\label{class_matrice22_a40fee4f5300385282c7321d7019d84bd}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries operator $\ast$} (const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&m) const
+\item 
+\mbox{\Hypertarget{class_matrice22_a1a182e80f9a70ed8156a7ae20e9b8800}\label{class_matrice22_a1a182e80f9a70ed8156a7ae20e9b8800}} 
+{\bfseries operator std\+::string} () const
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrice22_ab3254d385cb6e4ce41515e03295e1ddb}\label{class_matrice22_ab3254d385cb6e4ce41515e03295e1ddb}} 
+static const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries cree\+Matrice\+Diagonale} (const double \&a00, const double \&a11)
+\item 
+\mbox{\Hypertarget{class_matrice22_a27a54c0ac5727e620562f5b0db90a186}\label{class_matrice22_a27a54c0ac5727e620562f5b0db90a186}} 
+static const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries cree\+Rotation} (const double \&alfa)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrice22_a1ccefe5c2adcff56652559ac0ded25fd}\label{class_matrice22_a1ccefe5c2adcff56652559ac0ded25fd}} 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries ligne\+Haut}
+\item 
+\mbox{\Hypertarget{class_matrice22_a141885b5fe683b6b3b947ee0ff6588cd}\label{class_matrice22_a141885b5fe683b6b3b947ee0ff6588cd}} 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries ligne\+Bas}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrice22_aa8e8813399d7b5b6b7c2318ec1867bd9}\label{class_matrice22_aa8e8813399d7b5b6b7c2318ec1867bd9}} 
+const \mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries operator $\ast$} (const double \&a, const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&m)
+\item 
+\mbox{\Hypertarget{class_matrice22_a4dfc2274b21872ab2db9471b941fc20e}\label{class_matrice22_a4dfc2274b21872ab2db9471b941fc20e}} 
+const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries operator $\ast$} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&m)
+\item 
+\mbox{\Hypertarget{class_matrice22_ae011855287c25e07ed27203fdd0b92ed}\label{class_matrice22_ae011855287c25e07ed27203fdd0b92ed}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&o, const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&m)
+\end{DoxyCompactItemize}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Matrice22.\+h\end{DoxyCompactItemize}

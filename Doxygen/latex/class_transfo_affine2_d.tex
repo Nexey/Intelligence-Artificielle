@@ -1,0 +1,79 @@
+\hypertarget{class_transfo_affine2_d}{}\section{R√©f√©rence de la classe Transfo\+Affine2D}
+\label{class_transfo_affine2_d}\index{TransfoAffine2D@{TransfoAffine2D}}
+
+
+{\ttfamily \#include $<$Transfo\+Affine2\+D.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}{Transfo\+Affine2D}} (const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&M=\mbox{\hyperlink{class_matrice22}{Matrice22}}(), const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&B=\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}())
+\item 
+\mbox{\Hypertarget{class_transfo_affine2_d_a55568de1c428081c9f4fb372d7c16ca5}\label{class_transfo_affine2_d_a55568de1c428081c9f4fb372d7c16ca5}} 
+const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries applique} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&v) const
+\item 
+\mbox{\Hypertarget{class_transfo_affine2_d_a04000a83f6bd81b0e5c99149f4ed96b3}\label{class_transfo_affine2_d_a04000a83f6bd81b0e5c99149f4ed96b3}} 
+const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} {\bfseries inverse} () const
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} \mbox{\hyperlink{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}{passage\+Monde\+Ecran}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+B\+G1, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+H\+D1, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+B\+G2, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+H\+D2)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transfo_affine2_d_acf4de9e606924d24c173bc3fe315fec2}\label{class_transfo_affine2_d_acf4de9e606924d24c173bc3fe315fec2}} 
+\mbox{\hyperlink{class_matrice22}{Matrice22}} {\bfseries M}
+\item 
+\mbox{\Hypertarget{class_transfo_affine2_d_a3c8fab60f3d4f4bb041f389c6718188a}\label{class_transfo_affine2_d_a3c8fab60f3d4f4bb041f389c6718188a}} 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries B}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description d√©taill√©e}
+reprÈsente la transformation v $\vert$---$>$ M$\ast$v + B 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}\label{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}} 
+\index{TransfoAffine2D@{TransfoAffine2D}!TransfoAffine2D@{TransfoAffine2D}}
+\index{TransfoAffine2D@{TransfoAffine2D}!TransfoAffine2D@{TransfoAffine2D}}
+\subsubsection{\texorpdfstring{TransfoAffine2D()}{TransfoAffine2D()}}
+{\footnotesize\ttfamily Transfo\+Affine2\+D\+::\+Transfo\+Affine2D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&}]{M = {\ttfamily \mbox{\hyperlink{class_matrice22}{Matrice22}}()},  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{B = {\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+par dÈfaut la transformation construite est l\textquotesingle{}application identitÈ \+: v $\vert$---$>$ v 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}\label{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}} 
+\index{TransfoAffine2D@{TransfoAffine2D}!passageMondeEcran@{passageMondeEcran}}
+\index{passageMondeEcran@{passageMondeEcran}!TransfoAffine2D@{TransfoAffine2D}}
+\subsubsection{\texorpdfstring{passageMondeEcran()}{passageMondeEcran()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} Transfo\+Affine2\+D\+::passage\+Monde\+Ecran (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+B\+G1,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+H\+D1,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+B\+G2,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+H\+D2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: Notons On suppose que \{coin\+B\+G1, coin\+H\+D1\} reprÈsente la diagonale d\textquotesingle{}un rectangle R1. ce sont respectivement les coins bas gauche et haut droit de R1 R1 est donnÈ dans un certain repËre Rep1 (O1,i1,j1), R1 n\textquotesingle{}est pas dÈgÈnÈrÈ On suppose que \{coin\+B\+G2, coin\+H\+D2\} reprÈsente la diagonale d\textquotesingle{}un rectangle R2. ce sont respectivement les coins bas gauche et haut droit de R2 R2 est donnÈ dans un certain repËre Rep2 (O2,i2,j2) R2 n\textquotesingle{}est pas dÈgÈnÈrÈ
+
+On suppose qu\textquotesingle{}on peut transformer R1 en R2 sans rotation, c\textquotesingle{}est-\/‡-\/dire uniquement par translation et/ou Ètirement sur l\textquotesingle{}axe x ou sur l\textquotesingle{}axe y
+
+Autrement dit, on suppose que i1 et i2 sont colinÈaires et j1 et j2 sont aussi colinÈaires
+
+T\+A\+C\+HE \+:
+
+Le but est de calculer le changement de repËre t qui transforme R1 en R2
+
+construit donc la transfo affine 2D t tel que \+: 1) t(\+R1) ne soit pas dÈformÈ par rapport ‡ R1 2) t(\+R1) soit inclus dans R2 et t(\+R1) le plus grand possible 3) t(coin\+B\+G1) le plus proche possible de coin\+B\+G2 4) t(coin\+H\+D1) le plus proche possible de coin\+H\+D\+D2
+
+t est de la forme \+:
+
+/ \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} $\vert$ x\textquotesingle{}$\vert$ $\vert$ Eps1$\ast$lambda 0 $\vert$ $\vert$ x $\vert$ $\vert$ b1 $\vert$ $\vert$ y\textquotesingle{}$\vert$ = $\vert$ 0 Eps2$\ast$lambda$\vert$ $\ast$ $\vert$ y $\vert$ + $\vert$ b2 $\vert$ \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} /
+
+avec $\vert$\+Eps1$\vert$=$\vert$\+Eps2$\vert$= 1 et lambda $>$ 0
+
+On construit t telle que que t(\+C1) = C2 o˘ Ci est le centre respectif de Ri pour i = 1,2
+
+D\+O\+N\+N\+E\+ES \+: coin\+B\+G1, coin\+H\+D1, coin\+B\+G2, coin\+H\+D2
+
+R\+E\+S\+U\+L\+T\+A\+TS \+: t telle que si P = \mbox{[}X\mbox{]} dans Rep1 et P = \mbox{[}X\textquotesingle{}\mbox{]} dans Rep2 alors t(\+X) = X\textquotesingle{} 
+
+La documentation de cette classe a √©t√© g√©n√©r√©e √† partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Transfo\+Affine2\+D.\+h\end{DoxyCompactItemize}

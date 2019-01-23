@@ -1,0 +1,51 @@
+\hypertarget{class_reels}{}\section{RÃ©fÃ©rence de la classe Reels}
+\label{class_reels}\index{Reels@{Reels}}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_reels_abf1400150488eb4944bea0e7b0cb232c}{random}} ()
+\item 
+static double \mbox{\hyperlink{class_reels_af1741e96e241e7176d95d0d22d4b7ed5}{random}} (const double \&germe, const double \&eps)
+\item 
+static const double \mbox{\hyperlink{class_reels_ad40c9e4fe2f5c4431a57872b64f919a8}{random1}} (const double \&germe, const double \&eps)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_reels_aa3a4b9b296e675c50231b3dfadc76f48}\label{class_reels_aa3a4b9b296e675c50231b3dfadc76f48}} 
+static constexpr double {\bfseries PI} = 3.\+1415926
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_reels_abf1400150488eb4944bea0e7b0cb232c}\label{class_reels_abf1400150488eb4944bea0e7b0cb232c}} 
+\index{Reels@{Reels}!random@{random}}
+\index{random@{random}!Reels@{Reels}}
+\subsubsection{\texorpdfstring{random()}{random()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Reels\+::random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+R\+E\+S\+U\+L\+T\+AT \+: un nombre aléatoire x tel que 0 $<$= x $<$ 1
+
+suppose qu\textquotesingle{}un appel à srand a été fait au préalable \mbox{\Hypertarget{class_reels_af1741e96e241e7176d95d0d22d4b7ed5}\label{class_reels_af1741e96e241e7176d95d0d22d4b7ed5}} 
+\index{Reels@{Reels}!random@{random}}
+\index{random@{random}!Reels@{Reels}}
+\subsubsection{\texorpdfstring{random()}{random()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Reels\+::random (\begin{DoxyParamCaption}\item[{const double \&}]{germe,  }\item[{const double \&}]{eps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+R\+E\+S\+U\+L\+T\+AT \+: un nombre aléatoire x tel que $\vert$ x -\/ germe $\vert$ $<$ eps
+
+suppose qu\textquotesingle{}un appel à srand a été fait au préalable \mbox{\Hypertarget{class_reels_ad40c9e4fe2f5c4431a57872b64f919a8}\label{class_reels_ad40c9e4fe2f5c4431a57872b64f919a8}} 
+\index{Reels@{Reels}!random1@{random1}}
+\index{random1@{random1}!Reels@{Reels}}
+\subsubsection{\texorpdfstring{random1()}{random1()}}
+{\footnotesize\ttfamily static const double Reels\+::random1 (\begin{DoxyParamCaption}\item[{const double \&}]{germe,  }\item[{const double \&}]{eps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+R\+E\+S\+U\+L\+T\+AT \+: un nombre aléatoire x tel que $\vert$ x -\/ germe $\vert$ $<$ eps
+
+suppose qu\textquotesingle{}un appel à srand a été fait au préalable
+
+Pour être placée comme pointeur de fct paramètre d\textquotesingle{}une fct template 
+
+La documentation de cette classe a Ã©tÃ© gÃ©nÃ©rÃ©e Ã  partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Reels.\+h\end{DoxyCompactItemize}
