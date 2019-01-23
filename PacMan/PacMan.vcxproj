@@ -18,6 +18,37 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
+    <ClInclude Include="Ecran\Formes\FormeEcran.h" />
+    <ClInclude Include="Exceptions\Erreur.h" />
+    <ClInclude Include="Experts\EvenementCOR.h" />
+    <ClInclude Include="Experts\GestionnaireEvenement.h" />
+    <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />
+    <ClInclude Include="Experts\Évènements\Redimension\RedimensionCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h" />
+    <ClInclude Include="Graphe\AElement.h" />
+    <ClInclude Include="Maths\AlgebreLineaire.h" />
+    <ClInclude Include="Maths\Matrice22.h" />
+    <ClInclude Include="Maths\Reels.h" />
+    <ClInclude Include="Maths\TransfoAffine2D.h" />
+    <ClInclude Include="Maths\Vecteur2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp" />
+    <ClCompile Include="Ecran\Formes\FormeEcran.cpp" />
+    <ClCompile Include="Experts\EvenementCOR.cpp" />
+    <ClCompile Include="Experts\GestionnaireEvenement.cpp" />
+    <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\Redimension\RedimensionCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\Touches\ToucheCOR.cpp" />
+    <ClCompile Include="Graphe\AElement.cpp" />
+    <ClCompile Include="Main\Main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FEBC5470-913E-4F2D-87B1-526558F1D9F1}</ProjectGuid>
@@ -124,35 +155,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="DeplacementToucheCOR.cpp" />
-    <ClCompile Include="FermetureCOR.cpp" />
-    <ClCompile Include="EvenementCOR.cpp" />
-    <ClCompile Include="FermetureToucheCOR.cpp" />
-    <ClCompile Include="GestionnaireEvenement.cpp" />
-    <ClCompile Include="FenetreEcran.cpp" />
-    <ClCompile Include="FormeEcran.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="RedimensionCOR.cpp" />
-    <ClCompile Include="ToucheCOR.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AlgebreLineaire.h" />
-    <ClInclude Include="DeplacementToucheCOR.h" />
-    <ClInclude Include="FermetureCOR.h" />
-    <ClInclude Include="Erreur.h" />
-    <ClInclude Include="EvenementCOR.h" />
-    <ClInclude Include="FermetureToucheCOR.h" />
-    <ClInclude Include="GestionnaireEvenement.h" />
-    <ClInclude Include="FenetreEcran.h" />
-    <ClInclude Include="FormeEcran.h" />
-    <ClInclude Include="Matrice22.h" />
-    <ClInclude Include="Reels.h" />
-    <ClInclude Include="RedimensionCOR.h" />
-    <ClInclude Include="ToucheCOR.h" />
-    <ClInclude Include="TransfoAffine2D.h" />
-    <ClInclude Include="Vecteur2D.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
