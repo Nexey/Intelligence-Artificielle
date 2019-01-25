@@ -7,6 +7,6 @@ protected:
 public:
 	FermetureToucheCOR(FenetreEcran * fenetre);
 	FermetureToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
-	~FermetureToucheCOR();
+	virtual ~FermetureToucheCOR();
 	const bool appliquer();
 };

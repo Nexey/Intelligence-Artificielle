@@ -21,3 +21,5 @@ const bool EvenementCOR::gerer(const sf::Event & evenement) {
 		return suivant->gerer(evenement);
 	return false;
 }
+
+EvenementCOR::~EvenementCOR() {}

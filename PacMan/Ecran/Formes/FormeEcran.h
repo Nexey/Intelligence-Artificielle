@@ -3,7 +3,7 @@
 
 class FormeEcran {
 	FormeEcran() = delete;
-
+protected:
 	FenetreEcran * fenetre;
 	Vecteur2D positionEcran;
 public:

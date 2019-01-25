@@ -11,13 +11,13 @@ FermetureToucheCOR::FermetureToucheCOR(FenetreEcran * fenetre, GestionnaireEvene
 FermetureToucheCOR::~FermetureToucheCOR() {}
 
 void FermetureToucheCOR::initMap() {
-	this->touches = {
-		{ 36, "Echappe" }
+	this->codeTouchesEnStr = {
+		{ sf::Keyboard::Escape, "Echappe" }
 	};
 }
 
 const bool FermetureToucheCOR::appliquer() {
-	if (ToucheCOR::appliquer()) {
+	if (trouveEvenementDansMap(this->codeTouchesEnStr)) {
 		std::cout << "Fermeture de la fenêtre de jeu..." << std::endl;
 		this->fenetre->close();
 		return true;

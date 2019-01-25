@@ -3,11 +3,13 @@
 #include <sstream>
 
 class AElement {
-public:
 	int clef;
 
-	explicit AElement(const int clef) : clef(clef) {}
-	operator std::string() const { std::ostringstream o; o << "clef = " << clef; return o.str(); }
+	static int genereateurCle;
+public:
 
+	explicit AElement() : clef(genereateurCle++) {}
+	operator std::string() const { std::ostringstream o; o << "clef = " << clef; return o.str(); }
+	int getClef() const { return clef; }
 	friend std::ostream & operator << (std::ostream & os, const AElement& aElement) { return os << (std::string)aElement; }
 };

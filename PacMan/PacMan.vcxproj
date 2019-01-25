@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
+    <ClInclude Include="Ecran\Formes\Creature.h" />
     <ClInclude Include="Ecran\Formes\FormeEcran.h" />
     <ClInclude Include="Exceptions\Erreur.h" />
     <ClInclude Include="Experts\EvenementCOR.h" />
@@ -30,6 +31,9 @@
     <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h" />
     <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h" />
     <ClInclude Include="Graphe\AElement.h" />
+    <ClInclude Include="Graphe\PElement.h" />
+    <ClInclude Include="Iterateur.h" />
+    <ClInclude Include="Liste.h" />
     <ClInclude Include="Maths\AlgebreLineaire.h" />
     <ClInclude Include="Maths\Matrice22.h" />
     <ClInclude Include="Maths\Reels.h" />
@@ -38,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp" />
+    <ClCompile Include="Ecran\Formes\Creature.cpp" />
     <ClCompile Include="Ecran\Formes\FormeEcran.cpp" />
     <ClCompile Include="Experts\EvenementCOR.cpp" />
     <ClCompile Include="Experts\GestionnaireEvenement.cpp" />
@@ -47,6 +52,8 @@
     <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Touches\ToucheCOR.cpp" />
     <ClCompile Include="Graphe\AElement.cpp" />
+    <ClCompile Include="Iterateur.cpp" />
+    <ClCompile Include="Liste.cpp" />
     <ClCompile Include="Main\Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -107,12 +114,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Librairies\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Librairies\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;freetype.lib;jpeg.lib;gdi32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Bibliothèques\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;freetype.lib;gdi32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,14 +138,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Librairies\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Librairies\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;sfml-audio-s.lib;freetype.lib;jpeg.lib;gdi32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Bibliothèques\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;sfml-audio-s.lib;freetype.lib;gdi32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -5,7 +5,7 @@ class FermetureCOR :
 public:
 	FermetureCOR(FenetreEcran * fenetre);
 	FermetureCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
-	~FermetureCOR();
+	virtual ~FermetureCOR();
 
 	const bool appliquer();
 };

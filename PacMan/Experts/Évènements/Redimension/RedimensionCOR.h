@@ -5,7 +5,7 @@ class RedimensionCOR :
 public:
 	RedimensionCOR(FenetreEcran * fenetre);
 	RedimensionCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
-	~RedimensionCOR();
+	virtual ~RedimensionCOR();
 
 	const bool appliquer();
 };

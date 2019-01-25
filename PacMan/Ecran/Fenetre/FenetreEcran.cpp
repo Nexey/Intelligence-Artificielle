@@ -1,5 +1,7 @@
 #include "FenetreEcran.h"
 
+int FenetreEcran::direction = -1;
+
 FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsigned & h, const Vecteur2D & coinBG, const Vecteur2D & coinHD, const unsigned & r) :
 	sf::RenderWindow(sf::VideoMode(l, h), n),
 	nom(n),
@@ -9,7 +11,8 @@ FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsi
 	Vecteur2D coinBGEcran(0, h), coinHDEcran(l, 0);
 	transfoAffine = TransfoAffine2D::passageMondeEcran(coinBG, coinHD, coinBGEcran, coinHDEcran);
 }
-/*/
+
+/*
 FenetreEcran::FenetreEcran(const FenetreEcran & f) :
 	sf::RenderWindow(sf::VideoMode(f.getLargeur(), f.getHauteur()), f.getNom()),
 	nom(f.getNom()),
@@ -56,3 +59,5 @@ const Vecteur2D & FenetreEcran::getCoinHautDroit() const {
 sf::Vector2f FenetreEcran::calculPos(const Vecteur2D & posEcran) {
 	return TransfoVecteur2DToVector2f(transfoAffine.applique(posEcran));
 }
+
+FenetreEcran::~FenetreEcran() {}

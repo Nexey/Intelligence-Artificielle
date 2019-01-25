@@ -16,4 +16,6 @@ public:
 
 	const bool peutGerer(const sf::Event::EventType & evenementType) const;
 	const bool gerer(const sf::Event & evenementType);
+
+	virtual ~EvenementCOR();
 };
