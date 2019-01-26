@@ -5,8 +5,10 @@ class EvenementCOR :
 	GestionnaireEvenement * suivant;
 	sf::Event evenement;
 	sf::Event::EventType typeEvenement;
-public:
+protected:
+	// Un évènement garde un pointeur sur la fenêtre pour y apporter des modifications
 	FenetreEcran * fenetre;
+public:
 	EvenementCOR(FenetreEcran * fenetre, const sf::Event::EventType & evenementType);
 	EvenementCOR(FenetreEcran * fenetre, const sf::Event::EventType & evenementType, GestionnaireEvenement * suivant);
 

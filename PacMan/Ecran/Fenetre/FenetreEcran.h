@@ -44,17 +44,23 @@ public:
 		VECTEUR2D_DROITE,
 		VECTEUR2D_HAUT_GAUCHE,
 		VECTEUR2D_HAUT,
-		VECTEUR2D_HAUT_DROITE;
+		VECTEUR2D_HAUT_DROITE,
+		VECTEUR2D_STOP;
 
 	// La direction, elle est mise à jour dans l'expert qui récupère les touches tapées par l'utilisateur
 	// Elle peut être changée par n'importe quelle autre classe
 	Vecteur2D direction;
 
+	// Le constructeur initialise aussi direction à (0, 0)
 	FenetreEcran(const std::string & nom, const unsigned & largeur, const unsigned & hauteur, const Vecteur2D & coinBasGauche, const Vecteur2D & coinHautDroit, const unsigned & ratio);
 
 	const TransfoAffine2D & getTransfoAffine() const;
+
+	// Redimension quand l'évènement resize est lancé
+	// Il faudrait essayer de garder le ratio et d'éviter que la fenêtre soit trop étendue d'un côté ou un autre
 	void redimensionner();
 
+	/// Getters
 	const unsigned & getRatio() const;
 	const unsigned & getLargeur() const;
 	const unsigned & getHauteur() const;
@@ -62,16 +68,26 @@ public:
 	const Vecteur2D & getCoinBasGauche() const;
 	const Vecteur2D & getCoinHautDroit() const;
 
+	// Les deux méthodes d'ajout de créature à la collection
+	// Pas de clonage, les créatures à l'heure actuelle sont là juste pour tester
 	void ajouterForme(Creature & c);
 	const FenetreEcran * operator+(Creature & c);
 
+	// Type pointeur de fonction qui prend en paramètre une référence sur une créature
 	typedef void(FenetreEcran::*fctTraitement)(Creature &);
 
+	// Appel sur la méthode de déplacement d'une créature en tenant compte des paramètres à initialiser
 	void deplacerCreature(Creature & c);
-	void dessinerCreature(Creature & c);
-	void traitementCreatures(fctTraitement);
-	//void traitementCreatures(std::function<void(Creature&)> traitement);
 
+	// Appel sur la méthode de dessin d'une créature, elle se charge de tout faire
+	void dessinerCreature(Creature & c);
+
+	// Cette fonction parcourt la liste de toutes les créatures
+	// Le paramètre fctTraitement est un pointeur sur une fonction
+	// Cela permet de factoriser beaucoup de code
+	void traitementCreatures(fctTraitement);
+
+	// Applique la transformation affine sur un Vecteur2D, càd transforme des coordonnées écrans en coordonnées réelles
 	sf::Vector2f calculPos(const Vecteur2D& screenPos);
 	virtual ~FenetreEcran();
 };

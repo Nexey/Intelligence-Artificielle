@@ -9,7 +9,8 @@ FenetreEcran::VECTEUR2D_GAUCHE(-1, 0),
 FenetreEcran::VECTEUR2D_DROITE(1, 0),
 FenetreEcran::VECTEUR2D_HAUT_GAUCHE(-1, 1),
 FenetreEcran::VECTEUR2D_HAUT(0, 1),
-FenetreEcran::VECTEUR2D_HAUT_DROITE(1, 1);
+FenetreEcran::VECTEUR2D_HAUT_DROITE(1, 1),
+FenetreEcran::VECTEUR2D_STOP(0, 0);
 
 FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsigned & h, const Vecteur2D & coinBG, const Vecteur2D & coinHD, const unsigned & r) :
 	sf::RenderWindow(sf::VideoMode(l, h), n),
@@ -17,7 +18,7 @@ FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsi
 	largeur(l),
 	hauteur(h),
 	ratio(r),
-	direction(Vecteur2D(0, 0)) {
+	direction(VECTEUR2D_STOP) {
 	Vecteur2D coinBGEcran(0, h), coinHDEcran(l, 0);
 	transfoAffine = TransfoAffine2D::passageMondeEcran(coinBG, coinHD, coinBGEcran, coinHDEcran);
 }
@@ -67,7 +68,7 @@ const FenetreEcran * FenetreEcran::operator+(Creature & c) {
 }
 
 void FenetreEcran::deplacerCreature(Creature & c) {
-	if (this->direction != Vecteur2D(0, 0)) {
+	if (this->direction != VECTEUR2D_STOP) {
 		if (c.peutBouger()) {
 			c.directionCreature = direction;
 			c.nouvellePositionEcran = c.positionEcran + direction;

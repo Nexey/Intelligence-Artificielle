@@ -7,5 +7,6 @@ public:
 	FermetureCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 	virtual ~FermetureCOR();
 
+	// Ferme la fenêtre
 	const bool appliquer();
 };

@@ -21,6 +21,7 @@ public:
 	ToucheCOR(FenetreEcran * fenetre);
 	ToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 
+	// Quand une touche est tapée par l'utilisateur, une action est produite
 	virtual const bool appliquer();
 	virtual ~ToucheCOR();
 };

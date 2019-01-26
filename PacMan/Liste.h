@@ -7,9 +7,11 @@ class Liste {
 public:
 	Liste() : tete(NULL) {}
 
+	// Génère un itérateur pour parcourir la liste
 	Iterateur<T> getIterateur() const;
 
-	void ajouterElem(T * v);
+	// Ajoute un élément au PElement
+	void ajouterElem(T v);
 	virtual ~Liste();
 };
 
@@ -19,8 +21,8 @@ inline Iterateur<T> Liste<T>::getIterateur() const {
 }
 
 template<class T>
-inline void Liste<T>::ajouterElem(T * v) {
-	PElement<T>::insertion(v, tete);
+inline void Liste<T>::ajouterElem(T v) {
+	PElement<T>::insertion(&v, tete);
 }
 
 template<class T>

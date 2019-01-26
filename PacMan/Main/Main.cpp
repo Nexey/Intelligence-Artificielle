@@ -27,9 +27,10 @@ int main() {
 		}
 	}
 
-	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio / 2, ratio / 2)), &fenetre, Vecteur2D(4, 4));
+	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio / 3, ratio / 3)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
 	rectangle.formeSFML->setOutlineColor(sf::Color::Green);
+	rectangle.formeSFML->setOutlineThickness(2.f);
 	fenetre.ajouterForme(rectangle);
 
 	GestionnaireEvenement * experts =

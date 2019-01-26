@@ -8,5 +8,8 @@ public:
 	FermetureToucheCOR(FenetreEcran * fenetre);
 	FermetureToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 	virtual ~FermetureToucheCOR();
+
+	// Quand la touche échappe est appuyée, la fenêtre est fermée
+	// Semblable au premier expert, mais pas tout à fait pareil
 	const bool appliquer();
 };

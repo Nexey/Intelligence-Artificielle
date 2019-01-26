@@ -12,8 +12,13 @@ public:
 	Iterateur(PElement<T> * tete);
 	Iterateur(const Iterateur<T>& it);
 	
+	// Regarde si PElement possède un maillon suivant
 	bool aSuivant() const;
+
+	// Récupère le maillon suivant
 	T suivant();
+
+	// Remets le curseur au début de la liste
 	void debut();
 
 	virtual ~Iterateur();

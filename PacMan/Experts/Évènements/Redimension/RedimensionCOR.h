@@ -7,5 +7,6 @@ public:
 	RedimensionCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 	virtual ~RedimensionCOR();
 
+	// Fais en sorte que le ratio de la fenêtre reste inchangé (pas encore fonctionnel)
 	const bool appliquer();
 };

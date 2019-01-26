@@ -22,5 +22,7 @@ public:
 	DeplacementToucheCOR(FenetreEcran * fenetre);
 	DeplacementToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant);
 	virtual ~DeplacementToucheCOR();
+
+	// Change la direction stockée dans la fenêtre quand une touche est appuyée
 	const bool appliquer();
 };
