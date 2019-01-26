@@ -1,6 +1,17 @@
 #include "FenetreEcran.h"
+#include "../Formes/Creature.h"
 
-int FenetreEcran::direction = -1;
+const Vecteur2D
+FenetreEcran::VECTEUR2D_BAS_GAUCHE(-1, -1),
+FenetreEcran::VECTEUR2D_BAS(0, -1),
+FenetreEcran::VECTEUR2D_BAS_DROITE(1, -1),
+FenetreEcran::VECTEUR2D_GAUCHE(-1, 0),
+FenetreEcran::VECTEUR2D_DROITE(1, 0),
+FenetreEcran::VECTEUR2D_HAUT_GAUCHE(-1, 1),
+FenetreEcran::VECTEUR2D_HAUT(0, 1),
+FenetreEcran::VECTEUR2D_HAUT_DROITE(1, 1);
+
+Vecteur2D FenetreEcran::direction = Vecteur2D(0, 0);
 
 FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsigned & h, const Vecteur2D & coinBG, const Vecteur2D & coinHD, const unsigned & r) :
 	sf::RenderWindow(sf::VideoMode(l, h), n),
@@ -54,6 +65,34 @@ const Vecteur2D & FenetreEcran::getCoinBasGauche() const {
 
 const Vecteur2D & FenetreEcran::getCoinHautDroit() const {
 	return coinHautDroit;
+}
+
+void FenetreEcran::ajouterForme(Creature & c) {
+	this->listeCreature.push_back(c);
+}
+
+const FenetreEcran * FenetreEcran::operator+(Creature & c) {
+	this->ajouterForme(c);
+	return this;
+}
+
+void FenetreEcran::deplacerCreatures() {
+	std::vector<Creature>::iterator it = this->listeCreature.begin();
+	for (it; it < this->listeCreature.end(); it++) {
+		if (this->direction != Vecteur2D(0, 0)) {
+			if (it->peutBouger()) {
+				it->directionCreature = direction;
+				it->nouvellePositionEcran = it->positionEcran + direction;
+			}
+			it->deplacer();
+		}
+	}
+}
+
+void FenetreEcran::dessinerCreatures() {
+	std::vector<Creature>::iterator it = this->listeCreature.begin();
+	for (it; it < this->listeCreature.end(); it++)
+		it->dessine();
 }
 
 sf::Vector2f FenetreEcran::calculPos(const Vecteur2D & posEcran) {

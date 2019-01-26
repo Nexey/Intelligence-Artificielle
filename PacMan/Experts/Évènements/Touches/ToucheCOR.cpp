@@ -4,6 +4,10 @@ ToucheCOR::ToucheCOR(FenetreEcran * fenetre) : EvenementCOR(fenetre, sf::Event::
 
 ToucheCOR::ToucheCOR(FenetreEcran * fenetre, GestionnaireEvenement * suivant) : EvenementCOR(fenetre, sf::Event::KeyPressed, suivant) {}
 
+const bool ToucheCOR::appliquer() {
+	return trouveEvenementDansMap(this->codeTouchesEnStr);
+}
+
 ToucheCOR::~ToucheCOR() {
 	codeTouchesEnStr.clear();
 }

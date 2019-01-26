@@ -12,17 +12,6 @@ int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
 	const unsigned ratio = 16u;
 
-	Liste<int> l;
-	l.ajouterElem(new int(5));
-	l.ajouterElem(new int (12));
-	l.ajouterElem(new int (45));
-
-	Iterateur<int> it = l.getIterateur();
-	while (it.aSuivant()) {
-		std::cout << it.suivant() << std::endl;
-	}
-
-
 	Vecteur2D
 		CoinBasGauche(0, 0),
 		CoinHautDroit(ratio - 1, ratio - 1);
@@ -41,6 +30,7 @@ int main() {
 	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio / 2, ratio / 2)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
 	rectangle.formeSFML->setOutlineColor(sf::Color::Green);
+	fenetre.ajouterForme(rectangle);
 
 	GestionnaireEvenement * experts =
 		new DeplacementToucheCOR(&fenetre,
@@ -58,9 +48,13 @@ int main() {
 		std::vector<FormeEcran>::iterator it = formes.begin();
 		for (it; it < formes.end(); it++)
 			it->dessine();
-		rectangle.dessine();
+		fenetre.deplacerCreatures();
+		fenetre.dessinerCreatures();
 		fenetre.display();
 	}
+#ifdef _DEBUG
 	system("pause");
+#endif
+
 	return 0;
 }

@@ -14,7 +14,7 @@ public:
 	
 	bool aSuivant() const;
 	T suivant();
-	void begin();
+	void debut();
 
 	virtual ~Iterateur();
 };
@@ -40,7 +40,7 @@ T Iterateur<T>::suivant() {
 }
 
 template<class T>
-void Iterateur<T>::begin() {
+void Iterateur<T>::debut() {
 	curseur = tete;
 }
 

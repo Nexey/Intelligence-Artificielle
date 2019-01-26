@@ -1,0 +1,18 @@
+﻿  FenetreEcran.cpp
+  Creature.cpp
+  FormeEcran.cpp
+  EvenementCOR.cpp
+  GestionnaireEvenement.cpp
+  FermetureCOR.cpp
+  RedimensionCOR.cpp
+  DeplacementToucheCOR.cpp
+  FermetureToucheCOR.cpp
+  ToucheCOR.cpp
+  AElement.cpp
+  Iterateur.cpp
+  Liste.cpp
+  Main.cpp
+  Génération de code en cours
+  All 637 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  PacMan.vcxproj -> C:\Users\geels\Documents\GitHub\C++\Intelligence Artificielle\Release\PacMan.exe

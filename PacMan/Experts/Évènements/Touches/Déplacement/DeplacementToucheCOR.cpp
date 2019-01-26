@@ -23,16 +23,16 @@ DeplacementToucheCOR::~DeplacementToucheCOR() {
 }
 
 void DeplacementToucheCOR::initMap() {
-
+	
 	this->codeToucheEnDirection = {
-		{ sf::Keyboard::Numpad1, FenetreEcran::BAS_GAUCHE },
-		{ sf::Keyboard::Numpad2, FenetreEcran::BAS },
-		{ sf::Keyboard::Numpad3, FenetreEcran::BAS_DROITE },
-		{ sf::Keyboard::Numpad4, FenetreEcran::GAUCHE },
-		{ sf::Keyboard::Numpad6, FenetreEcran::DROITE },
-		{ sf::Keyboard::Numpad7, FenetreEcran::HAUT_GAUCHE },
-		{ sf::Keyboard::Numpad8, FenetreEcran::HAUT },
-		{ sf::Keyboard::Numpad9, FenetreEcran::HAUT_DROITE }//,
+		{ sf::Keyboard::Numpad1, FenetreEcran::VECTEUR2D_BAS_GAUCHE },
+		{ sf::Keyboard::Numpad2, FenetreEcran::VECTEUR2D_BAS },
+		{ sf::Keyboard::Numpad3, FenetreEcran::VECTEUR2D_BAS_DROITE },
+		{ sf::Keyboard::Numpad4, FenetreEcran::VECTEUR2D_GAUCHE },
+		{ sf::Keyboard::Numpad6, FenetreEcran::VECTEUR2D_DROITE },
+		{ sf::Keyboard::Numpad7, FenetreEcran::VECTEUR2D_HAUT_GAUCHE },
+		{ sf::Keyboard::Numpad8, FenetreEcran::VECTEUR2D_HAUT },
+		{ sf::Keyboard::Numpad9, FenetreEcran::VECTEUR2D_HAUT_DROITE }//,
 		// Ici c'est quand le pavé numérique est éteint
 		// Je ne pense pas les utiliser parce qu'elles entrent en conflit avec d'autres touches
 		/*
@@ -48,21 +48,24 @@ void DeplacementToucheCOR::initMap() {
 	};
 
 	this->codeTouchesEnStr = {
-		{ FenetreEcran::BAS_GAUCHE, BAS_GAUCHE_STR },
-		{ FenetreEcran::BAS, BAS_STR },
-		{ FenetreEcran::BAS_DROITE, BAS_DROITE_STR },
-		{ FenetreEcran::GAUCHE, GAUCHE_STR },
-		{ FenetreEcran::DROITE, DROITE_STR },
-		{ FenetreEcran::HAUT_GAUCHE, HAUT_GAUCHE_STR },
-		{ FenetreEcran::HAUT, HAUT_STR },
-		{ FenetreEcran::HAUT_DROITE, HAUT_DROITE_STR }
+		{ sf::Keyboard::Numpad1, BAS_GAUCHE_STR },
+		{ sf::Keyboard::Numpad2, BAS_STR },
+		{ sf::Keyboard::Numpad3, BAS_DROITE_STR },
+		{ sf::Keyboard::Numpad4, GAUCHE_STR },
+		{ sf::Keyboard::Numpad6, DROITE_STR },
+		{ sf::Keyboard::Numpad7, HAUT_GAUCHE_STR },
+		{ sf::Keyboard::Numpad8, HAUT_STR },
+		{ sf::Keyboard::Numpad9, HAUT_DROITE_STR }
 	};
 }
 
 const bool DeplacementToucheCOR::appliquer() {
-	if (trouveEvenementDansMap(this->codeToucheEnDirection)) {
+	if (ToucheCOR::appliquer()) {
 		this->fenetre->direction = codeToucheEnDirection[touchePressee];
-		std::cout << "Touche " << codeTouchesEnStr[this->fenetre->direction] << " entrée..." << std::endl;
+#ifdef _DEBUG
+		std::cout << "Touche " << codeTouchesEnStr[touchePressee] << " entrée..." << std::endl;
+		std::cout << this->fenetre->direction << std::endl;
+#endif
 		return true;
 	}
 	return false;

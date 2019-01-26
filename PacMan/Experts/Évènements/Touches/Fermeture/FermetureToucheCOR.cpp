@@ -17,8 +17,10 @@ void FermetureToucheCOR::initMap() {
 }
 
 const bool FermetureToucheCOR::appliquer() {
-	if (trouveEvenementDansMap(this->codeTouchesEnStr)) {
+	if (ToucheCOR::appliquer()) {
+#ifdef _DEBUG
 		std::cout << "Fermeture de la fenêtre de jeu..." << std::endl;
+#endif
 		this->fenetre->close();
 		return true;
 	}

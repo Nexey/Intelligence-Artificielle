@@ -135,9 +135,6 @@
     <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h">
       <Filter>Fichiers d%27en-tête\Experts\Évènements\Fermeture</Filter>
     </ClInclude>
-    <ClInclude Include="Ecran\Formes\Creature.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Graphe\PElement.h">
       <Filter>Fichiers d%27en-tête\Graphe</Filter>
     </ClInclude>
@@ -146,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="Liste.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\Creature.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,14 +182,14 @@
     <ClCompile Include="Main\Main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Ecran\Formes\Creature.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Iterateur.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Liste.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\Creature.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

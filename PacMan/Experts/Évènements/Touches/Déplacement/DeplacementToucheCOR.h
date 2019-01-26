@@ -4,7 +4,7 @@ class DeplacementToucheCOR :
 	public ToucheCOR {
 
 	// Collection qui translate les codes des touches en direction
-	std::map<int, int> codeToucheEnDirection;
+	std::map<int, Vecteur2D> codeToucheEnDirection;
 protected:
 	void initMap();
 public:
