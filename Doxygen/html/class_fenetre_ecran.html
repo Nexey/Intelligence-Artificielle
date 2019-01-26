@@ -63,7 +63,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="#pub-static-attribs">Attributs publics statiques</a> &#124;
 <a href="class_fenetre_ecran-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe FenetreEcran</div>  </div>
@@ -76,6 +79,12 @@ Graphe d'héritage de FenetreEcran:</div>
   <img src="class_fenetre_ecran.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr class="memitem:a26dc0fcb251daea5f23c42daca0ca3af"><td class="memItemLeft" align="right" valign="top"><a id="a26dc0fcb251daea5f23c42daca0ca3af"></a>
+typedef void(FenetreEcran::*&#160;</td><td class="memItemRight" valign="bottom"><b>fctTraitement</b>) (<a class="el" href="class_creature.html">Creature</a> &amp;)</td></tr>
+<tr class="separator:a26dc0fcb251daea5f23c42daca0ca3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a47ffd892fcd19b88ee4155c9f8e7bdb6"><td class="memItemLeft" align="right" valign="top"><a id="a47ffd892fcd19b88ee4155c9f8e7bdb6"></a>
@@ -88,7 +97,8 @@ const <a class="el" href="class_transfo_affine2_d.html">TransfoAffine2D</a> &amp
 void&#160;</td><td class="memItemRight" valign="bottom"><b>redimensionner</b> ()</td></tr>
 <tr class="separator:a7ce7ccc7851d631afd3ac24daed40688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a4e5cf7431f2a16530d297a9a3a5ea6"><td class="memItemLeft" align="right" valign="top"><a id="a3a4e5cf7431f2a16530d297a9a3a5ea6"></a>
-const unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRatio</b> () const</td></tr>
+const unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fenetre_ecran.html#a3a4e5cf7431f2a16530d297a9a3a5ea6">getRatio</a> () const</td></tr>
+<tr class="memdesc:a3a4e5cf7431f2a16530d297a9a3a5ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters. <br /></td></tr>
 <tr class="separator:a3a4e5cf7431f2a16530d297a9a3a5ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9424ea54ea0e9296522c53aeba8eb54"><td class="memItemLeft" align="right" valign="top"><a id="aa9424ea54ea0e9296522c53aeba8eb54"></a>
 const unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getLargeur</b> () const</td></tr>
@@ -105,13 +115,64 @@ const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;&#160;</td><
 <tr class="memitem:a3e19aa107adc34157e5220927232ca4c"><td class="memItemLeft" align="right" valign="top"><a id="a3e19aa107adc34157e5220927232ca4c"></a>
 const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCoinHautDroit</b> () const</td></tr>
 <tr class="separator:a3e19aa107adc34157e5220927232ca4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5d369bfc2f4113ec98dc2cbed0976f"><td class="memItemLeft" align="right" valign="top"><a id="a5c5d369bfc2f4113ec98dc2cbed0976f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouterForme</b> (<a class="el" href="class_creature.html">Creature</a> &amp;c)</td></tr>
+<tr class="separator:a5c5d369bfc2f4113ec98dc2cbed0976f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb77db45c94f26297c75dcf193d5927"><td class="memItemLeft" align="right" valign="top"><a id="a0bb77db45c94f26297c75dcf193d5927"></a>
+const <a class="el" href="class_fenetre_ecran.html">FenetreEcran</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="class_creature.html">Creature</a> &amp;c)</td></tr>
+<tr class="separator:a0bb77db45c94f26297c75dcf193d5927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006f3f5939e13a380bd5f846cad68aa1"><td class="memItemLeft" align="right" valign="top"><a id="a006f3f5939e13a380bd5f846cad68aa1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deplacerCreature</b> (<a class="el" href="class_creature.html">Creature</a> &amp;c)</td></tr>
+<tr class="separator:a006f3f5939e13a380bd5f846cad68aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cc4075c331fa5ab72e169236066d67"><td class="memItemLeft" align="right" valign="top"><a id="a05cc4075c331fa5ab72e169236066d67"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>dessinerCreature</b> (<a class="el" href="class_creature.html">Creature</a> &amp;c)</td></tr>
+<tr class="separator:a05cc4075c331fa5ab72e169236066d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29848a04bd022b2baa8a3c3491b768ed"><td class="memItemLeft" align="right" valign="top"><a id="a29848a04bd022b2baa8a3c3491b768ed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>traitementCreatures</b> (fctTraitement)</td></tr>
+<tr class="separator:a29848a04bd022b2baa8a3c3491b768ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f4344b4bc71982db1c192ee45548aa1"><td class="memItemLeft" align="right" valign="top"><a id="a2f4344b4bc71982db1c192ee45548aa1"></a>
 sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>calculPos</b> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;screenPos)</td></tr>
 <tr class="separator:a2f4344b4bc71982db1c192ee45548aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:a6665b9f790eb76f887bd2850e2b1bed5"><td class="memItemLeft" align="right" valign="top"><a id="a6665b9f790eb76f887bd2850e2b1bed5"></a>
+<a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>direction</b></td></tr>
+<tr class="separator:a6665b9f790eb76f887bd2850e2b1bed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:a65606b93774c9804d479542d6deb4602"><td class="memItemLeft" align="right" valign="top"><a id="a65606b93774c9804d479542d6deb4602"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_BAS_GAUCHE</b></td></tr>
+<tr class="separator:a65606b93774c9804d479542d6deb4602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2db34ee78a321af5437c0e66f2294f"><td class="memItemLeft" align="right" valign="top"><a id="a0a2db34ee78a321af5437c0e66f2294f"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_BAS</b></td></tr>
+<tr class="separator:a0a2db34ee78a321af5437c0e66f2294f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d10902919449d9c84ae247a39dcc734"><td class="memItemLeft" align="right" valign="top"><a id="a3d10902919449d9c84ae247a39dcc734"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_BAS_DROITE</b></td></tr>
+<tr class="separator:a3d10902919449d9c84ae247a39dcc734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac7e05d73341076b739350c034a6175"><td class="memItemLeft" align="right" valign="top"><a id="abac7e05d73341076b739350c034a6175"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_GAUCHE</b></td></tr>
+<tr class="separator:abac7e05d73341076b739350c034a6175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0f38ad36e92cb3cd506689998c79c4"><td class="memItemLeft" align="right" valign="top"><a id="a9b0f38ad36e92cb3cd506689998c79c4"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_DROITE</b></td></tr>
+<tr class="separator:a9b0f38ad36e92cb3cd506689998c79c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99efd95a288a32a9e137555b97453bfc"><td class="memItemLeft" align="right" valign="top"><a id="a99efd95a288a32a9e137555b97453bfc"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_HAUT_GAUCHE</b></td></tr>
+<tr class="separator:a99efd95a288a32a9e137555b97453bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c0ace12c265fdaa7f82bd83e09267f"><td class="memItemLeft" align="right" valign="top"><a id="a92c0ace12c265fdaa7f82bd83e09267f"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_HAUT</b></td></tr>
+<tr class="separator:a92c0ace12c265fdaa7f82bd83e09267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48eb96828b6329d62a81c8b047397126"><td class="memItemLeft" align="right" valign="top"><a id="a48eb96828b6329d62a81c8b047397126"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_HAUT_DROITE</b></td></tr>
+<tr class="separator:a48eb96828b6329d62a81c8b047397126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212c8828047083a0eae5e0a8275ddc9d"><td class="memItemLeft" align="right" valign="top"><a id="a212c8828047083a0eae5e0a8275ddc9d"></a>
+static const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VECTEUR2D_STOP</b></td></tr>
+<tr class="separator:a212c8828047083a0eae5e0a8275ddc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li><a class="el" href="_fenetre_ecran_8h_source.html">FenetreEcran.h</a></li>
-<li>FenetreEcran.cpp</li>
+<li>Ecran/Fenetre/<a class="el" href="_fenetre_ecran_8h_source.html">FenetreEcran.h</a></li>
+<li>Ecran/Fenetre/FenetreEcran.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

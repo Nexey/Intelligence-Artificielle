@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gestionnaireevenement',['GestionnaireEvenement',['../class_gestionnaire_evenement.html',1,'']]]
+  ['erreur',['Erreur',['../class_erreur.html',1,'']]],
+  ['evenementcor',['EvenementCOR',['../class_evenement_c_o_r.html',1,'']]]
 ];

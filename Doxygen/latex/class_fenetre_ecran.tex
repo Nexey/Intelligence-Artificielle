@@ -6,6 +6,12 @@ Graphe d\textquotesingle{}héritage de Fenetre\+Ecran\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_fenetre_ecran}
 \end{center}
 \end{figure}
+\subsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a26dc0fcb251daea5f23c42daca0ca3af}\label{class_fenetre_ecran_a26dc0fcb251daea5f23c42daca0ca3af}} 
+typedef void(Fenetre\+Ecran\+::$\ast$ {\bfseries fct\+Traitement}) (\mbox{\hyperlink{class_creature}{Creature}} \&)
+\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,8 +25,8 @@ const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} \& {\bfserie
 void {\bfseries redimensionner} ()
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}\label{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}} 
-const unsigned \& {\bfseries get\+Ratio} () const
-\item 
+const unsigned \& \mbox{\hyperlink{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}{get\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_fenetre_ecran_aa9424ea54ea0e9296522c53aeba8eb54}\label{class_fenetre_ecran_aa9424ea54ea0e9296522c53aeba8eb54}} 
 const unsigned \& {\bfseries get\+Largeur} () const
 \item 
@@ -36,12 +42,63 @@ const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& {\bfseries get\+Coin\+Ba
 \mbox{\Hypertarget{class_fenetre_ecran_a3e19aa107adc34157e5220927232ca4c}\label{class_fenetre_ecran_a3e19aa107adc34157e5220927232ca4c}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& {\bfseries get\+Coin\+Haut\+Droit} () const
 \item 
+\mbox{\Hypertarget{class_fenetre_ecran_a5c5d369bfc2f4113ec98dc2cbed0976f}\label{class_fenetre_ecran_a5c5d369bfc2f4113ec98dc2cbed0976f}} 
+void {\bfseries ajouter\+Forme} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}\label{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}} 
+const \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ {\bfseries operator+} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a006f3f5939e13a380bd5f846cad68aa1}\label{class_fenetre_ecran_a006f3f5939e13a380bd5f846cad68aa1}} 
+void {\bfseries deplacer\+Creature} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a05cc4075c331fa5ab72e169236066d67}\label{class_fenetre_ecran_a05cc4075c331fa5ab72e169236066d67}} 
+void {\bfseries dessiner\+Creature} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a29848a04bd022b2baa8a3c3491b768ed}\label{class_fenetre_ecran_a29848a04bd022b2baa8a3c3491b768ed}} 
+void {\bfseries traitement\+Creatures} (fct\+Traitement)
+\item 
 \mbox{\Hypertarget{class_fenetre_ecran_a2f4344b4bc71982db1c192ee45548aa1}\label{class_fenetre_ecran_a2f4344b4bc71982db1c192ee45548aa1}} 
 sf\+::\+Vector2f {\bfseries calcul\+Pos} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&screen\+Pos)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a6665b9f790eb76f887bd2850e2b1bed5}\label{class_fenetre_ecran_a6665b9f790eb76f887bd2850e2b1bed5}} 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries direction}
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a65606b93774c9804d479542d6deb4602}\label{class_fenetre_ecran_a65606b93774c9804d479542d6deb4602}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+B\+A\+S\+\_\+\+G\+A\+U\+C\+HE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a0a2db34ee78a321af5437c0e66f2294f}\label{class_fenetre_ecran_a0a2db34ee78a321af5437c0e66f2294f}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+B\+AS}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a3d10902919449d9c84ae247a39dcc734}\label{class_fenetre_ecran_a3d10902919449d9c84ae247a39dcc734}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+B\+A\+S\+\_\+\+D\+R\+O\+I\+TE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_abac7e05d73341076b739350c034a6175}\label{class_fenetre_ecran_abac7e05d73341076b739350c034a6175}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+G\+A\+U\+C\+HE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a9b0f38ad36e92cb3cd506689998c79c4}\label{class_fenetre_ecran_a9b0f38ad36e92cb3cd506689998c79c4}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+D\+R\+O\+I\+TE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a99efd95a288a32a9e137555b97453bfc}\label{class_fenetre_ecran_a99efd95a288a32a9e137555b97453bfc}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+H\+A\+U\+T\+\_\+\+G\+A\+U\+C\+HE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a92c0ace12c265fdaa7f82bd83e09267f}\label{class_fenetre_ecran_a92c0ace12c265fdaa7f82bd83e09267f}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+H\+A\+UT}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a48eb96828b6329d62a81c8b047397126}\label{class_fenetre_ecran_a48eb96828b6329d62a81c8b047397126}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+H\+A\+U\+T\+\_\+\+D\+R\+O\+I\+TE}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a212c8828047083a0eae5e0a8275ddc9d}\label{class_fenetre_ecran_a212c8828047083a0eae5e0a8275ddc9d}} 
+static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries V\+E\+C\+T\+E\+U\+R2\+D\+\_\+\+S\+T\+OP}
 \end{DoxyCompactItemize}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-Fenetre\+Ecran.\+h\item 
-Fenetre\+Ecran.\+cpp\end{DoxyCompactItemize}
+Ecran/\+Fenetre/Fenetre\+Ecran.\+h\item 
+Ecran/\+Fenetre/Fenetre\+Ecran.\+cpp\end{DoxyCompactItemize}

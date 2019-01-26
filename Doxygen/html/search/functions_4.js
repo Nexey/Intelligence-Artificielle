@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['testenonvide',['testeNonVide',['../class_erreur.html#ad318a27a06c5c1f68506eb00b9fe6beb',1,'Erreur']]],
-  ['transfoaffine2d',['TransfoAffine2D',['../class_transfo_affine2_d.html#a0c40b0f090f7cce558475a8222126442',1,'TransfoAffine2D']]]
+  ['getfenetre',['getFenetre',['../class_forme_ecran.html#a781177121ce901c848958800e0ce12ec',1,'FormeEcran']]],
+  ['getratio',['getRatio',['../class_fenetre_ecran.html#a3a4e5cf7431f2a16530d297a9a3a5ea6',1,'FenetreEcran']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['passagemondeecran',['passageMondeEcran',['../class_transfo_affine2_d.html#ae6e4fa341863380d0dc712395c77a8e3',1,'TransfoAffine2D']]]
+  ['depiler',['depiler',['../class_p_element.html#a64309fcc01ade68603bf85c7dbb04c95',1,'PElement']]],
+  ['det',['det',['../class_vecteur2_d.html#a619ad284db437059ec346e4372c5b596',1,'Vecteur2D']]]
 ];

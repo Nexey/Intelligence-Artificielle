@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['paire',['Paire',['../class_paire.html',1,'']]],
-  ['passagemondeecran',['passageMondeEcran',['../class_transfo_affine2_d.html#ae6e4fa341863380d0dc712395c77a8e3',1,'TransfoAffine2D']]]
+  ['insertionordonnee',['insertionOrdonnee',['../class_p_element.html#a0e32256cbecaea72487f347763b38d57',1,'PElement']]],
+  ['iterateur',['Iterateur',['../class_iterateur.html',1,'']]]
 ];

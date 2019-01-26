@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['operator_20_2a',['operator *',['../class_vecteur2_d.html#ab1ba03f6de3981612dc3e757c02e196e',1,'Vecteur2D']]],
-  ['operator_20_5e',['operator ^',['../class_vecteur2_d.html#acb66d0a40ff928d07898b2df0735ef6a',1,'Vecteur2D']]]
+  ['gestionnaireevenement',['GestionnaireEvenement',['../class_gestionnaire_evenement.html',1,'']]],
+  ['getfenetre',['getFenetre',['../class_forme_ecran.html#a781177121ce901c848958800e0ce12ec',1,'FormeEcran']]],
+  ['getratio',['getRatio',['../class_fenetre_ecran.html#a3a4e5cf7431f2a16530d297a9a3a5ea6',1,'FenetreEcran']]]
 ];
