@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <vector>
+#include <functional>
 #include "../../Maths/TransfoAffine2D.h"
 class Creature;
 
@@ -15,25 +16,26 @@ inline const sf::Vector2f TransfoVecteur2DToVector2f(const Vecteur2D & v) {
 
 class FenetreEcran :
 	public sf::RenderWindow {
+	// La transformation affine se charge de transformer des coordonnées écran en coordonnées réelles
 	TransfoAffine2D transfoAffine;
+
+	// Les différentes informations de la fenêtre
 	unsigned ratio, largeur, hauteur;
 	std::string nom;
+
+	// Les coins relatifs de la fenêtre
 	Vecteur2D coinBasGauche, coinHautDroit;
+
+	// Interdiction des constructeurs
 	FenetreEcran() = delete;
 	FenetreEcran(const FenetreEcran&) = delete;
 
+	// La fenêtre se charge des créatures à dessiner
 	std::vector<Creature> listeCreature;
 public:
-	/*
-	static const int BAS_GAUCHE = 1;
-	static const int BAS = 2;
-	static const int BAS_DROITE = 3;
-	static const int GAUCHE = 4;
-	static const int DROITE = 5;
-	static const int HAUT_GAUCHE = 6;
-	static const int HAUT = 7;
-	static const int HAUT_DROITE = 8;*/
-
+	// Liste des directions possibles
+	// Ce sont des Vecteur2D, ce qui permet de les additionner directement à une forme écran quelconque possédant
+	// des Vecteur2D comme coordonnées
 	static const Vecteur2D
 		VECTEUR2D_BAS_GAUCHE,
 		VECTEUR2D_BAS,
@@ -44,7 +46,9 @@ public:
 		VECTEUR2D_HAUT,
 		VECTEUR2D_HAUT_DROITE;
 
-	static Vecteur2D direction;
+	// La direction, elle est mise à jour dans l'expert qui récupère les touches tapées par l'utilisateur
+	// Elle peut être changée par n'importe quelle autre classe
+	Vecteur2D direction;
 
 	FenetreEcran(const std::string & nom, const unsigned & largeur, const unsigned & hauteur, const Vecteur2D & coinBasGauche, const Vecteur2D & coinHautDroit, const unsigned & ratio);
 
@@ -61,9 +65,12 @@ public:
 	void ajouterForme(Creature & c);
 	const FenetreEcran * operator+(Creature & c);
 
-	// Les deux fonctions suivantes sont trop semblables
-	void deplacerCreatures();
-	void dessinerCreatures();
+	typedef void(FenetreEcran::*fctTraitement)(Creature &);
+
+	void deplacerCreature(Creature & c);
+	void dessinerCreature(Creature & c);
+	void traitementCreatures(fctTraitement);
+	//void traitementCreatures(std::function<void(Creature&)> traitement);
 
 	sf::Vector2f calculPos(const Vecteur2D& screenPos);
 	virtual ~FenetreEcran();

@@ -17,6 +17,9 @@ const bool FormeEcran::dessine() {
 		fenetre->draw(*formeSFML);
 	}
 	catch (Erreur e) {
+#ifdef _DEBUG
+		std::cerr << e.message << std::endl;
+#endif
 		return false;
 	}
 	return true;

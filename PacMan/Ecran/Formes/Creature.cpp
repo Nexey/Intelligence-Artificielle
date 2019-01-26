@@ -30,10 +30,10 @@ void Creature::deplacer() {
 		// La direction est du style (0, 1) ou (-1, -1), le fait de la multiplier par alpha ne va
 		// donc mettre à jour que les coordonnées de la direction souhaitée (si c'est 0 la multiplication a lieu mais ça reste 0)
 		// On obtient donc une direction générale que l'on peut additionner à notre position actuelle
-		// Vecteur2D prévoit l'addition et la multiplication entre deux Vecteur2D et des double (ici alpha est un float donc petite conversion de données
+		// Vecteur2D prévoit l'addition et la multiplication entre deux Vecteur2D ainsi qu'avec des doubles (ici alpha est un float donc petite conversion de données)
 		nouvPos = Vecteur2D(this->positionEcran + this->directionCreature * alpha);
 	// On met à jour la position à l'écran
-	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));
+	this->setPos(nouvPos);
 }
 
 const bool Creature::peutBouger() const {

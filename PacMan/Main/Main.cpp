@@ -48,8 +48,8 @@ int main() {
 		std::vector<FormeEcran>::iterator it = formes.begin();
 		for (it; it < formes.end(); it++)
 			it->dessine();
-		fenetre.deplacerCreatures();
-		fenetre.dessinerCreatures();
+		fenetre.traitementCreatures(&FenetreEcran::deplacerCreature);
+		fenetre.traitementCreatures(&FenetreEcran::dessinerCreature);
 		fenetre.display();
 	}
 #ifdef _DEBUG
