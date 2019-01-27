@@ -15,6 +15,11 @@ class GElement :
 public:
 	T valeur;
 	GElement(const T & valeur): AElement(), valeur(valeur) {}
+
+	bool dessine() {
+		return valeur.dessine();
+	}
+
 	operator std::string() const {
 		std::ostringstream o;
 		o << this->AElement::operator std::string() << ", Valeur = " << valeur;

@@ -253,7 +253,7 @@ template< class FENETRE>
 bool Graphe<Ar, So>::dessineToutesAretes(FENETRE & fenetre) const {
 	PElement< Arete<Ar, So>> * pA;
 	for (pA = this->listeAretes; pA; pA = pA->suivant)
-		if (!fenetre.dessine(pA->valeur)) return false; // tente de dessiner puis retourne false en cas d'echec
+		if (!fenetre.dessine(*(pA->valeur))) return false; // tente de dessiner puis retourne false en cas d'echec
 
 	return true;
 }
@@ -263,7 +263,7 @@ template< class FENETRE>
 bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
 	PElement< Sommet<So>> * pS;
 	for (pS = this->listeSommets; pS; pS = pS->suivant)
-		if (!fenetre.dessine(pS->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
+		if (!fenetre.dessine(*(pS->valeur))) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
 
