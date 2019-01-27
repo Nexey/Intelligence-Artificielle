@@ -4,7 +4,7 @@
 #include "../Experts/Évènements/Fermeture/FermetureCOR.h"
 #include "../Experts/Évènements/Touches/Fermeture/FermetureToucheCOR.h"
 #include "../Experts/Évènements/Touches/Déplacement/DeplacementToucheCOR.h"
-#include "../Graphe/PElement.h"
+#include "../Graphe/Graphe.h"
 #include "../Liste.h"
 #include <Windows.h> // Pour les accents dans la console sous Windows
 
@@ -16,8 +16,20 @@ int main() {
 		CoinBasGauche(0, 0),
 		CoinHautDroit(ratio - 1, ratio - 1);
 	FenetreEcran fenetre("PacMan", 2*ratio*ratio, 2*ratio*ratio, CoinBasGauche, CoinHautDroit, ratio);
-	std::vector<FormeEcran> formes;
 
+
+	Graphe<FormeEcran, FormeEcran> graphe;
+
+	sf::Shape * rectangleSFML;
+	rectangleSFML = new sf::RectangleShape(sf::Vector2f(ratio, ratio));
+	rectangleSFML->setFillColor(sf::Color::Blue);
+	graphe.creeSommet(FormeEcran(rectangleSFML, &fenetre, Vecteur2D(5, 5)));
+
+	std::cout << graphe;
+
+	/*std::vector<FormeEcran> formes;
+
+	
 	sf::Shape * rectangleSFML;
 	for (int i = 0; i < ratio; i++) {
 		for (int j = 0; j < ratio; j++) {
@@ -25,7 +37,8 @@ int main() {
 			rectangleSFML->setFillColor(sf::Color::Blue);
 			formes.push_back(FormeEcran(rectangleSFML, &fenetre, Vecteur2D(i, j)));
 		}
-	}
+	}*/
+
 
 	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio / 3, ratio / 3)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
@@ -46,16 +59,18 @@ int main() {
 		}
 
 		fenetre.clear();
-		std::vector<FormeEcran>::iterator it = formes.begin();
+		/*std::vector<FormeEcran>::iterator it = formes.begin();
 		for (it; it < formes.end(); it++)
-			it->dessine();
-		fenetre.traitementCreatures(&FenetreEcran::deplacerCreature);
-		fenetre.traitementCreatures(&FenetreEcran::dessinerCreature);
+			it->dessine();*/
+
+		graphe.dessineTousSommets<FenetreEcran>(fenetre);
+
+		fenetre.effectuer(&FenetreEcran::deplacer);
+		fenetre.effectuer(&FenetreEcran::dessine);
 		fenetre.display();
 	}
 #ifdef _DEBUG
 	system("pause");
 #endif
-
 	return 0;
 }

@@ -138,14 +138,26 @@
     <ClInclude Include="Graphe\PElement.h">
       <Filter>Fichiers d%27en-tête\Graphe</Filter>
     </ClInclude>
-    <ClInclude Include="Iterateur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Liste.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Ecran\Formes\Creature.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\GElement.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Sommet.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Liste.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterateur.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Arete.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Graphe.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,14 +194,26 @@
     <ClCompile Include="Main\Main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Iterateur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Liste.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Ecran\Formes\Creature.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Sommet.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\GElement.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterateur.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Liste.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Arete.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Graphe.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

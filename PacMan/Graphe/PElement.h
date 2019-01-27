@@ -8,10 +8,10 @@
 template <class T>
 class PElement {
 public:
-	T * v;				// valeur
-	PElement<T> * s;	// suivant
+	T * valeur;				// valeur
+	PElement<T> * suivant;	// suivant
 
-	PElement(T * v, PElement<T> * s) :v(v), s(s) {}
+	PElement(T * v, PElement<T> * s) : valeur(v), suivant(s) {}
 
 	static const std::string toString(const PElement<T> * p, const char * debut = "( ", const char * separateur = ", ", const char * fin = ")");
 
@@ -111,7 +111,7 @@ void PElement<T>::insertion(T * a, PElement<T> * & l) {
 	if (!l)
 		l = new PElement<T>(a, l);
 	else
-		PElement<T>::insertion(a, l->s);
+		PElement<T>::insertion(a, l->suivant);
 }
 
 template<class T>
@@ -122,8 +122,8 @@ template <class T>
 	PElement<T> * r;
 	std::ostringstream oss;
 
-	for (r = (PElement<T>*) p, oss << debut; r; r = r->s)
-		oss << *(r->v) << separateur;
+	for (r = (PElement<T>*) p, oss << debut; r; r = r->suivant)
+		oss << *(r->valeur) << separateur;
 
 	oss << fin;
 	return oss.str();
@@ -135,14 +135,14 @@ template <class T>
 		l1 = l2;
 
 	else
-		concat(l1->s, l2);
+		concat(l1->suivant, l2);
 }
 
 template <class T>
 /* static */ int PElement<T>::taille(const PElement<T> * l) {
 	if (!l) return 0;
 	else
-		return 1 + PElement<T>::taille(l->s);
+		return 1 + PElement<T>::taille(l->suivant);
 }
 
 
@@ -156,7 +156,7 @@ template <class T>
 	if (!l)
 		return NULL;
 	else
-		return new PElement<T>(l->v, PElement<T>::copie1(l->s));
+		return new PElement<T>(l->valeur, PElement<T>::copie1(l->suivant));
 }
 
 /**
@@ -169,7 +169,7 @@ template <class T>
 	if (!l)
 		return NULL;
 	else
-		return new PElement<T>(new T(*(l->v)), PElement<T>::copie2(l->s));
+		return new PElement<T>(new T(*(l->valeur)), PElement<T>::copie2(l->suivant));
 }
 
 /**
@@ -184,7 +184,7 @@ template <class T>
 	if (!l)
 		return NULL;
 	else
-		return new PElement<T>(l->v->copie(), PElement<T>::copie3(l->s));
+		return new PElement<T>(l->valeur->copie(), PElement<T>::copie3(l->suivant));
 }
 
 
@@ -197,7 +197,7 @@ template <class T>
 template <class T>
 /* static */ void PElement<T>::efface1(PElement<T>* & l) {
 	if (l) {
-		PElement<T>::efface1(l->s);
+		PElement<T>::efface1(l->suivant);
 		delete l; l = NULL;
 	}
 }
@@ -209,8 +209,8 @@ template <class T>
 template <class T>
 /* static */ void PElement<T>::efface2(PElement<T>* & l) {
 	if (l) {
-		PElement<T>::efface2(l->s);
-		delete l->v; delete l; l = NULL;
+		PElement<T>::efface2(l->suivant);
+		delete l->valeur; delete l; l = NULL;
 	}
 }
 /**
@@ -222,8 +222,8 @@ template <class T>
  * */
 template <class T>
 PElement< T > * PElement< T >::appartient(const T * a, PElement<T> * l) {
-	for (; l; l = l->s)
-		if (a == l->v)
+	for (; l; l = l->suivant)
+		if (a == l->valeur)
 			return l;
 
 	return l;
@@ -240,8 +240,8 @@ PElement< T > * PElement< T >::appartient(const T * a, PElement<T> * l) {
 template <class T>
 template <class FONCTEUR>
 /*static*/ PElement< T > * PElement< T >::appartient(PElement<T> * l, const FONCTEUR & condition) {
-	for (; l; l = l->s)
-		if (condition(l->v))
+	for (; l; l = l->suivant)
+		if (condition(l->valeur))
 			return l;
 
 	return l;
@@ -260,10 +260,10 @@ template <class FONCTEUR>
  * */
 template<class T>
 /*static*/ void PElement<T>::insertionOrdonnee(T * a, PElement<T> * & l, bool(*estPlusPetitOuEgal)(const T * a1, const T * a2)) {
-	if (!l || estPlusPetitOuEgal(a, l->v))
+	if (!l || estPlusPetitOuEgal(a, l->valeur))
 		l = new PElement<T>(a, l);
 	else
-		PElement<T>::insertionOrdonnee(a, l->s, estPlusPetitOuEgal);
+		PElement<T>::insertionOrdonnee(a, l->suivant, estPlusPetitOuEgal);
 }
 
 /**
@@ -281,12 +281,12 @@ template<class T>
 	if (!l)
 		return false;
 	else
-		if (a == l->v) {
-			PElement<T> * r = l; l = l->s; delete r;
+		if (a == l->valeur) {
+			PElement<T> * r = l; l = l->suivant; delete r;
 			return true;
 		}
 		else
-			return PElement<T>::retire(a, l->s);
+			return PElement<T>::retire(a, l->suivant);
 }
 
 /**
@@ -299,10 +299,10 @@ template<class T>
 template <class T>
 /* static */ T * PElement<T>::depiler(PElement<T> * & l) {
 	if (!l) throw Erreur("impossible de depiler une pile vide");
-	T * a = l->v;
+	T * a = l->valeur;
 	PElement<T> * tete = l;
 
-	l = l->s; delete tete;
+	l = l->suivant; delete tete;
 	return a;
 
 }
@@ -326,9 +326,9 @@ PElement<T> * reunion(PElement<T> * l1, PElement<T> * l2) {
 	PElement<T> * r = PElement<T>::copie1(l2);
 	PElement<T> * pl1;
 
-	for (pl1 = l1; pl1; pl1 = pl1->s)
-		if (!PElement<T>::appartient(pl1->v, r))
-			r = new PElement<T>(pl1->v, r);
+	for (pl1 = l1; pl1; pl1 = pl1->suivant)
+		if (!PElement<T>::appartient(pl1->valeur, r))
+			r = new PElement<T>(pl1->valeur, r);
 
 	return r;
 }
@@ -344,18 +344,18 @@ PElement<T> * reunion(PElement<T> * l1, PElement<T> * l2) {
  * */
 template <class T>
 void partage(PElement<T> * & p, PElement<T> * & p1) {
-	if (p == NULL || p->s == NULL)
+	if (p == NULL || p->suivant == NULL)
 		p1 = NULL;
 	else {
 		PElement<T> *  r1, *r2;
 
-		r1 = p->s;
-		r2 = r1->s;
+		r1 = p->suivant;
+		r2 = r1->suivant;
 
 		partage(r2, p1);
 
-		r1->s = p1;
-		p->s = r2;
+		r1->suivant = p1;
+		p->suivant = r2;
 		p1 = r1;
 	}
 }
@@ -386,19 +386,19 @@ void fusion(PElement<T> * & p1, PElement<T> * & p2, bool(*estPlusPetitOuEgal)(co
 
 	// a present, p1 et p2 sont non vides
 
-	if (estPlusPetitOuEgal(p1->v, p2->v)) // p1->v <= p2->v
+	if (estPlusPetitOuEgal(p1->valeur, p2->valeur)) // p1->v <= p2->v
 	{
 		PElement<T> * r;
-		r = p1->s;
+		r = p1->suivant;
 		fusion(r, p2, estPlusPetitOuEgal);
-		p1->s = r;
+		p1->suivant = r;
 	}
 	else // p1->v > p2->v
 	{
 		PElement<T> * r;
-		r = p2->s;
+		r = p2->suivant;
 		fusion(p1, r, estPlusPetitOuEgal);
-		p2->s = p1;
+		p2->suivant = p1;
 		p1 = p2;
 		p2 = NULL;
 	}
@@ -422,7 +422,7 @@ void fusion(PElement<T> * & p1, PElement<T> * & p2, bool(*estPlusPetitOuEgal)(co
  * */
 template <class T>
 void tri(PElement<T>* & p, bool(*estPlusPetitOuEgal)(const T * a1, const T * a2)) {
-	if (p != NULL && p->s != NULL) {
+	if (p != NULL && p->suivant != NULL) {
 		PElement<T> * p1;
 
 		partage(p, p1);

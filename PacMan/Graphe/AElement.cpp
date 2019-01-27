@@ -1,3 +1,3 @@
 #include "AElement.h"
 
-int AElement::genereateurCle = 0;
+int AElement::generateurIdentifiant = 0;

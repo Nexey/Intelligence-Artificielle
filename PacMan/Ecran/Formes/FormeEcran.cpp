@@ -33,4 +33,14 @@ const Vecteur2D FormeEcran::getPositionEcran() const {
 	return positionEcran;
 }
 
+FormeEcran::operator std::string() const {
+	std::stringstream ss;
+	ss << "Position : " << positionEcran << std::endl;
+	return ss.str();
+}
+
 FormeEcran::~FormeEcran() {}
+
+std::ostream & operator<<(std::ostream &o, const FormeEcran &f) {
+	return o << (std::string)f;
+}

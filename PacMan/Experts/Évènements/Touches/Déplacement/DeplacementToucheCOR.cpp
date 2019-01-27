@@ -62,10 +62,12 @@ void DeplacementToucheCOR::initMap() {
 const bool DeplacementToucheCOR::appliquer() {
 	if (ToucheCOR::appliquer()) {
 		this->fenetre->direction = codeToucheEnDirection[touchePressee];
+		/*
 #ifdef _DEBUG
 		std::cout << "Touche " << codeTouchesEnStr[touchePressee] << " entrée..." << std::endl;
 		std::cout << this->fenetre->direction << std::endl;
 #endif
+*/
 		return true;
 	}
 	return false;

@@ -1,5 +1,6 @@
 #include "FenetreEcran.h"
 #include "../Formes/Creature.h"
+#include "../../Exceptions/Erreur.h"
 
 const Vecteur2D
 FenetreEcran::VECTEUR2D_BAS_GAUCHE(-1, -1),
@@ -67,24 +68,19 @@ const FenetreEcran * FenetreEcran::operator+(Creature & c) {
 	return this;
 }
 
-void FenetreEcran::deplacerCreature(Creature & c) {
-	if (this->direction != VECTEUR2D_STOP) {
-		if (c.peutBouger()) {
-			c.directionCreature = direction;
-			c.nouvellePositionEcran = c.positionEcran + direction;
-		}
-		c.deplacer();
+bool FenetreEcran::effectuer(fctTraitement traitement) {
+	try {
+		std::vector<Creature>::iterator it = this->listeCreature.begin();
+		for (it; it < this->listeCreature.end(); it++)
+			(this->*traitement)(*it);
 	}
-}
-
-void FenetreEcran::dessinerCreature(Creature & c) {
-	c.dessine();
-}
-
-void FenetreEcran::traitementCreatures(fctTraitement traitement) {
-	std::vector<Creature>::iterator it = this->listeCreature.begin();
-	for (it; it < this->listeCreature.end(); it++)
-		(this->*traitement)(*it);
+	catch (Erreur e) {
+#ifdef _DEBUG
+		std::cerr << e.message << std::endl;
+#endif
+		return false;
+	}
+	return true;
 }
 
 sf::Vector2f FenetreEcran::calculPos(const Vecteur2D & posEcran) {

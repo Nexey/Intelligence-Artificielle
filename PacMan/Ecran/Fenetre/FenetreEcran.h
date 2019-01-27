@@ -74,20 +74,40 @@ public:
 	const FenetreEcran * operator+(Creature & c);
 
 	// Type pointeur de fonction qui prend en paramètre une référence sur une créature
-	typedef void(FenetreEcran::*fctTraitement)(Creature &);
+	typedef bool(FenetreEcran::*fctTraitement)(Creature &);
 
 	// Appel sur la méthode de déplacement d'une créature en tenant compte des paramètres à initialiser
-	void deplacerCreature(Creature & c);
+	template<class T>
+	bool deplacer(T & c);
 
 	// Appel sur la méthode de dessin d'une créature, elle se charge de tout faire
-	void dessinerCreature(Creature & c);
+	template<class T>
+	bool dessine(T & forme);
 
 	// Cette fonction parcourt la liste de toutes les créatures
 	// Le paramètre fctTraitement est un pointeur sur une fonction
 	// Cela permet de factoriser beaucoup de code
-	void traitementCreatures(fctTraitement);
+	bool effectuer(fctTraitement);
 
 	// Applique la transformation affine sur un Vecteur2D, càd transforme des coordonnées écrans en coordonnées réelles
 	sf::Vector2f calculPos(const Vecteur2D& screenPos);
 	virtual ~FenetreEcran();
 };
+
+template<class T>
+inline bool FenetreEcran::deplacer(T & c) {
+	if (this->direction != VECTEUR2D_STOP) {
+		if (c.peutBouger()) {
+			c.directionCreature = direction;
+			c.nouvellePositionEcran = c.positionEcran + direction;
+		}
+		c.deplacer();
+		return true;
+	}
+	return false;
+}
+
+template<class T>
+inline bool FenetreEcran::dessine(T & forme) {
+	return forme.dessine();
+}

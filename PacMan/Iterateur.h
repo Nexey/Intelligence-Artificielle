@@ -39,9 +39,9 @@ inline bool Iterateur<T>::aSuivant() const {
 template<class T>
 T Iterateur<T>::suivant() {
 	assert(aSuivant());
-	T v = *(curseur->v);
-	curseur = curseur->s;
-	return v;
+	T valeur = *(curseur->valeur);
+	curseur = curseur->suivant;
+	return valeur;
 }
 
 template<class T>

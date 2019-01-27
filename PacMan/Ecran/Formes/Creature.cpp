@@ -17,10 +17,12 @@ void Creature::deplacer() {
 		// Pour tester, je remets la direction à (0, 0) sinon la créature se baladerait indéfiniment
 		this->fenetre->direction = Vecteur2D(0, 0);
 
+		/*
 #ifdef _DEBUG
 		std::cout << "Nouvelle position : " << this->getPositionEcran() << std::endl;
 		std::cout << "Origine : " << this->formeSFML->getOrigin().x << ", " << this->formeSFML->getOrigin().y << std::endl;
 #endif
+*/
 	}
 	// La créature est en mouvement
 	else

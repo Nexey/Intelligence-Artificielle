@@ -25,5 +25,9 @@ public:
 	FenetreEcran * getFenetre() const;
 	const Vecteur2D getPositionEcran() const;
 
+	operator std::string() const;
+
 	virtual ~FormeEcran();
+
+	friend std::ostream & operator<<(std::ostream&, const FormeEcran&);
 };

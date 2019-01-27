@@ -31,7 +31,11 @@
     <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h" />
     <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h" />
     <ClInclude Include="Graphe\AElement.h" />
+    <ClInclude Include="Graphe\Arete.h" />
+    <ClInclude Include="Graphe\GElement.h" />
+    <ClInclude Include="Graphe\Graphe.h" />
     <ClInclude Include="Graphe\PElement.h" />
+    <ClInclude Include="Graphe\Sommet.h" />
     <ClInclude Include="Iterateur.h" />
     <ClInclude Include="Liste.h" />
     <ClInclude Include="Maths\AlgebreLineaire.h" />
@@ -52,6 +56,10 @@
     <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Touches\ToucheCOR.cpp" />
     <ClCompile Include="Graphe\AElement.cpp" />
+    <ClCompile Include="Graphe\Arete.cpp" />
+    <ClCompile Include="Graphe\GElement.cpp" />
+    <ClCompile Include="Graphe\Graphe.cpp" />
+    <ClCompile Include="Graphe\Sommet.cpp" />
     <ClCompile Include="Iterateur.cpp" />
     <ClCompile Include="Liste.cpp" />
     <ClCompile Include="Main\Main.cpp" />
