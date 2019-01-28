@@ -1,0 +1,67 @@
+\hypertarget{class_graphe}{}\section{Référence du modèle de la classe Graphe$<$ Ar, So $>$}
+\label{class_graphe}\index{Graphe$<$ Ar, So $>$@{Graphe$<$ Ar, So $>$}}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graphe_a2f7f1d595ff97ca1235d1865001072f6}\label{class_graphe_a2f7f1d595ff97ca1235d1865001072f6}} 
+{\bfseries Graphe} (const \mbox{\hyperlink{class_graphe}{Graphe}}$<$ Ar, So $>$ \&graphe)
+\item 
+\mbox{\Hypertarget{class_graphe_a19d0e98fe9a00e7336bc3a0a7e51037d}\label{class_graphe_a19d0e98fe9a00e7336bc3a0a7e51037d}} 
+const \mbox{\hyperlink{class_graphe}{Graphe}}$<$ Ar, So $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{class_graphe}{Graphe}}$<$ Ar, So $>$ \&graphe)
+\item 
+\mbox{\Hypertarget{class_graphe_a01775aa1e7cc4c2d4e6c133272214fa2}\label{class_graphe_a01775aa1e7cc4c2d4e6c133272214fa2}} 
+\mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$ {\bfseries cree\+Sommet} (const So \&info)
+\item 
+\mbox{\Hypertarget{class_graphe_a421b311fe90f32d067e2a3c76e7978ce}\label{class_graphe_a421b311fe90f32d067e2a3c76e7978ce}} 
+\mbox{\hyperlink{class_arete}{Arete}}$<$ Ar, So $>$ $\ast$ {\bfseries cree\+Arete} (const Ar \&info, \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$debut, \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$fin)
+\item 
+\mbox{\Hypertarget{class_graphe_a21a446a7772cbb4bc6f3c41f23aa61b7}\label{class_graphe_a21a446a7772cbb4bc6f3c41f23aa61b7}} 
+void {\bfseries copie} (const \mbox{\hyperlink{class_graphe}{Graphe}}$<$ Ar, So $>$ \&graphe)
+\item 
+\mbox{\Hypertarget{class_graphe_a89dc75d563f482d37ebce765348996fa}\label{class_graphe_a89dc75d563f482d37ebce765348996fa}} 
+void {\bfseries efface\+Tout} ()
+\item 
+\mbox{\Hypertarget{class_graphe_abe8516e1c8adb1334c2eaad96d4a51e6}\label{class_graphe_abe8516e1c8adb1334c2eaad96d4a51e6}} 
+int {\bfseries nombre\+Sommets} () const
+\item 
+\mbox{\Hypertarget{class_graphe_a0c81ecd1aa71ed81f5163b6c0fe5a89e}\label{class_graphe_a0c81ecd1aa71ed81f5163b6c0fe5a89e}} 
+int {\bfseries nombre\+Aretes} () const
+\item 
+\mbox{\Hypertarget{class_graphe_a1af8c87b519030bfe3618dbbdfb25b14}\label{class_graphe_a1af8c87b519030bfe3618dbbdfb25b14}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ std\+::pair$<$ \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$, \mbox{\hyperlink{class_arete}{Arete}}$<$ Ar, So $>$ $\ast$ $>$ $>$ $\ast$ {\bfseries adjacences} (const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$sommet) const
+\item 
+\mbox{\Hypertarget{class_graphe_a59b0fd34274a0f17df49dd59a546272e}\label{class_graphe_a59b0fd34274a0f17df49dd59a546272e}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ \mbox{\hyperlink{class_arete}{Arete}}$<$ Ar, So $>$ $>$ $\ast$ {\bfseries aretes\+Adjacentes} (const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$sommet) const
+\item 
+\mbox{\Hypertarget{class_graphe_acc4971337a3af5b823afec6969d96409}\label{class_graphe_acc4971337a3af5b823afec6969d96409}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $>$ $\ast$ {\bfseries voisins} (const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$sommet) const
+\item 
+\mbox{\Hypertarget{class_graphe_a7627cce988794442b1eca7709d77194a}\label{class_graphe_a7627cce988794442b1eca7709d77194a}} 
+\mbox{\hyperlink{class_arete}{Arete}}$<$ Ar, So $>$ $\ast$ {\bfseries get\+Arete\+Par\+Sommets} (const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$s1, const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $\ast$s2) const
+\item 
+\mbox{\Hypertarget{class_graphe_a25310143fb14a646cef18ad756618312}\label{class_graphe_a25310143fb14a646cef18ad756618312}} 
+{\bfseries operator std\+::string} () const
+\item 
+\mbox{\Hypertarget{class_graphe_a518e2e51223c5afe6e875ee682fe5d6b}\label{class_graphe_a518e2e51223c5afe6e875ee682fe5d6b}} 
+{\footnotesize template$<$class F\+E\+N\+E\+T\+RE $>$ }\\bool {\bfseries dessine\+Toutes\+Aretes} (F\+E\+N\+E\+T\+RE \&fenetre) const
+\item 
+\mbox{\Hypertarget{class_graphe_a3bddb6d11f19ae9152a7489c239e8f99}\label{class_graphe_a3bddb6d11f19ae9152a7489c239e8f99}} 
+{\footnotesize template$<$class F\+E\+N\+E\+T\+RE $>$ }\\bool {\bfseries dessine\+Tous\+Sommets} (F\+E\+N\+E\+T\+RE \&fenetre) const
+\item 
+\mbox{\Hypertarget{class_graphe_a265ca249fcf400c43b5dfb3a1e7886c3}\label{class_graphe_a265ca249fcf400c43b5dfb3a1e7886c3}} 
+{\footnotesize template$<$class F\+E\+N\+E\+T\+RE $>$ }\\bool {\bfseries dessine} (F\+E\+N\+E\+T\+RE \&fenetre) const
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graphe_a51045d1042f9e9bdf2b798e324abbaaa}\label{class_graphe_a51045d1042f9e9bdf2b798e324abbaaa}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ \mbox{\hyperlink{class_sommet}{Sommet}}$<$ So $>$ $>$ $\ast$ {\bfseries liste\+Sommets}
+\item 
+\mbox{\Hypertarget{class_graphe_a270afe24473b6531a7da7cc524ee20e2}\label{class_graphe_a270afe24473b6531a7da7cc524ee20e2}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ \mbox{\hyperlink{class_arete}{Arete}}$<$ Ar, So $>$ $>$ $\ast$ {\bfseries liste\+Aretes}
+\end{DoxyCompactItemize}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Graphe/Graphe.\+h\end{DoxyCompactItemize}

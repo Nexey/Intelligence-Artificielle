@@ -9,8 +9,8 @@ Graphe d\textquotesingle{}héritage de Fenetre\+Ecran\+:\begin{figure}[H]
 \subsection*{Types publics}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a26dc0fcb251daea5f23c42daca0ca3af}\label{class_fenetre_ecran_a26dc0fcb251daea5f23c42daca0ca3af}} 
-typedef void(Fenetre\+Ecran\+::$\ast$ {\bfseries fct\+Traitement}) (\mbox{\hyperlink{class_creature}{Creature}} \&)
+\mbox{\Hypertarget{class_fenetre_ecran_aaec9d2d673614dfc27da9252491285d9}\label{class_fenetre_ecran_aaec9d2d673614dfc27da9252491285d9}} 
+typedef bool(Fenetre\+Ecran\+::$\ast$ {\bfseries fct\+Traitement}) (\mbox{\hyperlink{class_creature}{Creature}} $\ast$)
 \end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
@@ -48,14 +48,14 @@ void {\bfseries ajouter\+Forme} (\mbox{\hyperlink{class_creature}{Creature}} \&c
 \mbox{\Hypertarget{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}\label{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}} 
 const \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ {\bfseries operator+} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a006f3f5939e13a380bd5f846cad68aa1}\label{class_fenetre_ecran_a006f3f5939e13a380bd5f846cad68aa1}} 
-void {\bfseries deplacer\+Creature} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\mbox{\Hypertarget{class_fenetre_ecran_a90ed854e37772b0fe9b4db9d2c59d58c}\label{class_fenetre_ecran_a90ed854e37772b0fe9b4db9d2c59d58c}} 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries deplacer} (T $\ast$c)
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a05cc4075c331fa5ab72e169236066d67}\label{class_fenetre_ecran_a05cc4075c331fa5ab72e169236066d67}} 
-void {\bfseries dessiner\+Creature} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\mbox{\Hypertarget{class_fenetre_ecran_a788eaad1bcd1edb0257aa1a7a843cd61}\label{class_fenetre_ecran_a788eaad1bcd1edb0257aa1a7a843cd61}} 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries dessine} (T $\ast$forme)
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a29848a04bd022b2baa8a3c3491b768ed}\label{class_fenetre_ecran_a29848a04bd022b2baa8a3c3491b768ed}} 
-void {\bfseries traitement\+Creatures} (fct\+Traitement)
+\mbox{\Hypertarget{class_fenetre_ecran_a254a7e51115405bc9c3d573fdd6fe5a9}\label{class_fenetre_ecran_a254a7e51115405bc9c3d573fdd6fe5a9}} 
+bool {\bfseries effectuer} (fct\+Traitement)
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a2f4344b4bc71982db1c192ee45548aa1}\label{class_fenetre_ecran_a2f4344b4bc71982db1c192ee45548aa1}} 
 sf\+::\+Vector2f {\bfseries calcul\+Pos} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&screen\+Pos)

@@ -79,7 +79,7 @@ template <class Ar, class So>
 Graphe<Ar, So>::operator std::string() const {
 	std::ostringstream oss;
 	oss << "Graphe : [" << std::endl;
-	oss << "Prochain identifiant = " << AElement::getProchaineCle() << std::endl;
+	oss << "Prochain identifiant = " << AElement::getProchainIdentifiant() << std::endl;
 	oss << "Nombre de sommets = " << this->nombreSommets() << std::endl;
 
 	oss << PElement<Sommet<So> >::toString(listeSommets, "", "\n", "\n");

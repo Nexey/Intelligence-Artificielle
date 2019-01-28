@@ -16,38 +16,38 @@ static const std\+::string {\bfseries to\+String} (const \mbox{\hyperlink{class_
 static int {\bfseries taille} (const \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l)
 \item 
 static \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element_a37f4263271bae1cd966909f6aecc257d}{copie1}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em ne recopie pas les donnees $\ast$v. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element_ace62f81f477d335fb2ff62d0992ebc6d}{copie2}} (const \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em recopie toutes les donnees $\ast$v. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element_afb475b1a17065198ee133b268f4cfc2a}{copie3}} (const \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em recopie toutes les donnees $\ast$v a l\textquotesingle{}aide de la methode v-\/$>$copie(). \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_p_element_ad481033d278200374e19cc3f2f8df0c7}{concat}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l1, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l2)
-\item 
+\begin{DoxyCompactList}\small\item\em concatene l2 a la fin de l1. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_p_element_abd2e6b05692413616650fcd953317324}{efface1}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l)
-\item 
+\begin{DoxyCompactList}\small\item\em efface toute la liste l mais n\textquotesingle{}efface pas les donnees $\ast$v \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_p_element_a9e377727c7c78db9f49a7dde2ead74cd}{efface2}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l)
-\item 
+\begin{DoxyCompactList}\small\item\em efface toute la liste l et efface toutes les donnees $\ast$v \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element_aee7ccc9dcc49558af92960dd60fafc9d}{appartient}} (const T $\ast$a, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em recherche si a appartient a l \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F\+O\+N\+C\+T\+E\+UR $>$ }\\static \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element_ad1ad40db30605db39a57c08058cf444c}{appartient}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$l, const F\+O\+N\+C\+T\+E\+UR \&condition)
-\item 
+\begin{DoxyCompactList}\small\item\em H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: l\textquotesingle{}evaluation de condition() produit un booleen condition est supposee avoir la signature \+: bool condition( const T $\ast$ a) \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_p_element_a0e32256cbecaea72487f347763b38d57}{insertion\+Ordonnee}} (T $\ast$a, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l, bool($\ast$est\+Plus\+Petit\+Ou\+Egal)(const T $\ast$a1, const T $\ast$a2))
-\item 
+\begin{DoxyCompactList}\small\item\em Insere $\ast$ a dans l de telle sorte que l reste ordonnee par ordre croissant (l\textquotesingle{}element en tete est le plus petit). \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_p_element_a9ae596a40769fc8c75a673fe5388cbc9}\label{class_p_element_a9ae596a40769fc8c75a673fe5388cbc9}} 
 static void {\bfseries insertion} (T $\ast$a, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l)
 \item 
 static bool \mbox{\hyperlink{class_p_element_aa9bb67abf314148c1ecdb83e16c9c16d}{retire}} (const T $\ast$a, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l)
-\item 
+\begin{DoxyCompactList}\small\item\em retire la 1ere occurrence de a de l si a est present dans l, sinon ne fait rien \end{DoxyCompactList}\item 
 static T $\ast$ \mbox{\hyperlink{class_p_element_a64309fcc01ade68603bf85c7dbb04c95}{depiler}} (\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&l)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em retire l\textquotesingle{}element situe en tete de l et le renvoie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_p_element_ab406d2871111fe1fa983b58d4522502d}\label{class_p_element_ab406d2871111fe1fa983b58d4522502d}} 
-T $\ast$ {\bfseries v}
+\mbox{\Hypertarget{class_p_element_a45e6966e33b9ae8029324ec1ec80db49}\label{class_p_element_a45e6966e33b9ae8029324ec1ec80db49}} 
+T $\ast$ {\bfseries valeur}
 \item 
-\mbox{\Hypertarget{class_p_element_a8df72226902275db0b92d344b0564df5}\label{class_p_element_a8df72226902275db0b92d344b0564df5}} 
-\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ {\bfseries s}
+\mbox{\Hypertarget{class_p_element_a47fc5c13b7a974f98aa1e8656ee2c70b}\label{class_p_element_a47fc5c13b7a974f98aa1e8656ee2c70b}} 
+\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ {\bfseries suivant}
 \end{DoxyCompactItemize}
 
 
@@ -56,29 +56,37 @@ T $\ast$ {\bfseries v}
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!appartient@{appartient}}
 \index{appartient@{appartient}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{appartient()}{appartient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::appartient (\begin{DoxyParamCaption}\item[{const T $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-recherche si a appartient a l
+
+
+recherche si a appartient a l 
 
 renvoie un pointeur sur le maillon de l contenant a renvoie N\+U\+LL si a n\textquotesingle{}appartient pas a l \mbox{\Hypertarget{class_p_element_ad1ad40db30605db39a57c08058cf444c}\label{class_p_element_ad1ad40db30605db39a57c08058cf444c}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!appartient@{appartient}}
 \index{appartient@{appartient}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{appartient()}{appartient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 template$<$class F\+O\+N\+C\+T\+E\+UR $>$ \\
 \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::appartient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l,  }\item[{const F\+O\+N\+C\+T\+E\+UR \&}]{condition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: l\textquotesingle{}evaluation de condition() produit un booleen condition est supposee avoir la signature \+: bool condition( const T $\ast$ a)
+
+
+H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: l\textquotesingle{}evaluation de condition() produit un booleen condition est supposee avoir la signature \+: bool condition( const T $\ast$ a) 
 
 renvoie un pointeur sur le 1er maillon de l verifiant la condition \char`\"{}condition\char`\"{} renvoie N\+U\+LL si aucun maillon ne verifie la condition \mbox{\Hypertarget{class_p_element_ad481033d278200374e19cc3f2f8df0c7}\label{class_p_element_ad481033d278200374e19cc3f2f8df0c7}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!concat@{concat}}
 \index{concat@{concat}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{concat()}{concat()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::concat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l1,  }\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-concatene l2 a la fin de l1. Ne cree aucun maillon.
+
+
+concatene l2 a la fin de l1. 
+
+Ne cree aucun maillon.
 
 En sortie l1 pointe sur le debut de la concatenation
 
@@ -90,56 +98,84 @@ Exemple 1 \+: si en entree l1 = (2,5,4) et l2 = (7,11) alors en sortie l1 = (2,5
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!copie1@{copie1}}
 \index{copie1@{copie1}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{copie1()}{copie1()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::copie1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-ne recopie pas les donnees $\ast$v. realise donc une copie partageant les donnees v avec l \mbox{\Hypertarget{class_p_element_ace62f81f477d335fb2ff62d0992ebc6d}\label{class_p_element_ace62f81f477d335fb2ff62d0992ebc6d}} 
+
+
+ne recopie pas les donnees $\ast$v. 
+
+realise donc une copie partageant les donnees v avec l \mbox{\Hypertarget{class_p_element_ace62f81f477d335fb2ff62d0992ebc6d}\label{class_p_element_ace62f81f477d335fb2ff62d0992ebc6d}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!copie2@{copie2}}
 \index{copie2@{copie2}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{copie2()}{copie2()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::copie2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-recopie toutes les donnees $\ast$v. realise donc une copie ne partageant aucune donnee avec l \mbox{\Hypertarget{class_p_element_afb475b1a17065198ee133b268f4cfc2a}\label{class_p_element_afb475b1a17065198ee133b268f4cfc2a}} 
+
+
+recopie toutes les donnees $\ast$v. 
+
+realise donc une copie ne partageant aucune donnee avec l \mbox{\Hypertarget{class_p_element_afb475b1a17065198ee133b268f4cfc2a}\label{class_p_element_afb475b1a17065198ee133b268f4cfc2a}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!copie3@{copie3}}
 \index{copie3@{copie3}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{copie3()}{copie3()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::copie3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-recopie toutes les donnees $\ast$v a l\textquotesingle{}aide de la methode v-\/$>$copie(). realise donc une copie ne partageant aucune donnee avec l
+
+
+recopie toutes les donnees $\ast$v a l\textquotesingle{}aide de la methode v-\/$>$copie(). 
+
+realise donc une copie ne partageant aucune donnee avec l
 
 Alors si la classe T possede la methode virtuelle copie(), l peut etre heterogene. Et la methode copie3 produit une copie de cette liste heterogene. \mbox{\Hypertarget{class_p_element_a64309fcc01ade68603bf85c7dbb04c95}\label{class_p_element_a64309fcc01ade68603bf85c7dbb04c95}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!depiler@{depiler}}
 \index{depiler@{depiler}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{depiler()}{depiler()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 T $\ast$ \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::depiler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-retire l\textquotesingle{}element situe en tete de l et le renvoie. Le 1er maillon de l est efface.
+
+
+retire l\textquotesingle{}element situe en tete de l et le renvoie. 
+
+Le 1er maillon de l est efface.
 
 l est donc modifiee par l\textquotesingle{}appel. En sortie l compte un element de moins. lance une exception \mbox{\hyperlink{class_erreur}{Erreur}} si l == N\+U\+LL a l\textquotesingle{}appel \mbox{\Hypertarget{class_p_element_abd2e6b05692413616650fcd953317324}\label{class_p_element_abd2e6b05692413616650fcd953317324}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!efface1@{efface1}}
 \index{efface1@{efface1}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{efface1()}{efface1()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::efface1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-efface toute la liste l mais n\textquotesingle{}efface pas les donnees $\ast$v \mbox{\Hypertarget{class_p_element_a9e377727c7c78db9f49a7dde2ead74cd}\label{class_p_element_a9e377727c7c78db9f49a7dde2ead74cd}} 
+
+
+efface toute la liste l mais n\textquotesingle{}efface pas les donnees $\ast$v 
+
+\mbox{\Hypertarget{class_p_element_a9e377727c7c78db9f49a7dde2ead74cd}\label{class_p_element_a9e377727c7c78db9f49a7dde2ead74cd}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!efface2@{efface2}}
 \index{efface2@{efface2}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{efface2()}{efface2()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::efface2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-efface toute la liste l et efface toutes les donnees $\ast$v \mbox{\Hypertarget{class_p_element_a0e32256cbecaea72487f347763b38d57}\label{class_p_element_a0e32256cbecaea72487f347763b38d57}} 
+
+
+efface toute la liste l et efface toutes les donnees $\ast$v 
+
+\mbox{\Hypertarget{class_p_element_a0e32256cbecaea72487f347763b38d57}\label{class_p_element_a0e32256cbecaea72487f347763b38d57}} 
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!insertionOrdonnee@{insertionOrdonnee}}
 \index{insertionOrdonnee@{insertionOrdonnee}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{insertionOrdonnee()}{insertionOrdonnee()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::insertion\+Ordonnee (\begin{DoxyParamCaption}\item[{T $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l,  }\item[{bool($\ast$)(const T $\ast$a1, const T $\ast$a2)}]{est\+Plus\+Petit\+Ou\+Egal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Insere $\ast$ a dans l de telle sorte que l reste ordonnee par ordre croissant (l\textquotesingle{}element en tete est le plus petit). Ne realise pas de copie de $\ast$a. En sortie l et a partagent donc physiquement des donnees.
+
+
+Insere $\ast$ a dans l de telle sorte que l reste ordonnee par ordre croissant (l\textquotesingle{}element en tete est le plus petit). 
+
+Ne realise pas de copie de $\ast$a. En sortie l et a partagent donc physiquement des donnees.
 
 A l\textquotesingle{}instar de la methode precedente (appartient), cette fonction aurait aussi pu etre ecrite avec un argument foncteur
 
@@ -147,10 +183,12 @@ Donnees \+: a (l\textquotesingle{}element a inserer), l, est\+Plus\+Petit\+Ou\+E
 \index{PElement$<$ T $>$@{PElement$<$ T $>$}!retire@{retire}}
 \index{retire@{retire}!PElement$<$ T $>$@{PElement$<$ T $>$}}
 \subsubsection{\texorpdfstring{retire()}{retire()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 bool \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$\+::retire (\begin{DoxyParamCaption}\item[{const T $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_p_element}{P\+Element}}$<$ T $>$ $\ast$\&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-retire la 1ere occurrence de a de l si a est present dans l, sinon ne fait rien
+
+
+retire la 1ere occurrence de a de l si a est present dans l, sinon ne fait rien 
 
 L\textquotesingle{}element trouve n\textquotesingle{}est pas efface
 

@@ -16,9 +16,6 @@ bool Creature::deplacer() {
 		alpha = 0.f;
 		nouvPos = this->nouvellePositionEcran;
 		this->positionEcran = nouvPos;
-
-		// Pour tester, je remets la direction à (0, 0) sinon la créature se baladerait indéfiniment
-		// this->fenetre->direction = Vecteur2D(0, 0);
 	}
 	// La créature est en mouvement
 	else {
@@ -46,7 +43,7 @@ bool Creature::deplacer() {
 		nouvPos = Vecteur2D(this->positionEcran + this->directionCreature * alpha);
 	}
 	// On met à jour la position à l'écran
-	this->setPos(nouvPos);
+	this->miseAJourPositionEcran(nouvPos);
 	return true;
 }
 

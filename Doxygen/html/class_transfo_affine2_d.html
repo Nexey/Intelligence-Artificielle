@@ -72,11 +72,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>représente la transformation v |&mdash;&gt; M*v + B  
+ <a href="class_transfo_affine2_d.html#details">Plus de dÃ©tails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_transfo_affine2_d_8h_source.html">TransfoAffine2D.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a0c40b0f090f7cce558475a8222126442"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfo_affine2_d.html#a0c40b0f090f7cce558475a8222126442">TransfoAffine2D</a> (const <a class="el" href="class_matrice22.html">Matrice22</a> &amp;M=<a class="el" href="class_matrice22.html">Matrice22</a>(), const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;B=<a class="el" href="class_vecteur2_d.html">Vecteur2D</a>())</td></tr>
+<tr class="memitem:a0c40b0f090f7cce558475a8222126442"><td class="memItemLeft" align="right" valign="top"><a id="a0c40b0f090f7cce558475a8222126442"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfo_affine2_d.html#a0c40b0f090f7cce558475a8222126442">TransfoAffine2D</a> (const <a class="el" href="class_matrice22.html">Matrice22</a> &amp;M=<a class="el" href="class_matrice22.html">Matrice22</a>(), const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;B=<a class="el" href="class_vecteur2_d.html">Vecteur2D</a>())</td></tr>
+<tr class="memdesc:a0c40b0f090f7cce558475a8222126442"><td class="mdescLeft">&#160;</td><td class="mdescRight">par défaut la transformation construite est l'application identité : v |&mdash;&gt; v <br /></td></tr>
 <tr class="separator:a0c40b0f090f7cce558475a8222126442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55568de1c428081c9f4fb372d7c16ca5"><td class="memItemLeft" align="right" valign="top"><a id="a55568de1c428081c9f4fb372d7c16ca5"></a>
 const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>applique</b> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;v) const</td></tr>
@@ -88,6 +93,7 @@ const <a class="el" href="class_transfo_affine2_d.html">TransfoAffine2D</a>&#160
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:ae6e4fa341863380d0dc712395c77a8e3"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_transfo_affine2_d.html">TransfoAffine2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfo_affine2_d.html#ae6e4fa341863380d0dc712395c77a8e3">passageMondeEcran</a> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;coinBG1, const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;coinHD1, const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;coinBG2, const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;coinHD2)</td></tr>
+<tr class="memdesc:ae6e4fa341863380d0dc712395c77a8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">HYPOTHESES : Notons On suppose que {coinBG1, coinHD1} représente la diagonale d'un rectangle R1.  <a href="#ae6e4fa341863380d0dc712395c77a8e3">Plus de dÃ©tails...</a><br /></td></tr>
 <tr class="separator:ae6e4fa341863380d0dc712395c77a8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -101,45 +107,7 @@ Attributs publics</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description dÃ©taillÃ©e</h2>
 <div class="textblock"><p>représente la transformation v |&mdash;&gt; M*v + B </p>
-</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a0c40b0f090f7cce558475a8222126442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c40b0f090f7cce558475a8222126442">&#9670;&nbsp;</a></span>TransfoAffine2D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TransfoAffine2D::TransfoAffine2D </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_matrice22.html">Matrice22</a> &amp;&#160;</td>
-          <td class="paramname"><em>M</em> = <code><a class="el" href="class_matrice22.html">Matrice22</a>()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;&#160;</td>
-          <td class="paramname"><em>B</em> = <code><a class="el" href="class_vecteur2_d.html">Vecteur2D</a>()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>par défaut la transformation construite est l'application identité : v |&mdash;&gt; v </p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentation des fonctions membres</h2>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a id="ae6e4fa341863380d0dc712395c77a8e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6e4fa341863380d0dc712395c77a8e3">&#9670;&nbsp;</a></span>passageMondeEcran()</h2>
 
@@ -185,7 +153,9 @@ Attributs publics</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>HYPOTHESES : Notons On suppose que {coinBG1, coinHD1} représente la diagonale d'un rectangle R1. ce sont respectivement les coins bas gauche et haut droit de R1 R1 est donné dans un certain repère Rep1 (O1,i1,j1), R1 n'est pas dégénéré On suppose que {coinBG2, coinHD2} représente la diagonale d'un rectangle R2. ce sont respectivement les coins bas gauche et haut droit de R2 R2 est donné dans un certain repère Rep2 (O2,i2,j2) R2 n'est pas dégénéré</p>
+
+<p>HYPOTHESES : Notons On suppose que {coinBG1, coinHD1} représente la diagonale d'un rectangle R1. </p>
+<p>ce sont respectivement les coins bas gauche et haut droit de R1 R1 est donné dans un certain repère Rep1 (O1,i1,j1), R1 n'est pas dégénéré On suppose que {coinBG2, coinHD2} représente la diagonale d'un rectangle R2. ce sont respectivement les coins bas gauche et haut droit de R2 R2 est donné dans un certain repère Rep2 (O2,i2,j2) R2 n'est pas dégénéré</p>
 <p>On suppose qu'on peut transformer R1 en R2 sans rotation, c'est-à-dire uniquement par translation et/ou étirement sur l'axe x ou sur l'axe y</p>
 <p>Autrement dit, on suppose que i1 et i2 sont colinéaires et j1 et j2 sont aussi colinéaires</p>
 <p>TACHE :</p>

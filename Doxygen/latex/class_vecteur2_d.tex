@@ -2,6 +2,11 @@
 \label{class_vecteur2_d}\index{Vecteur2D@{Vecteur2D}}
 
 
+Vecteurs2\+D.\+h.  
+
+
+
+
 {\ttfamily \#include $<$Vecteur2\+D.\+h$>$}
 
 \subsection*{Fonctions membres publiques}
@@ -19,13 +24,15 @@ const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries operator+} (cons
 \mbox{\Hypertarget{class_vecteur2_d_aaca13009f4c8bd1d4707e80a0ba83380}\label{class_vecteur2_d_aaca13009f4c8bd1d4707e80a0ba83380}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries operator $\ast$} (const double \&a) const
 \item 
+\mbox{\Hypertarget{class_vecteur2_d_acb66d0a40ff928d07898b2df0735ef6a}\label{class_vecteur2_d_acb66d0a40ff928d07898b2df0735ef6a}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_vecteur2_d_acb66d0a40ff928d07898b2df0735ef6a}{operator $^\wedge$}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u) const
-\item 
+\begin{DoxyCompactList}\small\item\em multiplication au sens des nombres complexes \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vecteur2_d_ad66f16f464a7c1b7a92cff4d8414b9d6}\label{class_vecteur2_d_ad66f16f464a7c1b7a92cff4d8414b9d6}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries operator -\/} () const
 \item 
+\mbox{\Hypertarget{class_vecteur2_d_ab1ba03f6de3981612dc3e757c02e196e}\label{class_vecteur2_d_ab1ba03f6de3981612dc3e757c02e196e}} 
 double \mbox{\hyperlink{class_vecteur2_d_ab1ba03f6de3981612dc3e757c02e196e}{operator $\ast$}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u) const
-\item 
+\begin{DoxyCompactList}\small\item\em produit scalaire \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vecteur2_d_a0960b81ed0f8faafdf971b98cf9b779b}\label{class_vecteur2_d_a0960b81ed0f8faafdf971b98cf9b779b}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries rotation\+Directe\+Quart\+De\+Tour} () const
 \item 
@@ -54,9 +61,9 @@ const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& {\bfseries operator $\as
 static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries cree\+Vecteur2D} (const double \&x, const double \&y)
 \item 
 static const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_vecteur2_d_a4d46d892fe0f00aa2fc6aa995e23f362}{random}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&germe, const double \&rayon)
-\item 
+\begin{DoxyCompactList}\small\item\em D\+O\+N\+N\+E\+ES \+: s respectant le format \char`\"{}(  nombre réel, nombre réel)\char`\"{}. \end{DoxyCompactList}\item 
 static double \mbox{\hyperlink{class_vecteur2_d_a619ad284db437059ec346e4372c5b596}{det}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u1, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u2)
-\item 
+\begin{DoxyCompactList}\small\item\em déterminant(u1,u2) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vecteur2_d_a2b7e10b8210e0a4f4e97055e00f8b9fc}\label{class_vecteur2_d_a2b7e10b8210e0a4f4e97055e00f8b9fc}} 
 static double {\bfseries norme\+Sup} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
 \end{DoxyCompactItemize}
@@ -72,7 +79,7 @@ double {\bfseries y}
 
 
 \subsection{Description dÃ©taillÃ©e}
-Vecteurs2\+D.\+h
+Vecteurs2\+D.\+h. 
 
 Created on\+: 1 juil. 2011 Author\+: Valérie 
 
@@ -83,25 +90,21 @@ Created on\+: 1 juil. 2011 Author\+: Valérie
 \subsubsection{\texorpdfstring{det()}{det()}}
 {\footnotesize\ttfamily double Vecteur2\+D\+::det (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u1,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-déterminant(u1,u2) \mbox{\Hypertarget{class_vecteur2_d_ab1ba03f6de3981612dc3e757c02e196e}\label{class_vecteur2_d_ab1ba03f6de3981612dc3e757c02e196e}} 
-\index{Vecteur2D@{Vecteur2D}!operator $\ast$@{operator $\ast$}}
-\index{operator $\ast$@{operator $\ast$}!Vecteur2D@{Vecteur2D}}
-\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}}
-{\footnotesize\ttfamily double Vecteur2\+D\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-produit scalaire \mbox{\Hypertarget{class_vecteur2_d_acb66d0a40ff928d07898b2df0735ef6a}\label{class_vecteur2_d_acb66d0a40ff928d07898b2df0735ef6a}} 
-\index{Vecteur2D@{Vecteur2D}!operator $^\wedge$@{operator $^\wedge$}}
-\index{operator $^\wedge$@{operator $^\wedge$}!Vecteur2D@{Vecteur2D}}
-\subsubsection{\texorpdfstring{operator $^\wedge$()}{operator ^()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Vecteur2\+D\+::operator $^\wedge$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-multiplication au sens des nombres complexes \mbox{\Hypertarget{class_vecteur2_d_a4d46d892fe0f00aa2fc6aa995e23f362}\label{class_vecteur2_d_a4d46d892fe0f00aa2fc6aa995e23f362}} 
+déterminant(u1,u2) 
+
+\mbox{\Hypertarget{class_vecteur2_d_a4d46d892fe0f00aa2fc6aa995e23f362}\label{class_vecteur2_d_a4d46d892fe0f00aa2fc6aa995e23f362}} 
 \index{Vecteur2D@{Vecteur2D}!random@{random}}
 \index{random@{random}!Vecteur2D@{Vecteur2D}}
 \subsubsection{\texorpdfstring{random()}{random()}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Vecteur2\+D\+::random (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{germe,  }\item[{const double \&}]{rayon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-D\+O\+N\+N\+E\+ES \+: s respectant le format \char`\"{}(  nombre réel, nombre réel)\char`\"{}R\+E\+S\+U\+L\+T\+AT \+: un vecteur aléatoire x tel que $\vert$ x -\/ germe $\vert$ $<$ rayon
+
+
+D\+O\+N\+N\+E\+ES \+: s respectant le format \char`\"{}(  nombre réel, nombre réel)\char`\"{}. 
+
+R\+E\+S\+U\+L\+T\+AT \+: un vecteur aléatoire x tel que $\vert$ x -\/ germe $\vert$ $<$ rayon
 
 suppose qu\textquotesingle{}un appel à srand a été fait au préalable 
 

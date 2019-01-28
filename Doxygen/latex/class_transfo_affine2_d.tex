@@ -2,13 +2,19 @@
 \label{class_transfo_affine2_d}\index{TransfoAffine2D@{TransfoAffine2D}}
 
 
+représente la transformation v $\vert$---$>$ M$\ast$v + B  
+
+
+
+
 {\ttfamily \#include $<$Transfo\+Affine2\+D.\+h$>$}
 
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}\label{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}} 
 \mbox{\hyperlink{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}{Transfo\+Affine2D}} (const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&M=\mbox{\hyperlink{class_matrice22}{Matrice22}}(), const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&B=\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}())
-\item 
+\begin{DoxyCompactList}\small\item\em par défaut la transformation construite est l\textquotesingle{}application identité \+: v $\vert$---$>$ v \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_transfo_affine2_d_a55568de1c428081c9f4fb372d7c16ca5}\label{class_transfo_affine2_d_a55568de1c428081c9f4fb372d7c16ca5}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries applique} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&v) const
 \item 
@@ -19,7 +25,7 @@ const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} {\bfseries i
 \begin{DoxyCompactItemize}
 \item 
 static const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} \mbox{\hyperlink{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}{passage\+Monde\+Ecran}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+B\+G1, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+H\+D1, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+B\+G2, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&coin\+H\+D2)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: Notons On suppose que \{coin\+B\+G1, coin\+H\+D1\} représente la diagonale d\textquotesingle{}un rectangle R1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,15 +40,6 @@ static const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} \mbox
 \subsection{Description dÃ©taillÃ©e}
 représente la transformation v $\vert$---$>$ M$\ast$v + B 
 
-\subsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}\label{class_transfo_affine2_d_a0c40b0f090f7cce558475a8222126442}} 
-\index{TransfoAffine2D@{TransfoAffine2D}!TransfoAffine2D@{TransfoAffine2D}}
-\index{TransfoAffine2D@{TransfoAffine2D}!TransfoAffine2D@{TransfoAffine2D}}
-\subsubsection{\texorpdfstring{TransfoAffine2D()}{TransfoAffine2D()}}
-{\footnotesize\ttfamily Transfo\+Affine2\+D\+::\+Transfo\+Affine2D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrice22}{Matrice22}} \&}]{M = {\ttfamily \mbox{\hyperlink{class_matrice22}{Matrice22}}()},  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{B = {\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-par défaut la transformation construite est l\textquotesingle{}application identité \+: v $\vert$---$>$ v 
-
 \subsection{Documentation des fonctions membres}
 \mbox{\Hypertarget{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}\label{class_transfo_affine2_d_ae6e4fa341863380d0dc712395c77a8e3}} 
 \index{TransfoAffine2D@{TransfoAffine2D}!passageMondeEcran@{passageMondeEcran}}
@@ -50,7 +47,11 @@ par défaut la transformation construite est l\textquotesingle{}application ident
 \subsubsection{\texorpdfstring{passageMondeEcran()}{passageMondeEcran()}}
 {\footnotesize\ttfamily static const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} Transfo\+Affine2\+D\+::passage\+Monde\+Ecran (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+B\+G1,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+H\+D1,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+B\+G2,  }\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{coin\+H\+D2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: Notons On suppose que \{coin\+B\+G1, coin\+H\+D1\} représente la diagonale d\textquotesingle{}un rectangle R1. ce sont respectivement les coins bas gauche et haut droit de R1 R1 est donné dans un certain repère Rep1 (O1,i1,j1), R1 n\textquotesingle{}est pas dégénéré On suppose que \{coin\+B\+G2, coin\+H\+D2\} représente la diagonale d\textquotesingle{}un rectangle R2. ce sont respectivement les coins bas gauche et haut droit de R2 R2 est donné dans un certain repère Rep2 (O2,i2,j2) R2 n\textquotesingle{}est pas dégénéré
+
+
+H\+Y\+P\+O\+T\+H\+E\+S\+ES \+: Notons On suppose que \{coin\+B\+G1, coin\+H\+D1\} représente la diagonale d\textquotesingle{}un rectangle R1. 
+
+ce sont respectivement les coins bas gauche et haut droit de R1 R1 est donné dans un certain repère Rep1 (O1,i1,j1), R1 n\textquotesingle{}est pas dégénéré On suppose que \{coin\+B\+G2, coin\+H\+D2\} représente la diagonale d\textquotesingle{}un rectangle R2. ce sont respectivement les coins bas gauche et haut droit de R2 R2 est donné dans un certain repère Rep2 (O2,i2,j2) R2 n\textquotesingle{}est pas dégénéré
 
 On suppose qu\textquotesingle{}on peut transformer R1 en R2 sans rotation, c\textquotesingle{}est-\/à-\/dire uniquement par translation et/ou étirement sur l\textquotesingle{}axe x ou sur l\textquotesingle{}axe y
 

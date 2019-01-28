@@ -15,8 +15,8 @@ Graphe d\textquotesingle{}héritage de Forme\+Ecran\+:\begin{figure}[H]
 \mbox{\Hypertarget{class_forme_ecran_a389a4eef0f47f3451440113055453052}\label{class_forme_ecran_a389a4eef0f47f3451440113055453052}} 
 {\bfseries Forme\+Ecran} (const \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} \&)
 \item 
-\mbox{\Hypertarget{class_forme_ecran_aa96940cf8b569c9ba9376d3d4accba80}\label{class_forme_ecran_aa96940cf8b569c9ba9376d3d4accba80}} 
-void {\bfseries set\+Pos} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&nouv\+Pos)
+\mbox{\Hypertarget{class_forme_ecran_af7218febcf2ff9b7881fff962a81d5e9}\label{class_forme_ecran_af7218febcf2ff9b7881fff962a81d5e9}} 
+void {\bfseries mise\+A\+Jour\+Position\+Ecran} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&nouv\+Pos)
 \item 
 \mbox{\Hypertarget{class_forme_ecran_abd24ffecc0acb7f75635dd5a9b96cc63}\label{class_forme_ecran_abd24ffecc0acb7f75635dd5a9b96cc63}} 
 const bool {\bfseries dessine} ()
@@ -26,6 +26,9 @@ const bool {\bfseries dessine} ()
 \begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_forme_ecran_a6bf6d1c849fed205f2fc7f1a822ee383}\label{class_forme_ecran_a6bf6d1c849fed205f2fc7f1a822ee383}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries get\+Position\+Ecran} () const
+\item 
+\mbox{\Hypertarget{class_forme_ecran_a0dc759bf4cdbe9a2e679566263284128}\label{class_forme_ecran_a0dc759bf4cdbe9a2e679566263284128}} 
+{\bfseries operator std\+::string} () const
 \end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
@@ -41,6 +44,12 @@ sf\+::\+Shape $\ast$ {\bfseries forme\+S\+F\+ML}
 \item 
 \mbox{\Hypertarget{class_forme_ecran_a65ab2b50df82aa93e629bf7df1a5ff09}\label{class_forme_ecran_a65ab2b50df82aa93e629bf7df1a5ff09}} 
 \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ {\bfseries fenetre}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_forme_ecran_ace3406dee04b0ad37769553ffd4f97a5}\label{class_forme_ecran_ace3406dee04b0ad37769553ffd4f97a5}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} \&)
 \end{DoxyCompactItemize}
 
 

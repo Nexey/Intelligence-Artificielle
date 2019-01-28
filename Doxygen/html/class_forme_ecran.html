@@ -66,6 +66,7 @@ $(function() {
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pub-attribs">Attributs publics</a> &#124;
 <a href="#pro-attribs">Attributs protégés</a> &#124;
+<a href="#friends">Amis</a> &#124;
 <a href="class_forme_ecran-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe FormeEcran</div>  </div>
@@ -89,9 +90,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a389a4eef0f47f3451440113055453052"><td class="memItemLeft" align="right" valign="top"><a id="a389a4eef0f47f3451440113055453052"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FormeEcran</b> (const <a class="el" href="class_forme_ecran.html">FormeEcran</a> &amp;)</td></tr>
 <tr class="separator:a389a4eef0f47f3451440113055453052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96940cf8b569c9ba9376d3d4accba80"><td class="memItemLeft" align="right" valign="top"><a id="aa96940cf8b569c9ba9376d3d4accba80"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPos</b> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;nouvPos)</td></tr>
-<tr class="separator:aa96940cf8b569c9ba9376d3d4accba80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7218febcf2ff9b7881fff962a81d5e9"><td class="memItemLeft" align="right" valign="top"><a id="af7218febcf2ff9b7881fff962a81d5e9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>miseAJourPositionEcran</b> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;nouvPos)</td></tr>
+<tr class="separator:af7218febcf2ff9b7881fff962a81d5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd24ffecc0acb7f75635dd5a9b96cc63"><td class="memItemLeft" align="right" valign="top"><a id="abd24ffecc0acb7f75635dd5a9b96cc63"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><b>dessine</b> ()</td></tr>
 <tr class="separator:abd24ffecc0acb7f75635dd5a9b96cc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,6 +103,9 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><b>dessine</b> ()<
 <tr class="memitem:a6bf6d1c849fed205f2fc7f1a822ee383"><td class="memItemLeft" align="right" valign="top"><a id="a6bf6d1c849fed205f2fc7f1a822ee383"></a>
 const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionEcran</b> () const</td></tr>
 <tr class="separator:a6bf6d1c849fed205f2fc7f1a822ee383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc759bf4cdbe9a2e679566263284128"><td class="memItemLeft" align="right" valign="top"><a id="a0dc759bf4cdbe9a2e679566263284128"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
+<tr class="separator:a0dc759bf4cdbe9a2e679566263284128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
@@ -117,6 +121,12 @@ Attributs protégés</h2></td></tr>
 <tr class="memitem:a65ab2b50df82aa93e629bf7df1a5ff09"><td class="memItemLeft" align="right" valign="top"><a id="a65ab2b50df82aa93e629bf7df1a5ff09"></a>
 <a class="el" href="class_fenetre_ecran.html">FenetreEcran</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>fenetre</b></td></tr>
 <tr class="separator:a65ab2b50df82aa93e629bf7df1a5ff09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Amis</h2></td></tr>
+<tr class="memitem:ace3406dee04b0ad37769553ffd4f97a5"><td class="memItemLeft" align="right" valign="top"><a id="ace3406dee04b0ad37769553ffd4f97a5"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;, const <a class="el" href="class_forme_ecran.html">FormeEcran</a> &amp;)</td></tr>
+<tr class="separator:ace3406dee04b0ad37769553ffd4f97a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>Ecran/Formes/<a class="el" href="_forme_ecran_8h_source.html">FormeEcran.h</a></li>

@@ -3,12 +3,12 @@
 
 FormeEcran::FormeEcran(sf::Shape * forme, FenetreEcran * fenetre, const Vecteur2D & p) : formeSFML(forme), fenetre(fenetre), positionEcran(p) {
 	this->formeSFML->setOrigin(this->formeSFML->getGlobalBounds().width / 2.f, this->formeSFML->getGlobalBounds().height / 2);
-	this->setPos(positionEcran);
+	this->miseAJourPositionEcran(positionEcran);
 }
 
 FormeEcran::FormeEcran(const FormeEcran & f) : formeSFML(f.formeSFML), fenetre(f.getFenetre()), positionEcran(f.getPositionEcran()) {}
 
-void FormeEcran::setPos(const Vecteur2D & nouvPos) {
+void FormeEcran::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
 	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));
 }
 

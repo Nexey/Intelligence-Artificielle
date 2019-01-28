@@ -16,7 +16,7 @@ public:
 	Vecteur2D positionEcran;
 
 	// Applique la transformation affine sur les coordonnées de la forme SFML
-	void setPos(const Vecteur2D& nouvPos);
+	void miseAJourPositionEcran(const Vecteur2D& nouvPos);
 
 	// Appelle le dessin sur la forme
 	const bool dessine();

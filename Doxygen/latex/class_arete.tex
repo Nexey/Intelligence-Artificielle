@@ -1,0 +1,56 @@
+\hypertarget{class_arete}{}\section{Référence du modèle de la classe Arete$<$ S, T $>$}
+\label{class_arete}\index{Arete$<$ S, T $>$@{Arete$<$ S, T $>$}}
+
+
+Représente une arête d\textquotesingle{}un graphe en general.  
+
+
+
+
+{\ttfamily \#include $<$Arete.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Arete$<$ S, T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_arete}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arete_a477fdd0fe1a36292114f02805e3ed56b}\label{class_arete_a477fdd0fe1a36292114f02805e3ed56b}} 
+{\bfseries Arete} (const S \&valeur, \mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$debut, \mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$fin)
+\item 
+\mbox{\Hypertarget{class_arete_a22be3485e4bb9b3231205751755bc69a}\label{class_arete_a22be3485e4bb9b3231205751755bc69a}} 
+{\bfseries operator std\+::string} () const
+\item 
+\mbox{\Hypertarget{class_arete_a3ad238ea344eb0fc755f224e08f7554e}\label{class_arete_a3ad238ea344eb0fc755f224e08f7554e}} 
+bool {\bfseries est\+Egal} (const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$s1, const \mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$s2) const
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arete_a824a8bf33360aafaf1cbb91d770b4338}\label{class_arete_a824a8bf33360aafaf1cbb91d770b4338}} 
+\mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$ {\bfseries debut}
+\item 
+\mbox{\Hypertarget{class_arete_acbe522bae2ccff518e326077c98eca78}\label{class_arete_acbe522bae2ccff518e326077c98eca78}} 
+\mbox{\hyperlink{class_sommet}{Sommet}}$<$ T $>$ $\ast$ {\bfseries fin}
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$class S, class T$>$\newline
+class Arete$<$ S, T $>$}
+
+Représente une arête d\textquotesingle{}un graphe en general. 
+
+Une arête est définie par un sommet-\/début et par un sommet-\/fin et par une information valeur.
+
+On ne connait pas la nature de valeur à ce niveau (valeur pourrait contenir une couleur, une longueur, un nom, etc.)
+
+T est la nature de l\textquotesingle{}information portée par un sommet et S est la nature de l\textquotesingle{}information portée par une arete 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Graphe/Arete.\+h\end{DoxyCompactItemize}
