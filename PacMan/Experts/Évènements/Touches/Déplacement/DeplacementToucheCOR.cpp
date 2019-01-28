@@ -23,12 +23,15 @@ DeplacementToucheCOR::~DeplacementToucheCOR() {
 }
 
 void DeplacementToucheCOR::initMap() {
-	
 	this->codeToucheEnDirection = {
 		{ sf::Keyboard::Numpad1, FenetreEcran::VECTEUR2D_BAS_GAUCHE },
 		{ sf::Keyboard::Numpad2, FenetreEcran::VECTEUR2D_BAS },
 		{ sf::Keyboard::Numpad3, FenetreEcran::VECTEUR2D_BAS_DROITE },
 		{ sf::Keyboard::Numpad4, FenetreEcran::VECTEUR2D_GAUCHE },
+
+		// DEBUG SEULEMENT
+		{ sf::Keyboard::Numpad5, FenetreEcran::VECTEUR2D_STOP },
+
 		{ sf::Keyboard::Numpad6, FenetreEcran::VECTEUR2D_DROITE },
 		{ sf::Keyboard::Numpad7, FenetreEcran::VECTEUR2D_HAUT_GAUCHE },
 		{ sf::Keyboard::Numpad8, FenetreEcran::VECTEUR2D_HAUT },
@@ -52,6 +55,10 @@ void DeplacementToucheCOR::initMap() {
 		{ sf::Keyboard::Numpad2, BAS_STR },
 		{ sf::Keyboard::Numpad3, BAS_DROITE_STR },
 		{ sf::Keyboard::Numpad4, GAUCHE_STR },
+
+		// DEBUG
+		{ sf::Keyboard::Numpad5, "STOP" },
+		
 		{ sf::Keyboard::Numpad6, DROITE_STR },
 		{ sf::Keyboard::Numpad7, HAUT_GAUCHE_STR },
 		{ sf::Keyboard::Numpad8, HAUT_STR },

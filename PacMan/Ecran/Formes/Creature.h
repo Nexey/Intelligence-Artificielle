@@ -24,11 +24,11 @@ public:
 	
 	// Déplace la créature jusqu'au prochain point
 	// Actuellement, le déplacement ne peut pas être annulé
-	void deplacer();
+	bool deplacer();
 
 	// Si alpha est 0, alors on peut la bouger
 	// Il faut faire attention à lui mettre à jour sa direction si on veut la faire bouger après cet appel
-	const bool peutBouger() const;
+	const bool estImmobile() const;
 	
 	virtual ~Creature();
 };

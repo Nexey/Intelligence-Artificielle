@@ -72,7 +72,8 @@ bool FenetreEcran::effectuer(fctTraitement traitement) {
 	try {
 		std::vector<Creature>::iterator it = this->listeCreature.begin();
 		for (it; it < this->listeCreature.end(); it++)
-			(this->*traitement)(*it);
+			// Aucune idée de pourquoi &*it fonctionne mais (it) non
+			(this->*traitement)(&*it);
 	}
 	catch (Erreur e) {
 #ifdef _DEBUG
