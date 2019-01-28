@@ -28,11 +28,10 @@ const TransfoAffine2D & FenetreEcran::getTransfoAffine() const {
 	return transfoAffine;
 }
 
-void FenetreEcran::redimensionner() {
-	sf::IntRect viewPort = this->getViewport(this->getView());
-	viewPort.height = viewPort.height / this->getSize().y;
-	viewPort.width = viewPort.width / this->getSize().x;
-	std::cout << viewPort.width << ", " << viewPort.height << std::endl;
+void FenetreEcran::redimensionner(const sf::Event & evenement) {
+	sf::Vector2f sizef = static_cast<sf::Vector2f>(sf::Vector2u(evenement.size.width, evenement.size.height));
+	sf::View GUIView(sf::Vector2f(sizef.x / 2, sizef.y / 2), sf::Vector2f(sizef.x, sizef.y));
+	this->setView(GUIView);
 }
 
 const unsigned & FenetreEcran::getRatio() const {
@@ -83,6 +82,8 @@ bool FenetreEcran::effectuer(fctTraitement traitement) {
 	}
 	return true;
 }
+
+//void FenetreEcran::onResize() {}
 
 sf::Vector2f FenetreEcran::calculPos(const Vecteur2D & posEcran) {
 	return TransfoVecteur2DToVector2f(transfoAffine.applique(posEcran));

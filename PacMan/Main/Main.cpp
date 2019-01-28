@@ -5,29 +5,39 @@
 #include "../Experts/Évènements/Touches/Fermeture/FermetureToucheCOR.h"
 #include "../Experts/Évènements/Touches/Déplacement/DeplacementToucheCOR.h"
 #include "../Graphe/Graphe.h"
-#include "../Liste.h"
+#include "../Graphe/Liste.h"
+#include "../Experts/Chargement/Labyrinthe/ChargeurLabyrintheCOR.h"
 #include <Windows.h> // Pour les accents dans la console sous Windows
 
 int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
-	const unsigned ratio = 16u;
+	const unsigned ratio = 6u;
 
 	Vecteur2D
 		CoinBasGauche(0, 0),
-		CoinHautDroit(ratio - 1, ratio - 1);
-	FenetreEcran fenetre("PacMan", 2*ratio*ratio, 2*ratio*ratio, CoinBasGauche, CoinHautDroit, ratio);
+		CoinHautDroit(32, 32);
+
+	FenetreEcran fenetre("PacMan", 29*ratio*2, 31*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
 
 	Graphe<FormeEcran, FormeEcran> graphe;
+
+
+	GestionnaireChargement<Vecteur2D> * expertChargement;
+	expertChargement = new ChargeurLabyrintheCOR<Vecteur2D>;
+
+	std::vector<Vecteur2D> test = *expertChargement->charger("./Labyrinthe.txt");
+
 	sf::Shape * rectangleSFML;
-	for (int i = 0; i < ratio; i++) {
-		for (int j = 0; j < ratio; j++) {
-			rectangleSFML = new sf::RectangleShape(sf::Vector2f(ratio, ratio));
-			rectangleSFML->setFillColor(sf::Color::Blue);
-			graphe.creeSommet(FormeEcran(rectangleSFML, &fenetre, Vecteur2D(i, j)));
-		}
+
+	std::vector<Vecteur2D>::iterator it = test.begin();
+
+	for (it; it < test.end(); it++) {
+		rectangleSFML = new sf::RectangleShape(sf::Vector2f(4.f, 4.f));
+		rectangleSFML->setFillColor(sf::Color::Blue);
+		graphe.creeSommet(FormeEcran(rectangleSFML, &fenetre, *it));
 	}
 
-	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio / 3, ratio / 3)), &fenetre, Vecteur2D(4, 4));
+	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
 	rectangle.formeSFML->setOutlineColor(sf::Color::Green);
 	rectangle.formeSFML->setOutlineThickness(2.f);
@@ -53,7 +63,7 @@ int main() {
 		fenetre.display();
 	}
 #ifdef _DEBUG
-	system("pause");
+	//system("pause");
 #endif
 	return 0;
 }

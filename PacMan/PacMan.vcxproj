@@ -19,38 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
-    <ClInclude Include="Ecran\Formes\Creature.h" />
-    <ClInclude Include="Ecran\Formes\FormeEcran.h" />
-    <ClInclude Include="Exceptions\Erreur.h" />
-    <ClInclude Include="Experts\EvenementCOR.h" />
-    <ClInclude Include="Experts\GestionnaireEvenement.h" />
-    <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />
-    <ClInclude Include="Experts\Évènements\Redimension\RedimensionCOR.h" />
-    <ClInclude Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.h" />
-    <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h" />
-    <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h" />
-    <ClInclude Include="Graphe\AElement.h" />
-    <ClInclude Include="Graphe\Arete.h" />
-    <ClInclude Include="Graphe\GElement.h" />
-    <ClInclude Include="Graphe\Graphe.h" />
-    <ClInclude Include="Graphe\PElement.h" />
-    <ClInclude Include="Graphe\Sommet.h" />
-    <ClInclude Include="Iterateur.h" />
-    <ClInclude Include="Liste.h" />
-    <ClInclude Include="Maths\AlgebreLineaire.h" />
-    <ClInclude Include="Maths\Matrice22.h" />
-    <ClInclude Include="Maths\Reels.h" />
-    <ClInclude Include="Maths\TransfoAffine2D.h" />
-    <ClInclude Include="Maths\Vecteur2D.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp" />
     <ClCompile Include="Ecran\Formes\Creature.cpp" />
     <ClCompile Include="Ecran\Formes\FormeEcran.cpp" />
-    <ClCompile Include="Experts\EvenementCOR.cpp" />
-    <ClCompile Include="Experts\GestionnaireEvenement.cpp" />
+    <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
+    <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp" />
+    <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\EvenementCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp" />
+    <ClCompile Include="Experts\Évènements\GestionnaireEvenement.cpp" />
     <ClCompile Include="Experts\Évènements\Redimension\RedimensionCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp" />
@@ -59,10 +36,39 @@
     <ClCompile Include="Graphe\Arete.cpp" />
     <ClCompile Include="Graphe\GElement.cpp" />
     <ClCompile Include="Graphe\Graphe.cpp" />
+    <ClCompile Include="Graphe\Iterateur.cpp" />
+    <ClCompile Include="Graphe\Liste.cpp" />
     <ClCompile Include="Graphe\Sommet.cpp" />
-    <ClCompile Include="Iterateur.cpp" />
-    <ClCompile Include="Liste.cpp" />
     <ClCompile Include="Main\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
+    <ClInclude Include="Ecran\Formes\Creature.h" />
+    <ClInclude Include="Ecran\Formes\FormeEcran.h" />
+    <ClInclude Include="Exceptions\Erreur.h" />
+    <ClInclude Include="Experts\Chargement\ChargeurCOR.h" />
+    <ClInclude Include="Experts\Chargement\GestionnaireChargement.h" />
+    <ClInclude Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.h" />
+    <ClInclude Include="Experts\Évènements\EvenementCOR.h" />
+    <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />
+    <ClInclude Include="Experts\Évènements\GestionnaireEvenement.h" />
+    <ClInclude Include="Experts\Évènements\Redimension\RedimensionCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h" />
+    <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h" />
+    <ClInclude Include="Graphe\AElement.h" />
+    <ClInclude Include="Graphe\Arete.h" />
+    <ClInclude Include="Graphe\GElement.h" />
+    <ClInclude Include="Graphe\Graphe.h" />
+    <ClInclude Include="Graphe\Iterateur.h" />
+    <ClInclude Include="Graphe\Liste.h" />
+    <ClInclude Include="Graphe\PElement.h" />
+    <ClInclude Include="Graphe\Sommet.h" />
+    <ClInclude Include="Maths\AlgebreLineaire.h" />
+    <ClInclude Include="Maths\Matrice22.h" />
+    <ClInclude Include="Maths\Reels.h" />
+    <ClInclude Include="Maths\TransfoAffine2D.h" />
+    <ClInclude Include="Maths\Vecteur2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

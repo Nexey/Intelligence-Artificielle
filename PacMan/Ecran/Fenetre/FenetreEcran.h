@@ -58,7 +58,7 @@ public:
 
 	// Redimension quand l'évènement resize est lancé
 	// Il faudrait essayer de garder le ratio et d'éviter que la fenêtre soit trop étendue d'un côté ou un autre
-	void redimensionner();
+	void redimensionner(const sf::Event & evenement);
 
 	/// Getters
 	const unsigned & getRatio() const;
@@ -88,6 +88,9 @@ public:
 	// Le paramètre fctTraitement est un pointeur sur une fonction
 	// Cela permet de factoriser beaucoup de code
 	bool effectuer(fctTraitement);
+
+
+//	void onResize();
 
 	// Applique la transformation affine sur un Vecteur2D, càd transforme des coordonnées écrans en coordonnées réelles
 	sf::Vector2f calculPos(const Vecteur2D& screenPos);

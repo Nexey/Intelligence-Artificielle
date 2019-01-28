@@ -241,12 +241,9 @@ Arete<Ar, So> * Graphe<Ar, So>::getAreteParSommets(const Sommet<So> * s1, const 
 template <class Ar, class So>
 template< class FENETRE>
 bool Graphe<Ar, So>::dessine(FENETRE & fenetre) const {
-
-	if (!this->dessineToutesAretes(fenetre)) return false;
-
-	return this->dessineTousSommets(fenetre);
+	if (!this->dessineTousSommets(fenetre)) return false;
+	return this->dessineToutesAretes(fenetre); 
 }
-
 
 template <class Ar, class So>
 template< class FENETRE>
@@ -254,7 +251,6 @@ bool Graphe<Ar, So>::dessineToutesAretes(FENETRE & fenetre) const {
 	PElement< Arete<Ar, So>> * pA;
 	for (pA = this->listeAretes; pA; pA = pA->suivant)
 		if (!fenetre.dessine(pA->valeur)) return false; // tente de dessiner puis retourne false en cas d'echec
-
 	return true;
 }
 
@@ -266,8 +262,7 @@ bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
 		if (!fenetre.dessine(pS->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
-
-
+/*
 template <class So, class FENETRE>
 bool dessine(const PElement<Sommet<So>> * chemin, FENETRE & fenetre, const unsigned int couleur) {
 	if (!(chemin && chemin->suivant)) // le chemin est vide ou ne contient qu'un sommet : il n'y  a rien a dessiner
@@ -275,10 +270,9 @@ bool dessine(const PElement<Sommet<So>> * chemin, FENETRE & fenetre, const unsig
 
 	else {
 		// on dessine d'abord la 1ere arete
-
 		if (!fenetre.dessine(chemin->valeur, chemin->suivant->valeur, couleur)) return false;
 
 		return dessine(chemin->suivant, fenetre, couleur);		// puis on dessine les aretes suivantes
 	}
-}
+}*/
 #pragma endregion

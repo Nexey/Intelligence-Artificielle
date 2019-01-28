@@ -1,5 +1,5 @@
 #pragma once
-#include "../../EvenementCOR.h"
+#include "../EvenementCOR.h"
 class ToucheCOR :
 	public EvenementCOR {
 protected:

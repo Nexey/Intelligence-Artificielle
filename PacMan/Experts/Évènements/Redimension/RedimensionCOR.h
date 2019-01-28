@@ -1,5 +1,5 @@
 #pragma once
-#include "../../EvenementCOR.h"
+#include "../EvenementCOR.h"
 class RedimensionCOR :
 	public EvenementCOR {
 public:

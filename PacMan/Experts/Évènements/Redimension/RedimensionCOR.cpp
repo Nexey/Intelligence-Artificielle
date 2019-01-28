@@ -7,6 +7,6 @@ RedimensionCOR::RedimensionCOR(FenetreEcran * fenetre, GestionnaireEvenement * s
 RedimensionCOR::~RedimensionCOR() {}
 
 const bool RedimensionCOR::appliquer() {
-	this->fenetre->redimensionner();
+	this->fenetre->redimensionner(this->getEvenement());
 	return true;
 }

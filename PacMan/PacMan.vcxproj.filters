@@ -85,8 +85,154 @@
     <Filter Include="Fichiers sources\Graphe">
       <UniqueIdentifier>{9a99d73c-55c0-42f9-96d3-553beeff1509}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Chargement">
+      <UniqueIdentifier>{f7ee3a60-2509-4f42-a460-a0cc0098abdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Chargement">
+      <UniqueIdentifier>{9be0c31b-61f4-4f12-be19-7230c0dd5318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Chargement\Labyrinthe">
+      <UniqueIdentifier>{d3b06223-e655-4930-8c11-d925fb9a0e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Chargement\Labyrinthe">
+      <UniqueIdentifier>{83005400-2b73-47f6-918d-198d8438ebe4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Main\Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp">
+      <Filter>Fichiers sources\Ecran\Fenetre</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\FormeEcran.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\Creature.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\EvenementCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\GestionnaireEvenement.cpp">
+      <Filter>Fichiers sources\Experts\Évènements</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Fermeture</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\Redimension\RedimensionCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Redimension</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\Touches\ToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches\Femeture</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Évènements\Touches\Déplacement</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp">
+      <Filter>Fichiers sources\Experts\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp">
+      <Filter>Fichiers sources\Experts\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Iterateur.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Liste.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Sommet.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\AElement.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Arete.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\GElement.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphe\Graphe.cpp">
+      <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Fenetre</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\FormeEcran.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\Creature.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions\Erreur.h">
+      <Filter>Fichiers d%27en-tête\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\EvenementCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\GestionnaireEvenement.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Fermeture</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\Redimension\RedimensionCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Redimension</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Fermeture</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Déplacement</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Chargement\ChargeurCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Chargement</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Chargement\GestionnaireChargement.h">
+      <Filter>Fichiers d%27en-tête\Experts\Chargement</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Chargement\Labyrinthe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Iterateur.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Liste.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\PElement.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Sommet.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\AElement.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Arete.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\GElement.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphe\Graphe.h">
+      <Filter>Fichiers d%27en-tête\Graphe</Filter>
+    </ClInclude>
+    <ClInclude Include="Maths\Reels.h">
+      <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
     <ClInclude Include="Maths\TransfoAffine2D.h">
       <Filter>Fichiers d%27en-tête\Maths</Filter>
     </ClInclude>
@@ -99,121 +245,5 @@
     <ClInclude Include="Maths\Matrice22.h">
       <Filter>Fichiers d%27en-tête\Maths</Filter>
     </ClInclude>
-    <ClInclude Include="Maths\Reels.h">
-      <Filter>Fichiers d%27en-tête\Maths</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\AElement.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
-      <Filter>Fichiers d%27en-tête\Ecran\Fenetre</Filter>
-    </ClInclude>
-    <ClInclude Include="Ecran\Formes\FormeEcran.h">
-      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Exceptions\Erreur.h">
-      <Filter>Fichiers d%27en-tête\Exceptions</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\GestionnaireEvenement.h">
-      <Filter>Fichiers d%27en-tête\Experts</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\EvenementCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\Évènements\Touches\ToucheCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Déplacement</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Évènements\Touches\Fermeture</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\Évènements\Redimension\RedimensionCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Évènements\Redimension</Filter>
-    </ClInclude>
-    <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Évènements\Fermeture</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\PElement.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Ecran\Formes\Creature.h">
-      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\GElement.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\Sommet.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Liste.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Iterateur.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\Arete.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphe\Graphe.h">
-      <Filter>Fichiers d%27en-tête\Graphe</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Graphe\AElement.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp">
-      <Filter>Fichiers sources\Ecran\Fenetre</Filter>
-    </ClCompile>
-    <ClCompile Include="Ecran\Formes\FormeEcran.cpp">
-      <Filter>Fichiers sources\Ecran\Formes</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\EvenementCOR.cpp">
-      <Filter>Fichiers sources\Experts</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\GestionnaireEvenement.cpp">
-      <Filter>Fichiers sources\Experts</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\Évènements\Touches\ToucheCOR.cpp">
-      <Filter>Fichiers sources\Experts\Évènements\Touches</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\Évènements\Touches\Déplacement\DeplacementToucheCOR.cpp">
-      <Filter>Fichiers sources\Experts\Évènements\Touches\Déplacement</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\Évènements\Touches\Fermeture\FermetureToucheCOR.cpp">
-      <Filter>Fichiers sources\Experts\Évènements\Touches\Femeture</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\Évènements\Redimension\RedimensionCOR.cpp">
-      <Filter>Fichiers sources\Experts\Évènements\Redimension</Filter>
-    </ClCompile>
-    <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp">
-      <Filter>Fichiers sources\Experts\Évènements\Fermeture</Filter>
-    </ClCompile>
-    <ClCompile Include="Main\Main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Ecran\Formes\Creature.cpp">
-      <Filter>Fichiers sources\Ecran\Formes</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphe\Sommet.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphe\GElement.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Iterateur.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Liste.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphe\Arete.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphe\Graphe.cpp">
-      <Filter>Fichiers sources\Graphe</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
