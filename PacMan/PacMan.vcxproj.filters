@@ -97,6 +97,18 @@
     <Filter Include="Fichiers sources\Experts\Chargement\Labyrinthe">
       <UniqueIdentifier>{83005400-2b73-47f6-918d-198d8438ebe4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Experts\Création">
+      <UniqueIdentifier>{5d31b3b5-57cd-4522-a9f8-8e8cd0c1f731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création">
+      <UniqueIdentifier>{28138f3c-2976-48c8-90fe-8961a22757a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Sommet">
+      <UniqueIdentifier>{9e3c9b3c-6b54-421b-b656-45843fab4659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Sommet">
+      <UniqueIdentifier>{0d6d8f9a-0f7f-4a60-b8e3-2fcd175be296}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\Main.cpp">
@@ -161,6 +173,15 @@
     </ClCompile>
     <ClCompile Include="Graphe\Graphe.cpp">
       <Filter>Fichiers sources\Graphe</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\GestionnaireCreation.cpp">
+      <Filter>Fichiers sources\Experts\Création</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\CreationCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Sommet\SommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Sommet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +265,15 @@
     </ClInclude>
     <ClInclude Include="Maths\Matrice22.h">
       <Filter>Fichiers d%27en-tête\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\GestionnaireCreation.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\CreationCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Sommet\SommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Sommet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

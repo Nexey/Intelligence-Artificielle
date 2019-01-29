@@ -1,9 +1,2 @@
-﻿  ChargeurCOR.cpp
-  GestionnaireChargement.cpp
-  ChargeurLabyrintheCOR.cpp
-  EvenementCOR.cpp
-  GestionnaireEvenement.cpp
-  Iterateur.cpp
-  Liste.cpp
-  Génération de code en cours...
+﻿  Main.cpp
   PacMan.vcxproj -> C:\Users\geels\Documents\GitHub\C++\Intelligence Artificielle\Debug\PacMan.exe

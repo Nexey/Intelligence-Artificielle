@@ -15,27 +15,20 @@ int main() {
 
 	Vecteur2D
 		CoinBasGauche(0, 0),
-		CoinHautDroit(32, 32);
+		CoinHautDroit(31, 31);
 
-	FenetreEcran fenetre("PacMan", 29*ratio*2, 31*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
+	FenetreEcran fenetre("PacMan", 32*ratio*2, 32*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
 
 	Graphe<FormeEcran, FormeEcran> graphe;
 
+	GestionnaireChargement<FormeEcran> * expertChargement;
+	expertChargement = new ChargeurLabyrintheCOR<FormeEcran>(&fenetre);
 
-	GestionnaireChargement<Vecteur2D> * expertChargement;
-	expertChargement = new ChargeurLabyrintheCOR<Vecteur2D>;
+	std::vector<FormeEcran> test = *expertChargement->charger("./Labyrinthe.txt");
 
-	std::vector<Vecteur2D> test = *expertChargement->charger("./Labyrinthe.txt");
-
-	sf::Shape * rectangleSFML;
-
-	std::vector<Vecteur2D>::iterator it = test.begin();
-
-	for (it; it < test.end(); it++) {
-		rectangleSFML = new sf::RectangleShape(sf::Vector2f(4.f, 4.f));
-		rectangleSFML->setFillColor(sf::Color::Blue);
-		graphe.creeSommet(FormeEcran(rectangleSFML, &fenetre, *it));
-	}
+	std::vector<FormeEcran>::iterator it = test.begin();
+	for (it; it < test.end(); it++)
+		graphe.creeSommet(*it);
 
 	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
@@ -45,7 +38,7 @@ int main() {
 
 	GestionnaireEvenement * experts =
 		new DeplacementToucheCOR(&fenetre,
-			new FermetureToucheCOR(&fenetre, 
+			new FermetureToucheCOR(&fenetre,
 				new RedimensionCOR(&fenetre,
 					new FermetureCOR(&fenetre))));
 

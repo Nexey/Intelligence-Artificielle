@@ -1,5 +1,6 @@
 #pragma once
 #include "GestionnaireChargement.h"
+#include "../../Ecran/Fenetre/FenetreEcran.h"
 
 template<class T>
 class ChargeurCOR :
@@ -8,8 +9,10 @@ class ChargeurCOR :
 protected:
 	std::string extension;
 	std::vector<T> * resultat;
+
+	FenetreEcran * fenetre;
 public:
-	ChargeurCOR(GestionnaireChargement<T> * suivant = NULL) : suivant(suivant) {
+	ChargeurCOR(FenetreEcran * fenetre, GestionnaireChargement<T> * suivant = NULL) : fenetre(fenetre), suivant(suivant) {
 		resultat = new std::vector<T>();
 	}
 

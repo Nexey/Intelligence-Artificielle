@@ -6,7 +6,7 @@ FormeEcran::FormeEcran(sf::Shape * forme, FenetreEcran * fenetre, const Vecteur2
 	this->miseAJourPositionEcran(positionEcran);
 }
 
-FormeEcran::FormeEcran(const FormeEcran & f) : formeSFML(f.formeSFML), fenetre(f.getFenetre()), positionEcran(f.getPositionEcran()) {}
+FormeEcran::FormeEcran(const FormeEcran & f) : formeSFML(f.formeSFML), fenetre(f.fenetre), positionEcran(f.positionEcran) {}
 
 void FormeEcran::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
 	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));

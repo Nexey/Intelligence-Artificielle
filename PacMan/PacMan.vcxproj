@@ -25,6 +25,9 @@
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
     <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp" />
     <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp" />
+    <ClCompile Include="Experts\Création\CreationCOR.cpp" />
+    <ClCompile Include="Experts\Création\GestionnaireCreation.cpp" />
+    <ClCompile Include="Experts\Création\Sommet\SommetCOR.cpp" />
     <ClCompile Include="Experts\Évènements\EvenementCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp" />
     <ClCompile Include="Experts\Évènements\GestionnaireEvenement.cpp" />
@@ -49,6 +52,9 @@
     <ClInclude Include="Experts\Chargement\ChargeurCOR.h" />
     <ClInclude Include="Experts\Chargement\GestionnaireChargement.h" />
     <ClInclude Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.h" />
+    <ClInclude Include="Experts\Création\CreationCOR.h" />
+    <ClInclude Include="Experts\Création\GestionnaireCreation.h" />
+    <ClInclude Include="Experts\Création\Sommet\SommetCOR.h" />
     <ClInclude Include="Experts\Évènements\EvenementCOR.h" />
     <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />
     <ClInclude Include="Experts\Évènements\GestionnaireEvenement.h" />
