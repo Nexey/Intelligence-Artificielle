@@ -223,9 +223,9 @@ template <class T>
 template <class T>
 PElement< T > * PElement< T >::appartient(const T * a, PElement<T> * l) {
 	for (; l; l = l->suivant)
-		if (a == l->valeur)
+		if (a->getIdentifiant() == l->valeur->getIdentifiant())
 			return l;
-
+	std::cout << "oui";
 	return l;
 }
 

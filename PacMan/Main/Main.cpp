@@ -24,11 +24,40 @@ int main() {
 	GestionnaireChargement<FormeEcran> * expertChargement;
 	expertChargement = new ChargeurLabyrintheCOR<FormeEcran>(&fenetre);
 
-	std::vector<FormeEcran> test = *expertChargement->charger("./Labyrinthe.txt");
+	std::vector<FormeEcran> test = *expertChargement->charger("./Niveaux/1/Labyrinthe.txt");
 
-	std::vector<FormeEcran>::iterator it = test.begin();
+	std::vector<FormeEcran>::const_iterator it = test.begin();
 	for (it; it < test.end(); it++)
 		graphe.creeSommet(*it);
+
+	sf::Shape * rectangleSFML = new sf::RectangleShape(sf::Vector2f(4.f, 4.f));
+	rectangleSFML->setFillColor(sf::Color::Green);
+
+	std::cout << graphe;
+
+	Iterateur<Sommet<FormeEcran>> iterateurSommet1 = graphe.listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurSommet2 = graphe.listeSommets.getIterateur();
+
+	Sommet<FormeEcran> *deb, *fin;
+	while (iterateurSommet1.aSuivant()) {
+		deb = &iterateurSommet1.suivant();
+		while(iterateurSommet2.aSuivant()) {
+			fin = &iterateurSommet2.suivant();
+			if (deb->getIdentifiant() != fin->getIdentifiant()) {
+				if (
+					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_BAS == fin->valeur.getPositionEcran()) ||
+					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_GAUCHE == fin->valeur.getPositionEcran()) ||
+					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_HAUT == fin->valeur.getPositionEcran()) ||
+					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_DROITE == fin->valeur.getPositionEcran())
+					) {
+					graphe.creeArete(FormeEcran(rectangleSFML, &fenetre, (deb->valeur.getPositionEcran() + fin->valeur.getPositionEcran()) * 0.5), deb, fin);
+				}
+			}
+		}
+		iterateurSommet2.debut();
+	}
+
+	std::cout << graphe;
 
 	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
@@ -50,6 +79,8 @@ int main() {
 
 		fenetre.clear();
 		graphe.dessineTousSommets<FenetreEcran>(fenetre);
+		//graphe.dessineToutesAretes<FenetreEcran>(fenetre);
+		//graphe.dessine<FenetreEcran>(fenetre);
 
 		fenetre.effectuer(&FenetreEcran::deplacer);
 		fenetre.effectuer(&FenetreEcran::dessine);

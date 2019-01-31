@@ -2,16 +2,19 @@
 #include <utility>
 #include "./PElement.h"
 #include "./Arete.h"
+#include "./Liste.h"
 
 template<class Ar, class So>
 class Graphe {
 public:
-	PElement< Sommet<So> > * 	listeSommets;
-	PElement< Arete<Ar, So> > *	listeAretes;
+	//PElement< Sommet<So> > * 	listeSommets;
+	//PElement< Arete<Ar, So> > *	listeAretes;
+	Liste< Sommet<So> > listeSommets;
+	Liste< Arete<Ar, So> > listeAretes;
 
 #pragma region CREATIONS
 	//Constructeurs
-	Graphe() : listeSommets(NULL), listeAretes(NULL) {}
+	Graphe() {}
 	Graphe(const Graphe<Ar, So> & graphe) : Graphe() { this->copie(graphe); }
 
 	//Destructeur
@@ -41,13 +44,13 @@ public:
 
 #pragma region CONSULTATION
 	//simple
-	int nombreSommets() const { return PElement< Sommet<So> >::taille(listeSommets); }
-	int nombreAretes() const { return PElement< Arete<Ar, So> >::taille(listeAretes); }
+	int nombreSommets() const { return PElement< Sommet<So> >::taille(listeSommets.tete); }
+	int nombreAretes() const { return PElement< Arete<Ar, So> >::taille(listeAretes.tete); }
 
 	//compliqué
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > *	adjacences(const Sommet<So> * sommet) const;
-	PElement< Arete<Ar, So> > *							aretesAdjacentes(const Sommet<So> * sommet) const;
-	PElement< Sommet<So> > *							voisins(const Sommet<So> * sommet) const;
+	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > *	adjacences(const Sommet<So> * sommet) const;
+	Liste< Arete<Ar, So> > *							aretesAdjacentes(const Sommet<So> * sommet) const;
+	Liste< Sommet<So> > *							voisins(const Sommet<So> * sommet) const;
 
 	/*Recherche une arete à partir d'un sommet (debut et fin confondu)*/
 	Arete<Ar, So> * getAreteParSommets(const Sommet<So> * s1, const Sommet<So> * s2) const;
@@ -82,11 +85,11 @@ Graphe<Ar, So>::operator std::string() const {
 	oss << "Prochain identifiant = " << AElement::getProchainIdentifiant() << std::endl;
 	oss << "Nombre de sommets = " << this->nombreSommets() << std::endl;
 
-	oss << PElement<Sommet<So> >::toString(listeSommets, "", "\n", "\n");
+	oss << PElement<Sommet<So> >::toString(listeSommets.tete, "", "\n", "\n");
 
 	oss << "Nombre d'aretes = " << this->nombreAretes() << std::endl;
 
-	oss << PElement<Arete<Ar, So> >::toString(listeAretes, "", "\n", "\n");
+	oss << PElement<Arete<Ar, So> >::toString(listeAretes.tete, "", "\n", "\n");
 	oss << "]";
 	return oss.str();
 }
@@ -94,8 +97,8 @@ Graphe<Ar, So>::operator std::string() const {
 /*Operateur = et destruceur*/
 template <class Ar, class So>
 void Graphe<Ar, So>::effaceTout() {
-	PElement< Arete<Ar, So>>::efface2(this->listeAretes);
-	PElement<Sommet<So> >::efface2(this->listeSommets);
+	PElement< Arete<Ar, So>>::efface2(this->listeAretes.tete);
+	PElement<Sommet<So> >::efface2(this->listeSommets.tete);
 }
 #pragma endregion
 
@@ -103,7 +106,7 @@ void Graphe<Ar, So>::effaceTout() {
 template <class Ar, class So>
 Sommet<So> * Graphe<Ar, So>::creeSommet(const So & info) {
 	Sommet<So> * sommetCree = new Sommet<So>(info);
-	listeSommets = new PElement< Sommet<So> >(sommetCree, listeSommets);
+	listeSommets.tete = new PElement< Sommet<So> >(sommetCree, listeSommets.tete);
 
 	return sommetCree;
 }
@@ -112,12 +115,12 @@ Sommet<So> * Graphe<Ar, So>::creeSommet(const So & info) {
 template <class Ar, class So>
 Arete<Ar, So> * Graphe<Ar, So>::creeArete(const Ar & info, Sommet<So> * debut, Sommet<So> * fin) {
 	// ici tester que les 2 sommets sont bien existants dans le graphe
-	if (!PElement< Sommet<So> >::appartient(debut, listeSommets)) throw Erreur("debut d'arete non defini");
-	if (!PElement< Sommet<So> >::appartient(fin, listeSommets)) throw Erreur("fin d'arete non definie");
+	if (!PElement< Sommet<So> >::appartient(debut, listeSommets.tete)) throw Erreur("debut d'arete non defini");
+	if (!PElement< Sommet<So> >::appartient(fin, listeSommets.tete)) throw Erreur("fin d'arete non definie");
 
 	Arete<Ar, So> *  nouvelleArete = new Arete<Ar, So>(info, debut, fin);
 
-	listeAretes = new PElement< Arete<Ar, So> >(nouvelleArete, listeAretes);
+	listeAretes.ajouterElem(*nouvelleArete);
 
 	return nouvelleArete;
 }
@@ -137,38 +140,40 @@ public:
 
 template <class Ar, class So>
 void Graphe<Ar, So>::copie(const Graphe<Ar, So> & graphe) {
-	const PElement<Sommet<So>> * pS;
+	Iterateur<Sommet<So>> itSommets = listeSommets.getIterateur();
+	itSommets.debut();
 
 	// -------------- d'abord on recopie les sommets --------------------
-
-	for (pS = graphe.listeSommets; pS; pS = pS->suivant) {
-		const Sommet<So> * sommet = pS->valeur;				// sommet courant à recopier
+	const Sommet<So> * sommet;
+	while (itSommets.aSuivant()) {
+		sommet = &itSommets.suivant();						// sommet courant à recopier
 		this->creeSommet(sommet->identifiant, sommet->valeur);		// on crée la copie du sommet courant avec le même identifiant
 	}
-
 
 	// -------------------- et maintenant on recopie les aretes --------------------
 
 	// attention, la recopie des aretes est plus compliquee car il faut rebrancher les aretes sur les nouveaux sommets qui viennent d'etre crees.
 	// Pour retrouver les "bons sommets" on utilise les clefs qui ont ete conservees
 
-	const PElement<Arete<Ar, So>> * pA;
-	for (pA = graphe.listeAretes; pA; pA = pA->suivant) {
-		const Arete<Ar, So> * a = pA->valeur;			// arete courante a recopier
-		Sommet<So> * d, *f;						// le debut et la fin de la nouvelle arete qui va etre creee
-		PElement< Sommet<So> > * p;
+	Iterateur<Arete<Ar, So>> itAretes = listeAretes.getIterateur();
+	itAretes.debut();
 
-		// on recherche d dans la nouvelle liste de sommets grace a son identifiant
+	while (itAretes.aSuivant()) {
+		const Arete<Ar, So> * a = itAretes.suivant();			// arête courante à recopier
+		Sommet<So> * debut, *fin;							// le début et la fin de la nouvelle arête qui va être créée
+		Liste< Sommet<So> > p;
+
+		// on recherche d dans la nouvelle liste de sommets grâce à son identifiant
 		SommetDejaPresentDansLaCopie<So> conditionDebut(a->debut);
-		p = PElement< Sommet<So> >::appartient(listeSommets, conditionDebut);
-		d = p->valeur;
+		p.ajouterElem(PElement< Sommet<So> >::appartient(listeSommets, conditionDebut));
+		debut = p->tete->valeur;
 
 		// on recherche f dans la nouvelle liste de sommets grace a sa identifiant
 		SommetDejaPresentDansLaCopie<So> conditionFin(a->fin);
-		p = PElement< Sommet<So> >::appartient(listeSommets, conditionFin);
-		f = p->valeur;
+		p.ajouterElem(PElement< Sommet<So> >::appartient(listeSommets, conditionFin));
+		fin = p->tete->valeur;
 
-		this->creeArete(a->valeur, d, f);
+		this->creeArete(a->valeur, debut, fin);
 	}
 }
 
@@ -177,62 +182,68 @@ void Graphe<Ar, So>::copie(const Graphe<Ar, So> & graphe) {
 
 #pragma region CONSULTATION
 template <class Ar, class So>
-PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >  *  Graphe<Ar, So>::adjacences(const Sommet<So> * sommet) const {
-	const PElement< Arete<Ar, So> > * l;
+Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > >  *  Graphe<Ar, So>::adjacences(const Sommet<So> * sommet) const {
+	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > * r = new Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > >();
+	
+	Iterateur< Arete<Ar, So> > itAretes = listeAretes.getIterateur();
+	itAretes.debut();
 
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > * r;				// pair< Sommet<So> *, Arete<Ar,So>* >
+	Arete<Ar, So> * tmp;
 
-	for (l = listeAretes, r = NULL; l; l = l->suivant)
-
-		if (sommet == l->valeur->debut)
-			r = new PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(l->valeur->fin, l->valeur), r);
+	while (itAretes.aSuivant()) {
+		tmp = &itAretes.suivant();
+		if (sommet == tmp->debut)
+			r->ajouterElem(PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->fin, &tmp)));
 		else
-			if (sommet == l->valeur->fin)
-				r = new PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(l->valeur->debut, l->valeur), r);
+			if (sommet == tmp->fin)
+				r->ajouterElem(PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->debut, &tmp)));
+	}
+	return r;
+}
+
+
+template <class Ar, class So>
+Liste< Arete<Ar, So> > *  Graphe<Ar, So>::aretesAdjacentes(const Sommet<So> * sommet) const {
+	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > ladj = *this->adjacences(sommet);
+
+	Liste< Arete<Ar, So> > * r = new Liste< Arete<Ar, So> >();
+
+	Iterateur< std::pair< Sommet<So> *, Arete<Ar, So>* > > itLadj = ladj.getIterateur();
+	while (itLadj.aSuivant())
+		r->ajouterElem(PElement< Arete<Ar, So> >(itLadj.suivant()->second));
+
+	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj.tete);
 
 	return r;
 }
 
 
 template <class Ar, class So>
-PElement< Arete<Ar, So> > *  Graphe<Ar, So>::aretesAdjacentes(const Sommet<So> * sommet) const {
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > * ladj = this->adjacences(sommet);
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > * l;
+Liste< Sommet<So> > *  Graphe<Ar, So>::voisins(const Sommet<So> * sommet) const {
+	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > ladj = *this->adjacences(sommet);
+	Iterateur< std::pair< Sommet<So> *, Arete<Ar, So>* > > itLadj = ladj.getIterateur();
+	itLadj.debut();
 
-	PElement< Arete<Ar, So> > * r;
+	Liste< Sommet<So> > * r;
 
-	for (l = ladj, r = NULL; l; l = l->suivant)
-		r = new PElement< Arete<Ar, So> >(l->valeur->second, r);
+	while(itLadj.aSuivant())
+		r->ajouterElem(PElement< Sommet<So> >(itLadj.suivant()->first));
 
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj);
-
-	return r;
-}
-
-
-template <class Ar, class So>
-PElement< Sommet<So> > *  Graphe<Ar, So>::voisins(const Sommet<So> * sommet) const {
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > * ladj = this->adjacences(sommet);
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > > * l;
-
-	PElement< Sommet<So> > * r;
-
-	for (l = ladj, r = NULL; l; l = l->suivant)
-		r = new PElement< Sommet<So> >(l->valeur->first, r);
-
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj);
+	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj.tete);
 
 	return r;
 }
 
 template <class Ar, class So>
 Arete<Ar, So> * Graphe<Ar, So>::getAreteParSommets(const Sommet<So> * s1, const Sommet<So> * s2) const {
-	PElement<Arete<Ar, So> > * l;
-
-	for (l = this->listeAretes; l; l = l->suivant)
-		if (l->valeur->estEgal(s1, s2))
-			return l->valeur;
-
+	Iterateur<Arete<Ar, So> > itL = listeAretes.getIterateur();
+	itL.debut();
+	Arete<Ar, So> * areteS1S2;
+	while (itL.aSuivant()) {
+		areteS1S2 = itL.suivant();
+		if (areteS1S2->estEgal(s1, s2))
+			return areteS1S2;
+	}
 	return NULL;
 }
 #pragma endregion
@@ -248,18 +259,18 @@ bool Graphe<Ar, So>::dessine(FENETRE & fenetre) const {
 template <class Ar, class So>
 template< class FENETRE>
 bool Graphe<Ar, So>::dessineToutesAretes(FENETRE & fenetre) const {
-	PElement< Arete<Ar, So>> * pA;
-	for (pA = this->listeAretes; pA; pA = pA->suivant)
-		if (!fenetre.dessine(pA->valeur)) return false; // tente de dessiner puis retourne false en cas d'echec
+	Iterateur< Arete<Ar, So>> IterateurArete = listeAretes.getIterateur();
+	while (IterateurArete.aSuivant())
+		if (!fenetre.dessine(&IterateurArete.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
 
 template <class Ar, class So>
 template< class FENETRE>
 bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
-	PElement< Sommet<So>> * pS;
-	for (pS = this->listeSommets; pS; pS = pS->suivant)
-		if (!fenetre.dessine(pS->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
+	Iterateur< Sommet<So>> IterateurSommet = listeSommets.getIterateur();
+	while (IterateurSommet.aSuivant())
+		if (!fenetre.dessine(&IterateurSommet.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
 /*

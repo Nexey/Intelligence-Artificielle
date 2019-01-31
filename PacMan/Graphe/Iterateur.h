@@ -5,12 +5,13 @@
 
 template<class T>
 class Iterateur {
-	PElement<T> * tete;
-	PElement<T> * curseur;
 	Iterateur() = delete;
 public:
 	Iterateur(PElement<T> * tete);
 	Iterateur(const Iterateur<T>& it);
+
+	PElement<T> * tete;
+	PElement<T> * curseur;
 	
 	// Regarde si PElement possède un maillon suivant
 	bool aSuivant() const;
@@ -25,8 +26,7 @@ public:
 };
 
 template<class T>
-inline Iterateur<T>::Iterateur(PElement<T>* tete) : tete(tete), curseur(tete) {
-}
+inline Iterateur<T>::Iterateur(PElement<T>* tete) : tete(tete), curseur(tete) {}
 
 template<class T>
 inline Iterateur<T>::Iterateur(const Iterateur<T>& it) : tete(it.tete), curseur(it.curseur) {}
