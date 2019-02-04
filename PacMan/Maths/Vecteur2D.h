@@ -10,9 +10,9 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "AlgebreLineaire.h"
+#include "./Maths/AlgebreLineaire.h"
 #include <float.h>
-#include "Reels.h"
+#include "./Maths/Reels.h"
 
 class Vecteur2D {
 public:

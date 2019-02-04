@@ -8,33 +8,33 @@
 #include "../Graphe/Liste.h"
 #include "../Experts/Chargement/Labyrinthe/ChargeurLabyrintheCOR.h"
 #include <Windows.h> // Pour les accents dans la console sous Windows
+#include <experimental\filesystem>
+
+namespace fs = std::experimental::filesystem;
 
 int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
-	const unsigned ratio = 8u;
 
+	const unsigned ratio = 8u;
 	Vecteur2D
 		CoinBasGauche(0, 0),
 		CoinHautDroit(31, 31);
-
 	FenetreEcran fenetre("PacMan", 32*ratio*2, 32*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
 
-	Graphe<FormeEcran, FormeEcran> graphe;
 
-	GestionnaireChargement<FormeEcran> * expertChargement;
-	expertChargement = new ChargeurLabyrintheCOR<FormeEcran>(&fenetre);
+	GestionnaireChargement<Graphe<FormeEcran, FormeEcran>> * expertChargement;
+	expertChargement = new ChargeurLabyrintheCOR<Graphe<FormeEcran, FormeEcran>>(&fenetre);
 
-	std::vector<FormeEcran> test = *expertChargement->charger("./Niveaux/1/Labyrinthe.txt");
+	std::vector<Graphe<FormeEcran, FormeEcran>*> niveaux;
 
-	std::vector<FormeEcran>::const_iterator it = test.begin();
-	for (it; it < test.end(); it++)
-		graphe.creeSommet(*it);
+	for (fs::recursive_directory_iterator i("./Niveaux"), end; i != end; ++i)
+		if (!is_directory(i->path()))
+			niveaux.push_back(expertChargement->charger(i->path().string()));
 
 	sf::Shape * rectangleSFML;
 
-
-	Iterateur<Sommet<FormeEcran>> iterateurListeTemp = graphe.listeSommets.getIterateur();
-	Iterateur<Sommet<FormeEcran>> iterateurSommetGraphe = graphe.listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurListeTemp = niveaux.at(0)->listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurSommetGraphe = niveaux.at(0)->listeSommets.getIterateur();
 
 	Sommet<FormeEcran> * teteListeSommets;
 	Sommet<FormeEcran> * teteListeTemp;
@@ -53,7 +53,7 @@ int main() {
 					) {
 					rectangleSFML = new sf::RectangleShape(sf::Vector2f(8.f, 8.f));
 					rectangleSFML->setFillColor(sf::Color::Green);
-					graphe.creeArete(FormeEcran(rectangleSFML, &fenetre, (posTeteListeSommets + posTeteListeTemp) * 0.5), teteListeSommets, teteListeTemp);
+					niveaux.at(0)->creeArete(FormeEcran(rectangleSFML, &fenetre, (posTeteListeSommets + posTeteListeTemp) * 0.5), teteListeSommets, teteListeTemp);
 				}
 			}
 		}
@@ -72,6 +72,19 @@ int main() {
 				new RedimensionCOR(&fenetre,
 					new FermetureCOR(&fenetre))));
 
+	niveaux.at(0)->dessine<FenetreEcran>(fenetre);
+
+	sf::Texture niveauImg;
+	niveauImg.create(fenetre.getLargeur(), fenetre.getHauteur());
+	niveauImg.update(fenetre);
+
+	// Sauvegarde l'image générée sur le disque :
+	//std::string chemin = "C:\\Users\\geels\\Documents\\GitHub\\C++\\Intelligence Artificielle\\Niveau1.png";
+	//niveauImg.copyToImage().saveToFile(chemin);
+
+	sf::Sprite niveau(niveauImg);
+	fenetre.clear();
+
 	while (fenetre.isOpen()) {
 		sf::Event event;
 		while (fenetre.pollEvent(event)) {
@@ -79,8 +92,7 @@ int main() {
 		}
 
 		fenetre.clear();
-		graphe.dessine<FenetreEcran>(fenetre);
-
+		fenetre.draw(niveau);
 		fenetre.effectuer(&FenetreEcran::deplacer);
 		fenetre.effectuer(&FenetreEcran::dessine);
 		fenetre.display();

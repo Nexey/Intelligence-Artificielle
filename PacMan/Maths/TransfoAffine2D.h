@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Matrice22.h"
+#include "./Maths/Matrice22.h"
 
 inline int signe(const double & a) { return a >= 0 ? 1 : -1; }
 

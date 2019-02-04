@@ -1,5 +1,5 @@
 #pragma once
-#include "../EvenementCOR.h"
+#include "./Experts/Évènements/EvenementCOR.h"
 class FermetureCOR :
 	public EvenementCOR {
 public:

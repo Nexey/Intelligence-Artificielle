@@ -4,7 +4,7 @@
 #include <SFML/Window.hpp>
 #include <vector>
 #include <functional>
-#include "../../Maths/TransfoAffine2D.h"
+#include "./Maths/TransfoAffine2D.h"
 class Creature;
 
 // Translate des coordonnées doubles en coordonnées float

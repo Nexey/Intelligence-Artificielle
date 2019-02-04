@@ -1,5 +1,5 @@
 #pragma once
-#include "./AElement.h"
+#include "./Graphe/AElement.h"
 /*
 Represente la classe template de base des elements d'un graphe qui peuvent etre des sommets ou des aretes.
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "./GElement.h"
+#include "./Graphe/GElement.h"
 
 // Sommet d'un graphe en general
 // Valeur est l'information associee au sommet : elle depend de l'application du graphe

@@ -1,5 +1,7 @@
 #pragma once
-#include "GestionnaireEvenement.h"
+#include "./Experts/Évènements/GestionnaireEvenement.h"
+#include "./Ecran/Fenetre/FenetreEcran.h"
+
 class EvenementCOR :
 	public GestionnaireEvenement {
 	GestionnaireEvenement * suivant;

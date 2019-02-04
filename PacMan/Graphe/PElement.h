@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "../Exceptions/Erreur.h"
+#include "./Exceptions/Erreur.h"
 
 template <class T>
 class PElement {

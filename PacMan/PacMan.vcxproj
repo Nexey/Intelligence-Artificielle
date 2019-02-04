@@ -25,9 +25,9 @@
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
     <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp" />
     <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp" />
-    <ClCompile Include="Experts\Création\CreationCOR.cpp" />
-    <ClCompile Include="Experts\Création\GestionnaireCreation.cpp" />
-    <ClCompile Include="Experts\Création\Sommet\SommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.cpp" />
     <ClCompile Include="Experts\Évènements\EvenementCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp" />
     <ClCompile Include="Experts\Évènements\GestionnaireEvenement.cpp" />
@@ -52,9 +52,9 @@
     <ClInclude Include="Experts\Chargement\ChargeurCOR.h" />
     <ClInclude Include="Experts\Chargement\GestionnaireChargement.h" />
     <ClInclude Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.h" />
-    <ClInclude Include="Experts\Création\CreationCOR.h" />
-    <ClInclude Include="Experts\Création\GestionnaireCreation.h" />
-    <ClInclude Include="Experts\Création\Sommet\SommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.h" />
     <ClInclude Include="Experts\Évènements\EvenementCOR.h" />
     <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />
     <ClInclude Include="Experts\Évènements\GestionnaireEvenement.h" />
@@ -134,7 +134,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\geels\Documents\GitHub\C++\Intelligence Artificielle\PacMan;C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -158,7 +158,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\geels\Documents\GitHub\C++\Intelligence Artificielle\PacMan;C:\Bibliothèques\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

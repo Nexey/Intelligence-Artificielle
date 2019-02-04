@@ -1,5 +1,6 @@
 #pragma once
-#include "FormeEcran.h"
+#include "./Ecran/Formes/FormeEcran.h"
+
 class Creature :
 	public FormeEcran {
 	Creature() = delete;
@@ -32,4 +33,3 @@ public:
 	
 	virtual ~Creature();
 };
-

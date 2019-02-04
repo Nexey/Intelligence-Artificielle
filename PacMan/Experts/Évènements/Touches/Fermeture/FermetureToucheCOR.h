@@ -1,5 +1,5 @@
 #pragma once
-#include "../ToucheCOR.h"
+#include "./Experts/Évènements/Touches/ToucheCOR.h"
 class FermetureToucheCOR :
 	public ToucheCOR {
 protected:

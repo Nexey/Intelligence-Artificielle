@@ -103,11 +103,29 @@
     <Filter Include="Fichiers d%27en-tête\Experts\Création">
       <UniqueIdentifier>{28138f3c-2976-48c8-90fe-8961a22757a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Experts\Création\Sommet">
+    <Filter Include="Fichiers sources\Experts\Création\Graphe">
+      <UniqueIdentifier>{eb7737a9-a394-4128-a7ae-d1f9e60045aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Sommets">
+      <UniqueIdentifier>{0d6d8f9a-0f7f-4a60-b8e3-2fcd175be296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets">
+      <UniqueIdentifier>{a44eca73-d0f1-4fa6-ac9b-0e64d6353a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe">
+      <UniqueIdentifier>{61741c7a-ac00-4c0e-8724-5471c4a69a74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes">
+      <UniqueIdentifier>{3eeaa752-701a-4882-9cd1-8e1303f00776}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Sommets">
       <UniqueIdentifier>{9e3c9b3c-6b54-421b-b656-45843fab4659}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Experts\Création\Sommet">
-      <UniqueIdentifier>{0d6d8f9a-0f7f-4a60-b8e3-2fcd175be296}</UniqueIdentifier>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets">
+      <UniqueIdentifier>{e869c766-325e-47df-af77-85ee92671a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Arêtes">
+      <UniqueIdentifier>{2abdef0e-7cce-4488-8fe5-559416ff9dbd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,9 +168,6 @@
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp">
       <Filter>Fichiers sources\Experts\Chargement</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp">
-      <Filter>Fichiers sources\Experts\Chargement</Filter>
-    </ClCompile>
     <ClCompile Include="Graphe\Iterateur.cpp">
       <Filter>Fichiers sources\Graphe</Filter>
     </ClCompile>
@@ -174,14 +189,17 @@
     <ClCompile Include="Graphe\Graphe.cpp">
       <Filter>Fichiers sources\Graphe</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Création\GestionnaireCreation.cpp">
-      <Filter>Fichiers sources\Experts\Création</Filter>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Création\CreationCOR.cpp">
-      <Filter>Fichiers sources\Experts\Création</Filter>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Création\Sommet\SommetCOR.cpp">
-      <Filter>Fichiers sources\Experts\Création\Sommet</Filter>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp">
+      <Filter>Fichiers sources\Experts\Chargement\Labyrinthe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,14 +284,14 @@
     <ClInclude Include="Maths\Matrice22.h">
       <Filter>Fichiers d%27en-tête\Maths</Filter>
     </ClInclude>
-    <ClInclude Include="Experts\Création\GestionnaireCreation.h">
-      <Filter>Fichiers d%27en-tête\Experts\Création</Filter>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
     </ClInclude>
-    <ClInclude Include="Experts\Création\CreationCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Création</Filter>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets</Filter>
     </ClInclude>
-    <ClInclude Include="Experts\Création\Sommet\SommetCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Création\Sommet</Filter>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

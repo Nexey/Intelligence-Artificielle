@@ -1,8 +1,8 @@
 #pragma once
 #include <utility>
 #include "./PElement.h"
-#include "./Arete.h"
-#include "./Liste.h"
+#include "./Graphe/Arete.h"
+#include "./Graphe/Liste.h"
 
 template<class Ar, class So>
 class Graphe {
@@ -135,7 +135,7 @@ public:
 	const Sommet<So> * s;
 	SommetDejaPresentDansLaCopie(const Sommet<So> * s) : s(s) {}
 
-	bool operator () (const Sommet<So> * sommet) const { return sommet->identifiant == s->identifiant; }
+	bool operator () (const Sommet<So> * sommet) const { return sommet->getIdentifiant() == s->getIdentifiant(); }
 };
 
 template <class Ar, class So>
@@ -147,7 +147,7 @@ void Graphe<Ar, So>::copie(const Graphe<Ar, So> & graphe) {
 	const Sommet<So> * sommet;
 	while (itSommets.aSuivant()) {
 		sommet = itSommets.suivant();						// sommet courant à recopier
-		this->creeSommet(sommet->identifiant, sommet->valeur);		// on crée la copie du sommet courant avec le même identifiant
+		this->creeSommet(sommet->valeur);		// on crée la copie du sommet courant avec le même identifiant
 	}
 
 	// -------------------- et maintenant on recopie les aretes --------------------
@@ -165,13 +165,20 @@ void Graphe<Ar, So>::copie(const Graphe<Ar, So> & graphe) {
 
 		// on recherche d dans la nouvelle liste de sommets grâce à son identifiant
 		SommetDejaPresentDansLaCopie<So> conditionDebut(a->debut);
-		p.ajouterElem(PElement< Sommet<So> >::appartient(listeSommets, conditionDebut));
-		debut = p->tete->valeur;
+		Liste<Sommet<So>> temp;
+		temp.tete = PElement< Sommet<So> >::appartient(listeSommets.tete, conditionDebut);
+		Iterateur<Sommet<So>> itTemp = temp.getIterateur();
+		while (itTemp.aSuivant())
+			p.ajouterElem(*itTemp.suivant());
+		debut = p.tete->valeur;
 
 		// on recherche f dans la nouvelle liste de sommets grace a sa identifiant
 		SommetDejaPresentDansLaCopie<So> conditionFin(a->fin);
-		p.ajouterElem(PElement< Sommet<So> >::appartient(listeSommets, conditionFin));
-		fin = p->tete->valeur;
+		temp.tete = PElement< Sommet<So> >::appartient(listeSommets.tete, conditionFin);
+		itTemp = temp.getIterateur();
+		while (itTemp.aSuivant())
+			p.ajouterElem(*itTemp.suivant());
+		fin = p.tete->valeur;
 
 		this->creeArete(a->valeur, debut, fin);
 	}

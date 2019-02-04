@@ -1,6 +1,6 @@
 #pragma once
 #include "GestionnaireChargement.h"
-#include "../../Ecran/Fenetre/FenetreEcran.h"
+#include "./Ecran/Fenetre/FenetreEcran.h"
 
 template<class T>
 class ChargeurCOR :
@@ -8,20 +8,18 @@ class ChargeurCOR :
 	GestionnaireChargement<T> * suivant;
 protected:
 	std::string extension;
-	std::vector<T> * resultat;
+	T * resultat;
 
 	FenetreEcran * fenetre;
 public:
-	ChargeurCOR(FenetreEcran * fenetre, GestionnaireChargement<T> * suivant = NULL) : fenetre(fenetre), suivant(suivant) {
-		resultat = new std::vector<T>();
-	}
+	ChargeurCOR(FenetreEcran * fenetre, const std::string & extension, GestionnaireChargement<T> * suivant = NULL) : fenetre(fenetre), suivant(suivant), extension(extension) {}
 
 	virtual ~ChargeurCOR() {}
 	
-	virtual std::vector<T> * construit(const std::string & chemin) = 0;
+	virtual T * construit(const std::string & chemin) = 0;
 
 	const bool peutCharger(const std::string&) const;
-	std::vector<T> * charger(const std::string&);
+	T * charger(const std::string&);
 };
 
 template<class T>
@@ -30,7 +28,7 @@ inline const bool ChargeurCOR<T>::peutCharger(const std::string & chemin) const 
 }
 
 template<class T>
-inline std::vector<T>* ChargeurCOR<T>::charger(const std::string & chemin) {
+inline T * ChargeurCOR<T>::charger(const std::string & chemin) {
 	if (peutCharger(chemin))
 		return construit(chemin);
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "../Fenetre/FenetreEcran.h"
+#include "./Ecran/Fenetre/FenetreEcran.h"
 
 class FormeEcran {
 	FormeEcran() = delete;
