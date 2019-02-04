@@ -16,23 +16,18 @@ int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
 
 	const unsigned ratio = 8u;
-	Vecteur2D
-		CoinBasGauche(0, 0),
-		CoinHautDroit(31, 31);
+	Vecteur2D CoinBasGauche(0, 0), CoinHautDroit(31, 31);
 	FenetreEcran fenetre("PacMan", 32*ratio*2, 32*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
 
-
-
-	GestionnaireChargement<Graphe<FormeEcran, FormeEcran>> * expertChargement;
-	expertChargement = new ChargeurLabyrintheCOR<Graphe<FormeEcran, FormeEcran>>(&fenetre);
+	GestionnaireChargement<Graphe<FormeEcran, FormeEcran>> * expertChargementLabyrinthe;
+	expertChargementLabyrinthe = new ChargeurLabyrintheCOR<Graphe<FormeEcran, FormeEcran>>(&fenetre);
 
 	std::vector<Graphe<FormeEcran, FormeEcran>*> niveaux;
-
 
 	// Chargement de tous les niveaux
 	for (fs::recursive_directory_iterator i("./Niveaux"), end; i != end; ++i)
 		if (!is_directory(i->path()))
-			niveaux.push_back(expertChargement->charger(i->path().string()));
+			niveaux.push_back(expertChargementLabyrinthe->charger(i->path().string()));
 
 	int choixNiveau = 1;
 
@@ -42,6 +37,8 @@ int main() {
 	rectangle.formeSFML->setOutlineThickness(2.f);
 	fenetre.ajouterForme(rectangle);
 
+
+	// Experts d'évènements
 	GestionnaireEvenement * experts =
 		new DeplacementToucheCOR(&fenetre,
 			new FermetureToucheCOR(&fenetre,
@@ -76,8 +73,5 @@ int main() {
 		fenetre.effectuer(&FenetreEcran::dessine);
 		fenetre.display();
 	}
-#ifdef _DEBUG
-	//system("pause");
-#endif
 	return 0;
 }

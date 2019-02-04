@@ -268,7 +268,7 @@ template< class FENETRE>
 bool Graphe<Ar, So>::dessineToutesAretes(FENETRE & fenetre) const {
 	Iterateur< Arete<Ar, So>> IterateurArete = listeAretes.getIterateur();
 	while (IterateurArete.aSuivant()) {
-		if (!fenetre.dessine(IterateurArete.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
+		if (!fenetre.dessine(&IterateurArete.suivant()->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
 	}
 	return true;
 }
@@ -278,7 +278,7 @@ template< class FENETRE>
 bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
 	Iterateur< Sommet<So>> IterateurSommet = listeSommets.getIterateur();
 	while (IterateurSommet.aSuivant())
-		if (!fenetre.dessine(IterateurSommet.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
+		if (!fenetre.dessine(&IterateurSommet.suivant()->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
 /*
