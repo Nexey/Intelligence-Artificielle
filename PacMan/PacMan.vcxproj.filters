@@ -127,6 +127,12 @@
     <Filter Include="Fichiers sources\Experts\Création\Graphe\Arêtes">
       <UniqueIdentifier>{2abdef0e-7cce-4488-8fe5-559416ff9dbd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées">
+      <UniqueIdentifier>{5b467792-ebe7-4fa0-a793-ffdd78f8cc65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées">
+      <UniqueIdentifier>{d3eead18-4af0-4cde-acd2-2c6b39413449}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\Main.cpp">
@@ -200,6 +206,18 @@
     </ClCompile>
     <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp">
       <Filter>Fichiers sources\Experts\Chargement\Labyrinthe</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\CreationArete.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteVerticaleCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteHorizontaleCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +310,18 @@
     </ClInclude>
     <ClInclude Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.h">
       <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\CreationArete.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteHorizontaleCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteVerticaleCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

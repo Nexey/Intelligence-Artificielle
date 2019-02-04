@@ -25,6 +25,10 @@
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
     <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp" />
     <ClCompile Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteHorizontaleCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteVerticaleCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\CreationArete.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.cpp" />
@@ -52,6 +56,10 @@
     <ClInclude Include="Experts\Chargement\ChargeurCOR.h" />
     <ClInclude Include="Experts\Chargement\GestionnaireChargement.h" />
     <ClInclude Include="Experts\Chargement\Labyrinthe\ChargeurLabyrintheCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteHorizontaleCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteVerticaleCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\CreationArete.h" />
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.h" />
