@@ -17,7 +17,7 @@ public:
 	bool aSuivant() const;
 
 	// Récupère le maillon suivant
-	T suivant();
+	T * suivant();
 
 	// Remets le curseur au début de la liste
 	void debut();
@@ -37,9 +37,9 @@ inline bool Iterateur<T>::aSuivant() const {
 }
 
 template<class T>
-T Iterateur<T>::suivant() {
+T * Iterateur<T>::suivant() {
 	assert(aSuivant());
-	T valeur = *(curseur->valeur);
+	T * valeur = curseur->valeur;
 	curseur = curseur->suivant;
 	return valeur;
 }

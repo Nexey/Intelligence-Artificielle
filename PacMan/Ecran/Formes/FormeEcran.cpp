@@ -35,7 +35,8 @@ const Vecteur2D FormeEcran::getPositionEcran() const {
 
 FormeEcran::operator std::string() const {
 	std::stringstream ss;
-	ss << "Position : " << positionEcran << std::endl;
+	ss << "Position écran : " << positionEcran << std::endl;
+	ss << "Position réelle : " << formeSFML->getPosition().x << ", " << formeSFML->getPosition().y << std::endl;
 	return ss.str();
 }
 

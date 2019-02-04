@@ -11,7 +11,7 @@
 
 int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
-	const unsigned ratio = 6u;
+	const unsigned ratio = 8u;
 
 	Vecteur2D
 		CoinBasGauche(0, 0),
@@ -30,34 +30,35 @@ int main() {
 	for (it; it < test.end(); it++)
 		graphe.creeSommet(*it);
 
-	sf::Shape * rectangleSFML = new sf::RectangleShape(sf::Vector2f(4.f, 4.f));
-	rectangleSFML->setFillColor(sf::Color::Green);
+	sf::Shape * rectangleSFML;
 
-	std::cout << graphe;
 
-	Iterateur<Sommet<FormeEcran>> iterateurSommet1 = graphe.listeSommets.getIterateur();
-	Iterateur<Sommet<FormeEcran>> iterateurSommet2 = graphe.listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurListeTemp = graphe.listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurSommetGraphe = graphe.listeSommets.getIterateur();
 
-	Sommet<FormeEcran> *deb, *fin;
-	while (iterateurSommet1.aSuivant()) {
-		deb = &iterateurSommet1.suivant();
-		while(iterateurSommet2.aSuivant()) {
-			fin = &iterateurSommet2.suivant();
-			if (deb->getIdentifiant() != fin->getIdentifiant()) {
+	Sommet<FormeEcran> * teteListeSommets;
+	Sommet<FormeEcran> * teteListeTemp;
+
+	while (iterateurSommetGraphe.aSuivant()) {
+		teteListeSommets = iterateurSommetGraphe.suivant();
+		while (iterateurListeTemp.aSuivant()) {
+			teteListeTemp = iterateurListeTemp.suivant();
+			if (teteListeTemp != teteListeSommets) {
+				Vecteur2D
+					posTeteListeSommets = teteListeSommets->valeur.getPositionEcran(),
+					posTeteListeTemp = teteListeTemp->valeur.getPositionEcran();
 				if (
-					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_BAS == fin->valeur.getPositionEcran()) ||
-					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_GAUCHE == fin->valeur.getPositionEcran()) ||
-					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_HAUT == fin->valeur.getPositionEcran()) ||
-					(deb->valeur.getPositionEcran() + FenetreEcran::VECTEUR2D_DROITE == fin->valeur.getPositionEcran())
+					(posTeteListeSommets + FenetreEcran::VECTEUR2D_BAS		== posTeteListeTemp) ||
+					(posTeteListeSommets + FenetreEcran::VECTEUR2D_DROITE	== posTeteListeTemp)
 					) {
-					graphe.creeArete(FormeEcran(rectangleSFML, &fenetre, (deb->valeur.getPositionEcran() + fin->valeur.getPositionEcran()) * 0.5), deb, fin);
+					rectangleSFML = new sf::RectangleShape(sf::Vector2f(8.f, 8.f));
+					rectangleSFML->setFillColor(sf::Color::Green);
+					graphe.creeArete(FormeEcran(rectangleSFML, &fenetre, (posTeteListeSommets + posTeteListeTemp) * 0.5), teteListeSommets, teteListeTemp);
 				}
 			}
 		}
-		iterateurSommet2.debut();
+		iterateurListeTemp.debut();
 	}
-
-	std::cout << graphe;
 
 	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(4, 4));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
@@ -78,9 +79,7 @@ int main() {
 		}
 
 		fenetre.clear();
-		graphe.dessineTousSommets<FenetreEcran>(fenetre);
-		//graphe.dessineToutesAretes<FenetreEcran>(fenetre);
-		//graphe.dessine<FenetreEcran>(fenetre);
+		graphe.dessine<FenetreEcran>(fenetre);
 
 		fenetre.effectuer(&FenetreEcran::deplacer);
 		fenetre.effectuer(&FenetreEcran::dessine);

@@ -59,7 +59,7 @@ public:
 	static void efface2(PElement<T>* & l);
 
 	/**
-	 * recherche si a appartient a l
+	 * recherche si a appartient à l
 	 *
 	 * renvoie un pointeur sur le maillon de l contenant a
 	 * renvoie NULL si a n'appartient pas a l

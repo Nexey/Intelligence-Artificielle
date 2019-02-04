@@ -146,7 +146,7 @@ void Graphe<Ar, So>::copie(const Graphe<Ar, So> & graphe) {
 	// -------------- d'abord on recopie les sommets --------------------
 	const Sommet<So> * sommet;
 	while (itSommets.aSuivant()) {
-		sommet = &itSommets.suivant();						// sommet courant à recopier
+		sommet = itSommets.suivant();						// sommet courant à recopier
 		this->creeSommet(sommet->identifiant, sommet->valeur);		// on crée la copie du sommet courant avec le même identifiant
 	}
 
@@ -191,7 +191,7 @@ Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > >  *  Graphe<Ar, So>::adjacence
 	Arete<Ar, So> * tmp;
 
 	while (itAretes.aSuivant()) {
-		tmp = &itAretes.suivant();
+		tmp = itAretes.suivant();
 		if (sommet == tmp->debut)
 			r->ajouterElem(PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->fin, &tmp)));
 		else
@@ -260,8 +260,9 @@ template <class Ar, class So>
 template< class FENETRE>
 bool Graphe<Ar, So>::dessineToutesAretes(FENETRE & fenetre) const {
 	Iterateur< Arete<Ar, So>> IterateurArete = listeAretes.getIterateur();
-	while (IterateurArete.aSuivant())
-		if (!fenetre.dessine(&IterateurArete.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
+	while (IterateurArete.aSuivant()) {
+		if (!fenetre.dessine(IterateurArete.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
+	}
 	return true;
 }
 
@@ -270,7 +271,7 @@ template< class FENETRE>
 bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
 	Iterateur< Sommet<So>> IterateurSommet = listeSommets.getIterateur();
 	while (IterateurSommet.aSuivant())
-		if (!fenetre.dessine(&IterateurSommet.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
+		if (!fenetre.dessine(IterateurSommet.suivant())) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
 /*
