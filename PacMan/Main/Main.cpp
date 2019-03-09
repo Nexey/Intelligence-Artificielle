@@ -1,12 +1,12 @@
 #include <vector>
-#include "../Ecran/Formes/Creature.h"
-#include "../Experts/Évènements/Redimension/RedimensionCOR.h"
-#include "../Experts/Évènements/Fermeture/FermetureCOR.h"
-#include "../Experts/Évènements/Touches/Fermeture/FermetureToucheCOR.h"
-#include "../Experts/Évènements/Touches/Déplacement/DeplacementToucheCOR.h"
-#include "../Graphe/Graphe.h"
-#include "../Graphe/Liste.h"
-#include "../Experts/Chargement/Labyrinthe/ChargeurLabyrintheCOR.h"
+#include "./Ecran/Formes/Creature.h"
+#include "./Experts/Évènements/Redimension/RedimensionCOR.h"
+#include "./Experts/Évènements/Fermeture/FermetureCOR.h"
+#include "./Experts/Évènements/Touches/Fermeture/FermetureToucheCOR.h"
+#include "./Experts/Évènements/Touches/Déplacement/DeplacementToucheCOR.h"
+#include "./Graphe/Graphe.h"
+#include "./Graphe/Liste.h"
+#include "./Experts/Chargement/Labyrinthe/ChargeurLabyrintheCOR.h"
 #include <Windows.h> // Pour les accents dans la console sous Windows
 #include <experimental\filesystem>
 
@@ -25,18 +25,28 @@ int main() {
 	std::vector<Graphe<FormeEcran, FormeEcran>*> niveaux;
 
 	// Chargement de tous les niveaux
+	Graphe<FormeEcran, FormeEcran> * niveau;
 	for (fs::recursive_directory_iterator i("./Niveaux"), end; i != end; ++i)
-		if (!is_directory(i->path()))
-			niveaux.push_back(expertChargementLabyrinthe->charger(i->path().string()));
+		if (!is_directory(i->path())) {
+			niveau = expertChargementLabyrinthe->charger(i->path().string());
+			if (niveau != NULL)
+				niveaux.push_back(niveau);
+		}
+	int choixNiveau = 0;
 
-	int choixNiveau = 1;
+//	std::cout << *niveaux.at(0);
 
-	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(4, 4));
+	//Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, Vecteur2D(5, 5));
+	//rectangle.formeSFML->setFillColor(sf::Color::Red);
+	//rectangle.formeSFML->setOutlineColor(sf::Color::Green);
+	//rectangle.formeSFML->setOutlineThickness(2.f);
+	//fenetre.ajouterForme(rectangle);
+
+
+	Creature rectangle(new sf::RectangleShape(sf::Vector2f(ratio, ratio)), &fenetre, niveaux.at(choixNiveau)->listeSommets.tete->valeur, niveaux.at(0));
 	rectangle.formeSFML->setFillColor(sf::Color::Red);
-	rectangle.formeSFML->setOutlineColor(sf::Color::Green);
+	rectangle.formeSFML->setOutlineColor(sf::Color::White);
 	rectangle.formeSFML->setOutlineThickness(2.f);
-	fenetre.ajouterForme(rectangle);
-
 
 	// Experts d'évènements
 	GestionnaireEvenement * experts =
@@ -58,7 +68,16 @@ int main() {
 	//	std::string chemin = "C:\\Users\\geels\\Documents\\GitHub\\C++\\Intelligence Artificielle\\Niveau.png";
 	//	niveauImg.copyToImage().saveToFile(chemin);
 
-	sf::Sprite niveau(niveauImg);
+
+	//std::cout << *niveaux.at(0);
+	/*
+	Liste<Sommet<FormeEcran>> * voisins = niveaux.at(0)->voisins(rectangle.positionSommet);
+	Iterateur<Sommet<FormeEcran>> it = voisins->getIterateur();
+
+	while (it.aSuivant())
+		std::cout << *it.suivant();*/
+
+	sf::Sprite niveauSpr(niveauImg);
 	fenetre.clear();
 
 	while (fenetre.isOpen()) {
@@ -68,9 +87,13 @@ int main() {
 		}
 
 		fenetre.clear();
-		fenetre.draw(niveau);
-		fenetre.effectuer(&FenetreEcran::deplacer);
-		fenetre.effectuer(&FenetreEcran::dessine);
+		fenetre.draw(niveauSpr);
+
+		rectangle.deplacer();
+		fenetre.draw(*rectangle.formeSFML);
+
+		//fenetre.effectuer(&FenetreEcran::deplacer);
+		//fenetre.effectuer(&FenetreEcran::dessine);
 		fenetre.display();
 	}
 	return 0;

@@ -12,18 +12,16 @@ public:
 	Iterateur<T> getIterateur() const;
 
 	// Ajoute un élément au PElement
-	void ajouterElem(T & v);
+	void ajouterElem(T & v) {
+		PElement<T>::insertion(&v, this->tete);
+	}
+
 	virtual ~Liste();
 };
 
 template<class T>
 inline Iterateur<T> Liste<T>::getIterateur() const {
 	return Iterateur<T>(tete);
-}
-
-template<class T>
-inline void Liste<T>::ajouterElem(T & v) {
-	PElement<T>::insertion(&v, this->tete);
 }
 
 template<class T>

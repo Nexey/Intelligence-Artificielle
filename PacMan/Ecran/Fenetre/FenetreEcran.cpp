@@ -14,7 +14,7 @@ FenetreEcran::VECTEUR2D_HAUT_DROITE(1, 1),
 FenetreEcran::VECTEUR2D_STOP(0, 0);
 
 FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsigned & h, const Vecteur2D & coinBG, const Vecteur2D & coinHD, const unsigned & r) :
-	sf::RenderWindow(sf::VideoMode(l, h), n),
+	sf::RenderWindow(sf::VideoMode(l, h), n, sf::Style::Titlebar),
 	nom(n),
 	largeur(l),
 	hauteur(h),

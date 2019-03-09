@@ -1,54 +1,112 @@
 #include "Creature.h"
 
-Creature::Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, const Vecteur2D & positionEcran)
-	: FormeEcran(formeSFML, fenetre, positionEcran), alpha(0.f), velocite(0.05f) {}
+Creature::Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran>* positionSommet, Graphe<FormeEcran, FormeEcran> * niveau) :
+	formeSFML(formeSFML),
+	fenetre(fenetre),
+	sommetActuel(positionSommet),
+	niveau(niveau),
+	prochainSommet(positionSommet),
+	directionCreature(FenetreEcran::VECTEUR2D_STOP),
+	alpha(0.f),
+	velocite(0.05f) {
+	this->formeSFML->setOrigin(this->formeSFML->getGlobalBounds().width / 2.f, this->formeSFML->getGlobalBounds().height / 2.f);
+	this->miseAJourPositionEcran(positionSommet->valeur.getPositionEcran());
+	voisins = niveau->voisins(positionSommet);
+}
+
+Creature::~Creature() {}
 
 bool Creature::deplacer() {
-	// DEBUG : Sert à arrêter le pacman
-	if (this->directionCreature == FenetreEcran::VECTEUR2D_STOP)
-		return false;
-	Vecteur2D nouvPos;
-	alpha += velocite;
-	// Si alpha vaut 1.f ou plus, alors la créature a fini son déplacement
-	// On peut donc lui mettre alpha à 0 et lui mettre sa nouvelle position en dure
-	// Elle s'arrête de bouger
+	// La créature a atteint sa destination, on lui met à jour ses voisins
 	if (alpha >= 1.f) {
 		alpha = 0.f;
-		nouvPos = this->nouvellePositionEcran;
-		this->positionEcran = nouvPos;
+		sommetActuel = prochainSommet;
+		miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran());
+
+		voisins = niveau->voisins(sommetActuel);
+
+
+		// DEBUG
+		/*
+		iterateurVoisins = &voisins->getIterateur();
+		while (iterateurVoisins->aSuivant()) {
+			std::cout << **iterateurVoisins->suivant() << std::endl;
+		}
+
+		std::cout << std::endl << std::endl << std::endl;
+		*/
 	}
-	// La créature est en mouvement
 	else {
-		// Si la direction a changé, alors si la direction de la créature + la direction de la fenêtre = (0, 0) donc il faut faire un demi-tour
+		if (this->estImmobile()) {
+			// On initialise les voisins du sommet actuel, puis on initialise la direction du PacMan
+			iterateurVoisins = &voisins->getIterateur();
+			Sommet<FormeEcran> * tmp = nullptr;
+
+			// Quelques variables temporaires pour alléger l'appel aux fonctions
+			Vecteur2D
+				coordSommetActuel = sommetActuel->valeur.getPositionEcran(),
+				nouvelleCoordDirectionUtilisateur = coordSommetActuel + this->fenetre->direction,
+				nouvelleCoordCreature = coordSommetActuel + this->directionCreature,
+				coordSommetVoisin;
+
+			// Je récupère les voisins et vérifie s'il y en a un avec les coordonnées telles que : direction + pos = voisin.pos
+			// Je boucle tant qu'il y a des voisins et tant que le prochainSommet n'est pas mis à jour
+			while (iterateurVoisins->aSuivant() && prochainSommet == sommetActuel) {
+				tmp = *iterateurVoisins->suivant();
+				coordSommetVoisin = tmp->valeur.getPositionEcran();
+
+				// Je regarde si les nouvelles coordonnées engendrées par un changement de direction de l'utilisateur font tomber sur
+				// les coordonnées d'un des voisins
+				if (nouvelleCoordDirectionUtilisateur == coordSommetVoisin) {
+					this->directionCreature = this->fenetre->direction;
+					prochainSommet = tmp;
+					// J'ai récupéré le prochain sommet
+				}
+			}
+			iterateurVoisins->debut();
+			// Si les nouvelles coordonnées engendrées par la direction de la créature restent valides, alors j'y vais
+			while (iterateurVoisins->aSuivant() && prochainSommet == sommetActuel) {
+				// On entre dans cette boucle que si les coordonnées de l'utilisateur sont invalides
+				tmp = *iterateurVoisins->suivant();
+				coordSommetVoisin = tmp->valeur.getPositionEcran();
+
+				if (nouvelleCoordCreature == coordSommetVoisin)
+					prochainSommet = tmp;
+			}
+		}
+		// On est en mouvement
+		
+		// Si la direction a changé, et si la direction de la créature + la direction de la fenêtre = (0, 0) alors il faut faire un demi-tour
 		if (this->directionCreature + this->fenetre->direction == FenetreEcran::VECTEUR2D_STOP) {
 			// J'inverse l'alpha
 			alpha = 1.f - alpha;
 
 			// Je lui inverse sa position actuelle et sa position de destination
-			Vecteur2D temp = this->nouvellePositionEcran;
-			this->nouvellePositionEcran = this->positionEcran;
-			this->positionEcran = temp;
+			Sommet<FormeEcran> * temp = this->prochainSommet;
+			this->prochainSommet = this->sommetActuel;
+			this->sommetActuel = temp;
 
 			// Je lui inverse sa destination
 			this->directionCreature = this->fenetre->direction;
+
+			// Je mets à jour ses voisins
+			this->voisins = niveau->voisins(sommetActuel);
 		}
 
-		// Il faut maintenant mettre à jour la nouvelle position
-		// La formule est la suivante
-		// position actuelle + direction * alpha
-		// La direction est du style (0, 1) ou (-1, -1), le fait de la multiplier par alpha ne va
-		// donc mettre à jour que les coordonnées de la direction souhaitée (si c'est 0 la multiplication a lieu mais ça reste 0)
-		// On obtient donc une direction générale que l'on peut additionner à notre position actuelle
-		// Vecteur2D prévoit l'addition et la multiplication entre deux Vecteur2D ainsi qu'avec des doubles (ici alpha est un float donc petite conversion de données)
-		nouvPos = Vecteur2D(this->positionEcran + this->directionCreature * alpha);
+		if (prochainSommet != sommetActuel) {
+			// On augmente son alpha et on met à jour la position du sprite
+			alpha += velocite;
+			miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran() + directionCreature * alpha);
+			return true;
+		}
 	}
-	// On met à jour la position à l'écran
-	this->miseAJourPositionEcran(nouvPos);
-	return true;
+	return false;
 }
 
 const bool Creature::estImmobile() const {
 	return alpha == 0.f;
 }
 
-Creature::~Creature() {}
+void Creature::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
+	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));
+}

@@ -50,7 +50,7 @@ public:
 	//compliqué
 	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > *	adjacences(const Sommet<So> * sommet) const;
 	Liste< Arete<Ar, So> > *							aretesAdjacentes(const Sommet<So> * sommet) const;
-	Liste< Sommet<So> > *							voisins(const Sommet<So> * sommet) const;
+	Liste< Sommet<So> * > *							voisins(const Sommet<So> * sommet) const;
 
 	/*Recherche une arete à partir d'un sommet (debut et fin confondu)*/
 	Arete<Ar, So> * getAreteParSommets(const Sommet<So> * s1, const Sommet<So> * s2) const;
@@ -71,6 +71,10 @@ public:
 
 	template  <class FENETRE>
 	bool dessine(FENETRE & fenetre) const;
+#pragma endregion
+
+#pragma region VISITEUR
+
 #pragma endregion
 };
 
@@ -197,13 +201,20 @@ Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > >  *  Graphe<Ar, So>::adjacence
 
 	Arete<Ar, So> * tmp;
 
+	std::pair< Sommet<So> *, Arete<Ar, So>* > * paire;
+
 	while (itAretes.aSuivant()) {
 		tmp = itAretes.suivant();
-		if (sommet == tmp->debut)
-			r->ajouterElem(PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->fin, &tmp)));
+		if (sommet == tmp->debut) {
+			paire = new std::pair< Sommet<So> *, Arete<Ar, So>* >(tmp->fin, tmp);
+			r->ajouterElem(*paire);
+		}
+			//r->tete = new PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->fin, tmp), r->tete);
 		else
-			if (sommet == tmp->fin)
-				r->ajouterElem(PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >(new std::pair< Sommet<So> *, Arete<Ar, So>* >(itAretes.suivant()->debut, &tmp)));
+			if (sommet == tmp->fin) {
+				paire = new std::pair< Sommet<So> *, Arete<Ar, So>* >(tmp->debut, tmp);
+				r->ajouterElem(*paire);
+			}
 	}
 	return r;
 }
@@ -226,17 +237,18 @@ Liste< Arete<Ar, So> > *  Graphe<Ar, So>::aretesAdjacentes(const Sommet<So> * so
 
 
 template <class Ar, class So>
-Liste< Sommet<So> > *  Graphe<Ar, So>::voisins(const Sommet<So> * sommet) const {
+Liste< Sommet<So> * > *  Graphe<Ar, So>::voisins(const Sommet<So> * sommet) const {
 	Liste< std::pair< Sommet<So> *, Arete<Ar, So>* > > ladj = *this->adjacences(sommet);
 	Iterateur< std::pair< Sommet<So> *, Arete<Ar, So>* > > itLadj = ladj.getIterateur();
 	itLadj.debut();
 
-	Liste< Sommet<So> > * r;
-
-	while(itLadj.aSuivant())
-		r->ajouterElem(PElement< Sommet<So> >(itLadj.suivant()->first));
-
-	PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj.tete);
+	Liste< Sommet<So> * > * r = new Liste< Sommet<So> * >;
+	std::pair< Sommet<So> *, Arete<Ar, So>* > * temp;
+	while (itLadj.aSuivant()) {
+		temp = itLadj.suivant();
+		r->ajouterElem(/*PElement< Sommet<So> >(*/temp->first/*)*/);
+	}
+	//PElement< std::pair< Sommet<So> *, Arete<Ar, So>* > >::efface2(ladj.tete);
 
 	return r;
 }
@@ -281,17 +293,4 @@ bool Graphe<Ar, So>::dessineTousSommets(FENETRE & fenetre) const {
 		if (!fenetre.dessine(&IterateurSommet.suivant()->valeur)) return false;	// tente de dessiner puis retourne false en cas d'echec
 	return true;
 }
-/*
-template <class So, class FENETRE>
-bool dessine(const PElement<Sommet<So>> * chemin, FENETRE & fenetre, const unsigned int couleur) {
-	if (!(chemin && chemin->suivant)) // le chemin est vide ou ne contient qu'un sommet : il n'y  a rien a dessiner
-		return true;
-
-	else {
-		// on dessine d'abord la 1ere arete
-		if (!fenetre.dessine(chemin->valeur, chemin->suivant->valeur, couleur)) return false;
-
-		return dessine(chemin->suivant, fenetre, couleur);		// puis on dessine les aretes suivantes
-	}
-}*/
 #pragma endregion

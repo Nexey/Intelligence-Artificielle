@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp" />
-    <ClCompile Include="Ecran\Formes\Creature.cpp" />
     <ClCompile Include="Ecran\Formes\FormeEcran.cpp" />
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
     <ClCompile Include="Experts\Chargement\GestionnaireChargement.cpp" />
@@ -47,10 +47,10 @@
     <ClCompile Include="Graphe\Liste.cpp" />
     <ClCompile Include="Graphe\Sommet.cpp" />
     <ClCompile Include="Main\Main.cpp" />
+    <ClCompile Include="Visiteurs\IVisiteur.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
-    <ClInclude Include="Ecran\Formes\Creature.h" />
     <ClInclude Include="Ecran\Formes\FormeEcran.h" />
     <ClInclude Include="Exceptions\Erreur.h" />
     <ClInclude Include="Experts\Chargement\ChargeurCOR.h" />
@@ -83,6 +83,7 @@
     <ClInclude Include="Maths\Reels.h" />
     <ClInclude Include="Maths\TransfoAffine2D.h" />
     <ClInclude Include="Maths\Vecteur2D.h" />
+    <ClInclude Include="Visiteurs\IVisiteur.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

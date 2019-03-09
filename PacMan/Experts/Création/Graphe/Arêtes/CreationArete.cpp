@@ -5,7 +5,8 @@ CreationArete::CreationArete(FenetreEcran * fenetre, const Vecteur2D & direction
 CreationArete::~CreationArete() {}
 
 bool CreationArete::peutGerer(const Vecteur2D & direction) {
-	return this->direction == direction || this->direction == -direction;
+	// La partie commentée peut créer une arête de fin à deb alors que je veux créer seulement des arêtes de deb à fin
+	return this->direction == direction/* || this->direction == -direction*/;
 }
 
 Arete<FormeEcran, FormeEcran>* CreationArete::gerer(Sommet<FormeEcran>* s1, Sommet<FormeEcran>* s2) {

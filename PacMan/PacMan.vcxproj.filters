@@ -133,6 +133,12 @@
     <Filter Include="Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées">
       <UniqueIdentifier>{d3eead18-4af0-4cde-acd2-2c6b39413449}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Visiteurs">
+      <UniqueIdentifier>{48d64a56-426e-4e1a-a0b8-c69a22bd723e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Visiteurs">
+      <UniqueIdentifier>{6599bf56-1167-4e6a-a106-40f922b8fd4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\Main.cpp">
@@ -142,9 +148,6 @@
       <Filter>Fichiers sources\Ecran\Fenetre</Filter>
     </ClCompile>
     <ClCompile Include="Ecran\Formes\FormeEcran.cpp">
-      <Filter>Fichiers sources\Ecran\Formes</Filter>
-    </ClCompile>
-    <ClCompile Include="Ecran\Formes\Creature.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
     <ClCompile Include="Experts\Évènements\EvenementCOR.cpp">
@@ -219,15 +222,18 @@
     <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteHorizontaleCOR.cpp">
       <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
     </ClCompile>
+    <ClCompile Include="Visiteurs\IVisiteur.cpp">
+      <Filter>Fichiers sources\Visiteurs</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
       <Filter>Fichiers d%27en-tête\Ecran\Fenetre</Filter>
     </ClInclude>
     <ClInclude Include="Ecran\Formes\FormeEcran.h">
-      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Ecran\Formes\Creature.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
     <ClInclude Include="Exceptions\Erreur.h">
@@ -322,6 +328,9 @@
     </ClInclude>
     <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteVerticaleCOR.h">
       <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClInclude>
+    <ClInclude Include="Visiteurs\IVisiteur.h">
+      <Filter>Fichiers d%27en-tête\Visiteurs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,56 @@
+﻿  FenetreEcran.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\ecran\fenetre\fenetreecran.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'SFML/Graphics.hpp' : No such file or directory
+  Creature.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\ecran\formes\creature.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Ecran/Formes/FormeEcran.h' : No such file or directory
+  FormeEcran.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\ecran\formes\formeecran.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Ecran/Fenetre/FenetreEcran.h' : No such file or directory
+  ChargeurCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\chargement\gestionnairechargement.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : './Exceptions/Erreur.h' : No such file or directory
+  GestionnaireChargement.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\chargement\gestionnairechargement.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : './Exceptions/Erreur.h' : No such file or directory
+  ChargeurLabyrintheCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\chargement\labyrinthe\chargeurlabyrinthecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Chargement/ChargeurCOR.h' : No such file or directory
+  AreteHorizontaleCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\arêtes\arêtes orientées\aretehorizontalecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Création/Graphe/Arêtes/CreationArete.h' : No such file or directory
+  AreteVerticaleCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\arêtes\arêtes orientées\areteverticalecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Création/Graphe/Arêtes/CreationArete.h' : No such file or directory
+  CreationArete.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\arêtes\creationarete.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Création/Graphe/Arêtes/GestionnaireCreationAretes.h' : No such file or directory
+  GestionnaireCreationAretes.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\arêtes\gestionnairecreationaretes.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/Arete.h' : No such file or directory
+  CreationSommetCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\sommets\creationsommetcor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Création/Graphe/Sommets/GestionnaireCreationSommet.h' : No such file or directory
+  GestionnaireCreationSommet.cpp
+  SommetCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\création\graphe\sommets\types de sommets\sommetcor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Création/Graphe/Sommets/CreationSommetCOR.h' : No such file or directory
+  EvenementCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\evenementcor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/GestionnaireEvenement.h' : No such file or directory
+  FermetureCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\fermeture\fermeturecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/EvenementCOR.h' : No such file or directory
+  GestionnaireEvenement.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\gestionnaireevenement.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'SFML/Graphics.hpp' : No such file or directory
+  RedimensionCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\redimension\redimensioncor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/EvenementCOR.h' : No such file or directory
+  DeplacementToucheCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\touches\déplacement\deplacementtouchecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/Touches/ToucheCOR.h' : No such file or directory
+  FermetureToucheCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\touches\fermeture\fermeturetouchecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/Touches/ToucheCOR.h' : No such file or directory
+  ToucheCOR.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\experts\évènements\touches\touchecor.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Experts/Évènements/EvenementCOR.h' : No such file or directory
+  Génération de code en cours...
+  Compilation en cours...
+  Arete.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\arete.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/Sommet.h' : No such file or directory
+  GElement.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\gelement.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/AElement.h' : No such file or directory
+  Graphe.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\pelement.h(6): fatal error C1083: Impossible d'ouvrir le fichier include : './Exceptions/Erreur.h' : No such file or directory
+  Iterateur.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\iterateur.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/PElement.h' : No such file or directory
+  Liste.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\liste.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/Iterateur.h' : No such file or directory
+  Sommet.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\graphe\sommet.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Graphe/GElement.h' : No such file or directory
+  Main.cpp
+c:\users\geels\documents\github\c++\intelligence artificielle\pacman\ecran\formes\creature.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : './Ecran/Formes/FormeEcran.h' : No such file or directory
+  Génération de code en cours...
