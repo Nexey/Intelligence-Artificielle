@@ -1,5 +1,4 @@
 #pragma once
-#include "./Graphe/Graphe.h"
 #include "./Ecran/Formes/FormeEcran.h"
 
 class Creature {
@@ -11,7 +10,7 @@ protected:
 		// La velocité est ajouté aux coordonnées de la figure, ce qui permet un déplacement fluide
 		velocite;
 
-	Liste<Sommet<FormeEcran> * > * voisins;
+	Liste<Sommet<FormeEcran> * > * listeVoisins;
 	Iterateur<Sommet<FormeEcran> * > * iterateurVoisins;
 
 	FenetreEcran * fenetre;
@@ -25,6 +24,8 @@ protected:
 	Sommet<FormeEcran> * prochainSommet;
 
 	void miseAJourPositionEcran(const Vecteur2D & nouvPos);
+
+	virtual const Vecteur2D selectionDirection() = 0;
 public:
 	Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran> * positionSommet, int choixNiveau);
 	virtual ~Creature();
@@ -34,7 +35,7 @@ public:
 
 	// Déplace la créature jusqu'au prochain point
 	// Actuellement, le déplacement ne peut pas être annulé
-	virtual bool deplacer() = 0;
+	virtual bool deplacer();
 
 	// Si alpha est 0, alors on peut la bouger
 	// Il faut faire attention à lui mettre à jour sa direction si on veut la faire bouger après cet appel

@@ -6,6 +6,6 @@ public:
 	PacMan(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran>* positionSommet, int choixNiveau);
 	virtual ~PacMan();
 
-	bool deplacer();
+	const Vecteur2D selectionDirection();
 };
 
