@@ -5,7 +5,9 @@
 #include <vector>
 #include <functional>
 #include "./Maths/TransfoAffine2D.h"
+#include "Graphe\Graphe.h"
 class Creature;
+class FormeEcran;
 
 // Translate des coordonnées doubles en coordonnées float
 inline const sf::Vector2f TransfoVecteur2DToVector2f(const Vecteur2D & v) {
@@ -29,10 +31,13 @@ class FenetreEcran :
 	// Interdiction des constructeurs
 	FenetreEcran() = delete;
 	FenetreEcran(const FenetreEcran&) = delete;
-
-	// La fenêtre se charge des créatures à dessiner
-	std::vector<Creature> listeCreature;
 public:
+	std::vector<Graphe<FormeEcran, FormeEcran>*> * niveaux;
+
+	int choixNiveau;
+
+	std::map<int, std::vector<Creature*>> listeCreatureParNiveaux;
+
 	// Liste des directions possibles
 	// Ce sont des Vecteur2D, ce qui permet de les additionner directement à une forme écran quelconque possédant
 	// des Vecteur2D comme coordonnées
@@ -70,8 +75,8 @@ public:
 
 	// Les deux méthodes d'ajout de créature à la collection
 	// Pas de clonage, les créatures à l'heure actuelle sont là juste pour tester
-	void ajouterForme(Creature & c);
-	const FenetreEcran * operator+(Creature & c);
+	void ajouterForme(Creature * c);
+	const FenetreEcran * operator+(Creature * c);
 
 	// Type pointeur de fonction qui prend en paramètre une référence sur une créature
 	typedef bool(FenetreEcran::*fctTraitement)(Creature *);
@@ -82,13 +87,12 @@ public:
 
 	// Appel sur la méthode de dessin d'une créature, elle se charge de tout faire
 	template<class T>
-	bool dessine(T * forme);
+	bool dessiner(T * forme);
 
 	// Cette fonction parcourt la liste de toutes les créatures
 	// Le paramètre fctTraitement est un pointeur sur une fonction
 	// Cela permet de factoriser beaucoup de code
 	bool effectuer(fctTraitement);
-
 
 //	void onResize();
 
@@ -99,14 +103,10 @@ public:
 
 template<class T>
 inline bool FenetreEcran::deplacer(T * c) {
-	if (c->estImmobile()) {
-		c->directionCreature = direction;
-		c->nouvellePositionEcran = c->positionEcran + direction;
-	}
 	return c->deplacer();
 }
 
 template<class T>
-inline bool FenetreEcran::dessine(T * forme) {
-	return forme->dessine();
+inline bool FenetreEcran::dessiner(T * forme) {
+	return forme->dessiner();
 }

@@ -1,18 +1,21 @@
 #pragma once
 #include "./Experts/Chargement/ChargeurCOR.h"
 #include "./Experts/Création/Graphe/Sommets/Types de sommets/SommetCOR.h"
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/PacmanSommetCOR.h"
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/FantomeSommetCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteHorizontaleCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteVerticaleCOR.h"
 #include "./Graphe/Graphe.h"
 #include <fstream>
 #include <algorithm>
 
+constexpr int TAILLE = 32;
+
 template<class T>
 class ChargeurLabyrintheCOR :
 	public ChargeurCOR<T> {
 public:
 	ChargeurLabyrintheCOR(FenetreEcran * fenetre, GestionnaireChargement<T> * suivant = NULL) : ChargeurCOR<T>(fenetre, "txt", suivant) {}
-
 	T * construit(const std::string & chemin);
 
 	virtual ~ChargeurLabyrintheCOR() {}
@@ -22,17 +25,26 @@ template<class T>
 inline T * ChargeurLabyrintheCOR<T>::construit(const std::string & chemin) {
 	Graphe<FormeEcran, FormeEcran> * niveau = new Graphe<FormeEcran, FormeEcran>();
 
-	GestionnaireCreationSommet * expertCreationSommets = new SommetCOR(this->fenetre);
+	GestionnaireCreationSommet * expertCreationSommets =
+		new SommetCOR(this->fenetre,
+			new PacmanSommetCOR(this->fenetre,
+				new FantomeSommetCOR(this->fenetre
+				)
+			)
+		);
 	
 	std::ifstream fichierLaby(chemin);
-	char elementsLabyrinthe[32][32];
+	char elementsLabyrinthe[TAILLE][TAILLE];
 
 	Sommet<FormeEcran> * sommet;
 
-	for (int i = 31; i >= 0; i--) {
-		for (int j = 31; j >= 0; j--) {
+	for (int i = TAILLE - 1; i >= 0; i--) {
+		for (int j = TAILLE - 1; j >= 0; j--) {
 			fichierLaby >> elementsLabyrinthe[i][j];
-			if ((sommet = expertCreationSommets->gerer(elementsLabyrinthe[i][j], Vecteur2D(j, i))) != nullptr)
+			// Puisque le fichier est lu de droite à gauche, et que les éléments sont rajoutés du dernier au premier dans le tableau,
+			// je dois mettre le X à l'opposé de j, càd TAILLE - j - 1, sinon si je laisse j le niveau généré sera une représentation
+			// miroir
+			if ((sommet = expertCreationSommets->gerer(elementsLabyrinthe[i][j], Vecteur2D(TAILLE - j - 1, i))) != nullptr)
 				niveau->listeSommets.ajouterElem(*sommet);
 		}
 	}

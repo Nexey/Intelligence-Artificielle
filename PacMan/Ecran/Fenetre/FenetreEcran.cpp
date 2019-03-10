@@ -1,6 +1,11 @@
 #include "FenetreEcran.h"
-#include "../Formes/Creature.h"
-#include "../../Exceptions/Erreur.h"
+#include "Ecran/Formes/Creature.h"
+#include "Graphe\Graphe.h"
+#include "Exceptions/Erreur.h"
+#include "./Experts/Chargement/Labyrinthe/ChargeurLabyrintheCOR.h"
+#include <experimental\filesystem>
+
+namespace fs = std::experimental::filesystem;
 
 const Vecteur2D
 FenetreEcran::VECTEUR2D_BAS_GAUCHE(-1, -1),
@@ -19,9 +24,29 @@ FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsi
 	largeur(l),
 	hauteur(h),
 	ratio(r),
-	direction(VECTEUR2D_STOP) {
+	direction(VECTEUR2D_STOP),
+	choixNiveau(0) {
+	niveaux = new std::vector<Graphe<FormeEcran, FormeEcran>*>();
 	Vecteur2D coinBGEcran(0, h), coinHDEcran(l, 0);
 	transfoAffine = TransfoAffine2D::passageMondeEcran(coinBG, coinHD, coinBGEcran, coinHDEcran);
+
+
+	// Initialisation des niveaux
+
+	GestionnaireChargement<Graphe<FormeEcran, FormeEcran>> * expertChargementLabyrinthe;
+	expertChargementLabyrinthe = new ChargeurLabyrintheCOR<Graphe<FormeEcran, FormeEcran>>(this);
+
+	// Chargement de tous les niveaux
+	Graphe<FormeEcran, FormeEcran> * niveau;
+	for (fs::recursive_directory_iterator i("./Niveaux"), end; i != end; ++i)
+		if (!is_directory(i->path())) {
+			niveau = expertChargementLabyrinthe->charger(i->path().string());
+			if (niveau != NULL) {
+				niveaux->push_back(niveau);
+				choixNiveau++;
+			}
+		}
+
 }
 
 const TransfoAffine2D & FenetreEcran::getTransfoAffine() const {
@@ -58,21 +83,22 @@ const Vecteur2D & FenetreEcran::getCoinHautDroit() const {
 	return coinHautDroit;
 }
 
-void FenetreEcran::ajouterForme(Creature & c) {
-	this->listeCreature.push_back(c);
+void FenetreEcran::ajouterForme(Creature * c) {
+	this->listeCreatureParNiveaux[choixNiveau].push_back(c);
 }
 
-const FenetreEcran * FenetreEcran::operator+(Creature & c) {
+const FenetreEcran * FenetreEcran::operator+(Creature * c) {
 	this->ajouterForme(c);
 	return this;
 }
 
 bool FenetreEcran::effectuer(fctTraitement traitement) {
 	try {
-		std::vector<Creature>::iterator it = this->listeCreature.begin();
-		for (it; it < this->listeCreature.end(); it++)
-			// Aucune idée de pourquoi &*it fonctionne mais (it) non
-			(this->*traitement)(&*it);
+		if (this->listeCreatureParNiveaux.count(choixNiveau) != 0) {
+			std::vector<Creature *>::iterator it = this->listeCreatureParNiveaux.at(choixNiveau).begin();
+			for (it; it < this->listeCreatureParNiveaux.at(choixNiveau).end(); it++)
+				(this->*traitement)(*it);
+		}
 	}
 	catch (Erreur e) {
 #ifdef _DEBUG

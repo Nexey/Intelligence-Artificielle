@@ -19,7 +19,7 @@ public:
 	void miseAJourPositionEcran(const Vecteur2D& nouvPos);
 
 	// Appelle le dessin sur la forme
-	const bool dessine();
+	const bool dessiner();
 
 	/// Getters
 	FenetreEcran * getFenetre() const;

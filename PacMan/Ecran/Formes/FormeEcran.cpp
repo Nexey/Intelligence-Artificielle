@@ -12,7 +12,7 @@ void FormeEcran::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
 	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));
 }
 
-const bool FormeEcran::dessine() {
+const bool FormeEcran::dessiner() {
 	try {
 		fenetre->draw(*formeSFML);
 	}

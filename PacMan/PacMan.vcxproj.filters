@@ -225,8 +225,20 @@
     <ClCompile Include="Visiteurs\IVisiteur.cpp">
       <Filter>Fichiers sources\Visiteurs</Filter>
     </ClCompile>
-    <ClCompile Include="Creature.cpp">
+    <ClCompile Include="Ecran\Formes\Creature.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\PacMan.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\Fantome.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +343,21 @@
     </ClInclude>
     <ClInclude Include="Visiteurs\IVisiteur.h">
       <Filter>Fichiers d%27en-tête\Visiteurs</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\Creature.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\PacMan.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\Fantome.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

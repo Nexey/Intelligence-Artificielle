@@ -11,31 +11,34 @@ protected:
 		// La velocité est ajouté aux coordonnées de la figure, ce qui permet un déplacement fluide
 		velocite;
 
-
 	Liste<Sommet<FormeEcran> * > * voisins;
 	Iterateur<Sommet<FormeEcran> * > * iterateurVoisins;
 
 	FenetreEcran * fenetre;
-	Graphe<FormeEcran, FormeEcran> * niveau;
-public:
-	Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran> * positionSommet, Graphe<FormeEcran, FormeEcran> * niveau);
-	virtual ~Creature();
+	int choixNiveau;
 
-	// Pour le moment, gère une forme sfml, mais plus tard ce sera des sprites
-	sf::Shape * formeSFML;
+	void miseAJourVoisins();
 
 	Vecteur2D directionCreature;
 
 	Sommet<FormeEcran> * sommetActuel;
 	Sommet<FormeEcran> * prochainSommet;
 
+	void miseAJourPositionEcran(const Vecteur2D & nouvPos);
+public:
+	Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran> * positionSommet, int choixNiveau);
+	virtual ~Creature();
+
+	// Pour le moment, gère une forme sfml, mais plus tard ce sera des sprites
+	sf::Shape * formeSFML;
+
 	// Déplace la créature jusqu'au prochain point
 	// Actuellement, le déplacement ne peut pas être annulé
-	bool deplacer();
+	virtual bool deplacer() = 0;
 
 	// Si alpha est 0, alors on peut la bouger
 	// Il faut faire attention à lui mettre à jour sa direction si on veut la faire bouger après cet appel
 	const bool estImmobile() const;
 
-	void miseAJourPositionEcran(const Vecteur2D& nouvPos);
+	bool dessiner();
 };
