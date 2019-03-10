@@ -6,6 +6,7 @@
 #include <functional>
 #include "./Maths/TransfoAffine2D.h"
 #include "Graphe\Graphe.h"
+#include "./Textures/PlancheSprites.h"
 class Creature;
 class FormeEcran;
 
@@ -35,6 +36,8 @@ public:
 	std::vector<Graphe<FormeEcran, FormeEcran>*> * niveaux;
 
 	int choixNiveau;
+
+	PlancheSprites * planche;
 
 	std::map<int, std::vector<Creature*>> listeCreatureParNiveaux;
 

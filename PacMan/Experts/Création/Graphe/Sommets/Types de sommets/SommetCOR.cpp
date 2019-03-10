@@ -9,9 +9,7 @@ SommetCOR::SommetCOR(FenetreEcran * fenetre, GestionnaireCreationSommet * suivan
 }
 
 Sommet<FormeEcran> * SommetCOR::construit(const char & forme, const Vecteur2D & coords) {
-	sf::Shape * rectangle = new sf::RectangleShape(sf::Vector2f(8.f, 8.f));
-	rectangle->setFillColor(sf::Color::Blue);
-	return new Sommet<FormeEcran>(FormeEcran(rectangle, fenetre, coords));
+	return new Sommet<FormeEcran>(FormeEcran(&this->fenetre->planche->sommet, fenetre, coords));
 }
 
 SommetCOR::~SommetCOR() {}

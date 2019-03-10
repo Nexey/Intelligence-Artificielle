@@ -240,6 +240,9 @@
     <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.cpp">
       <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
     </ClCompile>
+    <ClCompile Include="Textures\PlancheSprites.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
@@ -358,6 +361,9 @@
     </ClInclude>
     <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.h">
       <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures\PlancheSprites.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

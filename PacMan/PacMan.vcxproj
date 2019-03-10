@@ -51,6 +51,7 @@
     <ClCompile Include="Graphe\Liste.cpp" />
     <ClCompile Include="Graphe\Sommet.cpp" />
     <ClCompile Include="Main\Main.cpp" />
+    <ClCompile Include="Textures\PlancheSprites.cpp" />
     <ClCompile Include="Visiteurs\IVisiteur.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +93,7 @@
     <ClInclude Include="Maths\Reels.h" />
     <ClInclude Include="Maths\TransfoAffine2D.h" />
     <ClInclude Include="Maths\Vecteur2D.h" />
+    <ClInclude Include="Textures\PlancheSprites.h" />
     <ClInclude Include="Visiteurs\IVisiteur.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
