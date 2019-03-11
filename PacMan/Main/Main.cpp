@@ -13,9 +13,11 @@
 int main() {
 	SetConsoleOutputCP(1252); // Pour les accents dans la console sous Windows
 
-	const unsigned ratio = 8u;
-	Vecteur2D CoinBasGauche(0, 0), CoinHautDroit(31, 31);
-	FenetreEcran fenetre("PacMan", 32*ratio*2, 32*ratio*2, CoinBasGauche, CoinHautDroit, ratio);
+	const unsigned ratio = 32u,
+		longueur = 512,
+		largeur = 512;
+	Vecteur2D CoinBasGauche(0, 0), CoinHautDroit(ratio - 1, ratio - 1);
+	FenetreEcran fenetre("PacMan", largeur, longueur, CoinBasGauche, CoinHautDroit, ratio);
 
 	// Experts d'évènements
 	GestionnaireEvenement * experts =
@@ -29,6 +31,8 @@ int main() {
 
 	fenetre.choixNiveau = 0;
 	fenetre.niveaux->at(fenetre.choixNiveau)->dessine<FenetreEcran>(fenetre);
+
+	//std::cout << *fenetre.niveaux->at(fenetre.choixNiveau) << std::endl;
 
 	sf::Texture niveauImg;
 	niveauImg.create(fenetre.getLargeur(), fenetre.getHauteur());
@@ -50,7 +54,8 @@ int main() {
 		fenetre.clear();
 		fenetre.draw(niveauSpr);
 
-		fenetre.effectuer(&FenetreEcran::deplacer);
+		if (fenetre.direction != FenetreEcran::VECTEUR2D_STOP)
+			fenetre.effectuer(&FenetreEcran::deplacer);
 		fenetre.effectuer(&FenetreEcran::dessiner);
 
 		fenetre.display();

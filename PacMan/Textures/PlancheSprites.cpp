@@ -3,17 +3,17 @@
 
 PlancheSprites::~PlancheSprites() {}
 
-PlancheSprites::PlancheSprites(const std::string & chemin) {
+PlancheSprites::PlancheSprites(const std::string & chemin, const unsigned & ratio) : ratioFenetre(ratio) {
 	planche = new sf::Texture();
 	if (!planche->loadFromFile(chemin)) throw Erreur("Probleme lors du chargement de la texture.");
-	this->chargerTextures();
+	this->initialiserTextures();
 }
 
-PlancheSprites::PlancheSprites(sf::Texture * planche) : planche(planche) {
-	this->chargerTextures();
+PlancheSprites::PlancheSprites(sf::Texture * planche, const unsigned & ratio) : planche(planche), ratioFenetre(ratio) {
+	this->initialiserTextures();
 }
 
-bool PlancheSprites::chargerTextures() {
+bool PlancheSprites::initialiserTextures() {
 	unsigned largeur, hauteur;
 	sf::Vector2u tailleTexture = planche->getSize();
 	largeur = tailleTexture.x;
@@ -30,32 +30,38 @@ bool PlancheSprites::chargerTextures() {
 	// On divise la taille en deux
 	demiTaille = taille >> 1;
 
+	ratioSprite =  ((float)ratioFenetre / (float)taille);
+
+	chargerCreatures();
 	chargerAretes();
 	chargerSommet();
 	return true;
 }
 
 bool PlancheSprites::chargerSommet() {
-	sommet.setTexture(*planche);
-	sommet.setTextureRect(sf::IntRect(12 * taille, 0, taille, taille));
-	sommet.setOrigin((float)demiTaille, (float)demiTaille);
-	sommet.setScale(0.2f, 0.2f);
+	chargerTexture(areteV, 12u, 0u);
 	return true;
 }
 
 bool PlancheSprites::chargerAretes() {
-	areteH.setTexture(*planche);
-	areteH.setTextureRect(sf::IntRect(12 * taille, 1 * taille, taille, taille));
-	areteH.setOrigin((float)demiTaille, (float)demiTaille);
-	areteH.setScale(0.2f, 0.2f);
-
-	areteV.setTexture(*planche);
-	areteV.setTextureRect(sf::IntRect(12 * taille, 3 * taille, taille, taille));
-	areteV.setOrigin((float)demiTaille, (float)demiTaille);
-	areteV.setScale(0.2f, 0.2f);
-	return false;
+	chargerTexture(areteH, 12u, 1u);
+	chargerTexture(areteV, 12u, 3u);
+	return true;
 }
 
 bool PlancheSprites::chargerCreatures() {
-	return false;
+	chargerTexture(pacman, 0u, 1u);
+	chargerTexture(fantomeB, 6u, 5u);
+	chargerTexture(fantomeJ, 6u, 1u);
+	chargerTexture(fantomeR, 6u, 9u);
+	chargerTexture(fantomeV, 6u, 13u);
+	return true;
+}
+
+bool PlancheSprites::chargerTexture(sf::Sprite & texture, const unsigned & colonne, const unsigned & ligne) {
+	texture.setTexture(*planche);
+	texture.setTextureRect(sf::IntRect(colonne * taille, ligne * taille, taille, taille));
+	texture.setOrigin((float)demiTaille, (float)demiTaille);
+	texture.setScale(ratioSprite, ratioSprite);
+	return true;
 }

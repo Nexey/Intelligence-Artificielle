@@ -1,26 +1,18 @@
 #include "Creature.h"
 
-Creature::Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran>* positionSommet, int choixNiveau) :
-	formeSFML(formeSFML),
-	fenetre(fenetre),
+Creature::Creature(FormeEcran * infos, Sommet<FormeEcran>* positionSommet, int choixNiveau) :
+	infos(infos),
 	sommetActuel(positionSommet),
 	choixNiveau(choixNiveau),
 	prochainSommet(positionSommet),
 	directionCreature(FenetreEcran::VECTEUR2D_STOP),
 	alpha(0.f),
-	velocite(0.05f) {
-	this->formeSFML->setOrigin(this->formeSFML->getGlobalBounds().width / 2.f, this->formeSFML->getGlobalBounds().height / 2.f);
-	this->miseAJourPositionEcran(positionSommet->valeur.getPositionEcran());
-}
+	velocite(0.05f) {}
 
 Creature::~Creature() {}
 
 void Creature::miseAJourVoisins() {
-	listeVoisins = fenetre->niveaux->at(this->choixNiveau)->voisins(this->sommetActuel);
-}
-
-void Creature::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
-	this->formeSFML->setPosition(fenetre->calculPos(nouvPos));
+	listeVoisins = infos->getFenetre()->niveaux->at(this->choixNiveau)->voisins(this->sommetActuel);
 }
 
 bool Creature::deplacer() {
@@ -28,7 +20,7 @@ bool Creature::deplacer() {
 	if (alpha >= 1.f) {
 		alpha = 0.f;
 		sommetActuel = prochainSommet;
-		miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran());
+		infos->miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran());
 
 		// Mise à jour des voisins
 		miseAJourVoisins();
@@ -77,7 +69,7 @@ bool Creature::deplacer() {
 			}
 		}
 		// On est en mouvement
-
+		
 		// Si la direction a changé, et si la direction de la créature + la direction de la fenêtre = (0, 0) alors il faut faire un demi-tour
 		if (this->directionCreature + directionChoisie == FenetreEcran::VECTEUR2D_STOP) {
 			// J'inverse l'alpha
@@ -98,7 +90,7 @@ bool Creature::deplacer() {
 		if (prochainSommet != sommetActuel) {
 			// On augmente son alpha et on met à jour la position du sprite
 			alpha += velocite;
-			miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran() + directionCreature * alpha);
+			infos->miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran() + directionCreature * alpha);
 			return true;
 		}
 	}
@@ -110,6 +102,5 @@ const bool Creature::estImmobile() const {
 }
 
 bool Creature::dessiner() {
-	fenetre->draw(*formeSFML);
-	return true;
+	return infos->dessiner();
 }

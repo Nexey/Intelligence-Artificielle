@@ -13,8 +13,9 @@ protected:
 	Liste<Sommet<FormeEcran> * > * listeVoisins;
 	Iterateur<Sommet<FormeEcran> * > * iterateurVoisins;
 
-	FenetreEcran * fenetre;
 	int choixNiveau;
+
+	FormeEcran * infos;
 
 	void miseAJourVoisins();
 
@@ -23,15 +24,10 @@ protected:
 	Sommet<FormeEcran> * sommetActuel;
 	Sommet<FormeEcran> * prochainSommet;
 
-	void miseAJourPositionEcran(const Vecteur2D & nouvPos);
-
 	virtual const Vecteur2D selectionDirection() = 0;
 public:
-	Creature(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran> * positionSommet, int choixNiveau);
+	Creature(FormeEcran * infos, Sommet<FormeEcran> * positionSommet, int choixNiveau);
 	virtual ~Creature();
-
-	// Pour le moment, gère une forme sfml, mais plus tard ce sera des sprites
-	sf::Shape * formeSFML;
 
 	// Déplace la créature jusqu'au prochain point
 	// Actuellement, le déplacement ne peut pas être annulé

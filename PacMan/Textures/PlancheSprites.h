@@ -14,23 +14,34 @@ class PlancheSprites {
 	PlancheSprites() = delete;
 	PlancheSprites(const PlancheSprites&) = delete;
 
+	unsigned ratioFenetre;
 	unsigned taille;
 	unsigned demiTaille;
+
+	float ratioSprite;
 
 	sf::Texture* planche;
 
 public:
-	PlancheSprites(const std::string &chemin);
-	PlancheSprites(sf::Texture * planche);
+	PlancheSprites(const std::string &chemin, const unsigned &);
+	PlancheSprites(sf::Texture * planche, const unsigned &);
 
-	bool chargerTextures();
+	bool initialiserTextures();
 	bool chargerSommet();
 	bool chargerAretes();
 	bool chargerCreatures();
 
+	bool chargerTexture(sf::Sprite & texture, const unsigned & colonne, const unsigned & ligne);
+
 	sf::Sprite sommet,
 		areteH,
-		areteV;
+		areteV,
+		pacman,
+		fantomeJ,
+		fantomeB,
+		fantomeR,
+		fantomeV;
+
 	virtual ~PlancheSprites();
 };
 

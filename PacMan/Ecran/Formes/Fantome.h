@@ -4,7 +4,7 @@ class Fantome :
 	public Creature {
 	int directionAleatoire;
 public:
-	Fantome(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran>* positionSommet, int choixNiveau);
+	Fantome(FormeEcran * infos, Sommet<FormeEcran>* positionSommet, int choixNiveau);
 	virtual ~Fantome();
 
 	const Vecteur2D selectionDirection();

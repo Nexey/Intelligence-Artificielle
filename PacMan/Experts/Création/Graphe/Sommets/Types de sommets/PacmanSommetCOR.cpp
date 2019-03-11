@@ -11,10 +11,7 @@ Sommet<FormeEcran>* PacmanSommetCOR::construit(const char & forme, const Vecteur
 	Sommet<FormeEcran> * sommet = chaineSommetCOR->construit('3', coords);
 
 	// Ajout du PacMan dans la liste de la fenêtre
-	Creature * pacman = new PacMan(new sf::RectangleShape(sf::Vector2f((float)fenetre->getRatio(), (float)fenetre->getRatio())), fenetre, sommet, fenetre->choixNiveau);
-	pacman->formeSFML->setFillColor(sf::Color::Red);
-	pacman->formeSFML->setOutlineColor(sf::Color::White);
-	pacman->formeSFML->setOutlineThickness(2.f);
+	Creature * pacman = new PacMan(new FormeEcran(&this->fenetre->planche->pacman, this->fenetre, coords), sommet, this->fenetre->choixNiveau);
 
 	fenetre->listeCreatureParNiveaux[fenetre->choixNiveau].push_back(pacman);
 

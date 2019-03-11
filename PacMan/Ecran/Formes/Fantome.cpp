@@ -1,7 +1,7 @@
 #include "Fantome.h"
 
-Fantome::Fantome(sf::Shape * formeSFML, FenetreEcran * fenetre, Sommet<FormeEcran>* positionSommet, int choixNiveau) :
-	Creature(formeSFML, fenetre, positionSommet, choixNiveau) {
+Fantome::Fantome(FormeEcran * infos, Sommet<FormeEcran>* positionSommet, int choixNiveau) :
+	Creature(infos, positionSommet, choixNiveau) {
 	directions[0] = FenetreEcran::VECTEUR2D_BAS;
 	directions[1] = FenetreEcran::VECTEUR2D_GAUCHE;
 	directions[2] = FenetreEcran::VECTEUR2D_HAUT;

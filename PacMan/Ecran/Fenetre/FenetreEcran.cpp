@@ -26,7 +26,7 @@ FenetreEcran::FenetreEcran(const std::string & n, const unsigned & l, const unsi
 	ratio(r),
 	direction(VECTEUR2D_STOP),
 	choixNiveau(0) {
-	planche = new PlancheSprites("./Textures/Textures2.png");
+	planche = new PlancheSprites("./Textures/Textures2.png", ratio);
 	niveaux = new std::vector<Graphe<FormeEcran, FormeEcran>*>();
 	Vecteur2D coinBGEcran(0, h), coinHDEcran(l, 0);
 	transfoAffine = TransfoAffine2D::passageMondeEcran(coinBG, coinHD, coinBGEcran, coinHDEcran);
