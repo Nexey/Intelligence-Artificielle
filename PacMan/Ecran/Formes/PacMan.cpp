@@ -8,3 +8,7 @@ PacMan::~PacMan() {}
 const Vecteur2D PacMan::selectionDirection() {
 	return this->infos->getFenetre()->direction;
 }
+
+PacMan::operator std::string() const {
+	return "pacman";
+}

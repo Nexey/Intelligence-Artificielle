@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Intelligence Artificielle - PacMan: Référence du modèle de la classe AStarT&lt; Graphe, Sommet &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Intelligence Artificielle - PacMan
+   </div>
+   <div id="projectbrief">Création d&#39;un PacMan en C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="class_a_star_t-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du modèle de la classe AStarT&lt; Graphe, Sommet &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>suppose que pour tout s sommet de graphe, on a: s.etat = LIBRE  
+ <a href="class_a_star_t.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_a_star_t_8h_source.html">AStarT.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:a57af36028134b9e3cc2bf347a44fabda"><td class="memItemLeft" align="right" valign="top"><a id="a57af36028134b9e3cc2bf347a44fabda"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>estPlusPetitOuEgal</b> (const <a class="el" href="class_sommet.html">Sommet</a> *sommet1, const <a class="el" href="class_sommet.html">Sommet</a> *sommet2)</td></tr>
+<tr class="separator:a57af36028134b9e3cc2bf347a44fabda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cec8b2f83ca9ce7329baaec2dd1a82"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_star_t.html#a32cec8b2f83ca9ce7329baaec2dd1a82">aStar1Cible</a> (<a class="el" href="class_graphe.html">Graphe</a> &amp;graphe, <a class="el" href="class_sommet.html">Sommet</a> *depart, <a class="el" href="class_sommet.html">Sommet</a> *cible, double(*hh)(const <a class="el" href="class_sommet.html">Sommet</a> *s1, const <a class="el" href="class_sommet.html">Sommet</a> *s2))</td></tr>
+<tr class="memdesc:a32cec8b2f83ca9ce7329baaec2dd1a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche dans graphe le plus court chemin de départ à cible par l'algo A*.  <a href="#a32cec8b2f83ca9ce7329baaec2dd1a82">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a32cec8b2f83ca9ce7329baaec2dd1a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec39a6d52f7a7941175e246fff59b7f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_sommet.html">Sommet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_star_t.html#aec39a6d52f7a7941175e246fff59b7f0">aStar</a> (<a class="el" href="class_graphe.html">Graphe</a> &amp;graphe, <a class="el" href="class_sommet.html">Sommet</a> *depart, double(*hh)(const <a class="el" href="class_sommet.html">Sommet</a> *s))</td></tr>
+<tr class="memdesc:aec39a6d52f7a7941175e246fff59b7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche dans graphe le plus court chemin de départ à un état final par l'algo A*.  <a href="#aec39a6d52f7a7941175e246fff59b7f0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec39a6d52f7a7941175e246fff59b7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2a7fd7b3bf9a4974ae34245b0afbef"><td class="memItemLeft" align="right" valign="top"><a id="aff2a7fd7b3bf9a4974ae34245b0afbef"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>miseAJourVoisin</b> (<a class="el" href="class_sommet.html">Sommet</a> *v, <a class="el" href="class_sommet.html">Sommet</a> *s, const double &amp;nouveauCout, <a class="el" href="class_p_element.html">PElement</a>&lt; <a class="el" href="class_sommet.html">Sommet</a> &gt; *&amp;Ouverts)</td></tr>
+<tr class="separator:aff2a7fd7b3bf9a4974ae34245b0afbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><h3>template&lt;class Graphe, class Sommet&gt;<br />
+class AStarT&lt; Graphe, Sommet &gt;</h3>
+
+<p>suppose que pour tout s sommet de graphe, on a: s.etat = LIBRE </p>
+<p>suppose que les fonctions coût et h sont toujours &gt;= 0 </p>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="aec39a6d52f7a7941175e246fff59b7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec39a6d52f7a7941175e246fff59b7f0">&#9670;&nbsp;</a></span>aStar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Graphe , class Sommet &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_sommet.html">Sommet</a>* <a class="el" href="class_a_star_t.html">AStarT</a>&lt; <a class="el" href="class_graphe.html">Graphe</a>, <a class="el" href="class_sommet.html">Sommet</a> &gt;::aStar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_graphe.html">Graphe</a> &amp;&#160;</td>
+          <td class="paramname"><em>graphe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sommet.html">Sommet</a> *&#160;</td>
+          <td class="paramname"><em>depart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double(*)(const <a class="el" href="class_sommet.html">Sommet</a> *s)&#160;</td>
+          <td class="paramname"><em>hh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>recherche dans graphe le plus court chemin de départ à un état final par l'algo A*. </p>
+<p>en cas de succès, les liens "père" des sommets indiquent le chemin à suivre en partant du sommet-cible trouvé vers départ. le père de départ vaut toujours NULL en sortie (c'est la racine du chemin ou bien encore la fin de la liste chaînée "père")</p>
+<p>retourne un pointeur sur le sommet-cible trouvé (le 1er sommet rencontré qui satisfait estFinal()) si succès et NULL si échec</p>
+<p>suppose que tout sommet s du graphe dispose des attributs suivants publics : int etat (peut prendre l'une des 3 valeurs suivantes : LIBRE, OUVERT ou FERMé) pere : <a class="el" href="class_sommet.html">Sommet</a> * pere double c; // coût réel entre départ et s double h; // estimation du coût entre s et cible double g; // g == c+h</p>
+<p>suppose que la méthode listeVoisins(sommet,graphe) retourne la liste des paires (voisin, coût de l'arête sommet-voisin)</p>
+<p>hh est l'heuristique à appliquer entre 1 sommet quelconque du graphe et un état final</p>
+<p>bool estFinal(const Sommet * s) est une méthode indiquant si le sommet correspond à un état final </p>
+
+</div>
+</div>
+<a id="a32cec8b2f83ca9ce7329baaec2dd1a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cec8b2f83ca9ce7329baaec2dd1a82">&#9670;&nbsp;</a></span>aStar1Cible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Graphe , class Sommet &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="class_a_star_t.html">AStarT</a>&lt; <a class="el" href="class_graphe.html">Graphe</a>, <a class="el" href="class_sommet.html">Sommet</a> &gt;::aStar1Cible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_graphe.html">Graphe</a> &amp;&#160;</td>
+          <td class="paramname"><em>graphe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sommet.html">Sommet</a> *&#160;</td>
+          <td class="paramname"><em>depart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sommet.html">Sommet</a> *&#160;</td>
+          <td class="paramname"><em>cible</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double(*)(const <a class="el" href="class_sommet.html">Sommet</a> *s1, const <a class="el" href="class_sommet.html">Sommet</a> *s2)&#160;</td>
+          <td class="paramname"><em>hh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>recherche dans graphe le plus court chemin de départ à cible par l'algo A*. </p>
+<p>en cas de succès, les liens "père" des sommets indiquent le chemin à suivre en partant de cible vers départ. le père de départ vaut toujours NULL en sortie (c'est la racine du chemin ou bien encore la fin de la liste chaînée "père")</p>
+<p>retourne vrai si succès et faux si échec</p>
+<p>suppose que tout sommet s du graphe dispose des attributs suivants publics : int etat (peut prendre l'une des 3 valeurs suivantes : LIBRE, OUVERT ou FERMé) pere : <a class="el" href="class_sommet.html">Sommet</a> * pere double c; // coût réel entre départ et s double h; // estimation du coût entre s et cible double g; // g == c+h</p>
+<p>suppose que la méthode listeVoisins(sommet,graphe) retourne la liste des paires (voisin, coût de l'arête sommet-voisin)</p>
+<p>hh est l'heuristique à appliquer entre 2 sommets quelconques du graphe </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>Graphe/<a class="el" href="_a_star_t_8h_source.html">AStarT.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

@@ -21,8 +21,8 @@ typedef bool(Fenetre\+Ecran\+::$\ast$ {\bfseries fct\+Traitement}) (\mbox{\hyper
 \mbox{\Hypertarget{class_fenetre_ecran_a29ecd8e6c4f773b85b5e344b0ebb67da}\label{class_fenetre_ecran_a29ecd8e6c4f773b85b5e344b0ebb67da}} 
 const \mbox{\hyperlink{class_transfo_affine2_d}{Transfo\+Affine2D}} \& {\bfseries get\+Transfo\+Affine} () const
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a7ce7ccc7851d631afd3ac24daed40688}\label{class_fenetre_ecran_a7ce7ccc7851d631afd3ac24daed40688}} 
-void {\bfseries redimensionner} ()
+\mbox{\Hypertarget{class_fenetre_ecran_a140ef3ad64d75a9db5ba33eb7584bc6a}\label{class_fenetre_ecran_a140ef3ad64d75a9db5ba33eb7584bc6a}} 
+void {\bfseries redimensionner} (const sf\+::\+Event \&evenement)
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}\label{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}} 
 const unsigned \& \mbox{\hyperlink{class_fenetre_ecran_a3a4e5cf7431f2a16530d297a9a3a5ea6}{get\+Ratio}} () const
@@ -42,17 +42,17 @@ const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& {\bfseries get\+Coin\+Ba
 \mbox{\Hypertarget{class_fenetre_ecran_a3e19aa107adc34157e5220927232ca4c}\label{class_fenetre_ecran_a3e19aa107adc34157e5220927232ca4c}} 
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& {\bfseries get\+Coin\+Haut\+Droit} () const
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a5c5d369bfc2f4113ec98dc2cbed0976f}\label{class_fenetre_ecran_a5c5d369bfc2f4113ec98dc2cbed0976f}} 
-void {\bfseries ajouter\+Forme} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\mbox{\Hypertarget{class_fenetre_ecran_a5da18d223bb9a50ef9df2fbca39cbfba}\label{class_fenetre_ecran_a5da18d223bb9a50ef9df2fbca39cbfba}} 
+void {\bfseries ajouter\+Forme} (\mbox{\hyperlink{class_creature}{Creature}} $\ast$c)
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}\label{class_fenetre_ecran_a0bb77db45c94f26297c75dcf193d5927}} 
-const \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ {\bfseries operator+} (\mbox{\hyperlink{class_creature}{Creature}} \&c)
+\mbox{\Hypertarget{class_fenetre_ecran_a3568497e80eda81ded15c6c8399d2626}\label{class_fenetre_ecran_a3568497e80eda81ded15c6c8399d2626}} 
+const \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ {\bfseries operator+} (\mbox{\hyperlink{class_creature}{Creature}} $\ast$c)
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a90ed854e37772b0fe9b4db9d2c59d58c}\label{class_fenetre_ecran_a90ed854e37772b0fe9b4db9d2c59d58c}} 
 {\footnotesize template$<$class T $>$ }\\bool {\bfseries deplacer} (T $\ast$c)
 \item 
-\mbox{\Hypertarget{class_fenetre_ecran_a788eaad1bcd1edb0257aa1a7a843cd61}\label{class_fenetre_ecran_a788eaad1bcd1edb0257aa1a7a843cd61}} 
-{\footnotesize template$<$class T $>$ }\\bool {\bfseries dessine} (T $\ast$forme)
+\mbox{\Hypertarget{class_fenetre_ecran_aee95fb01be15ad8071743df414ac2f11}\label{class_fenetre_ecran_aee95fb01be15ad8071743df414ac2f11}} 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries dessiner} (T $\ast$forme)
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a254a7e51115405bc9c3d573fdd6fe5a9}\label{class_fenetre_ecran_a254a7e51115405bc9c3d573fdd6fe5a9}} 
 bool {\bfseries effectuer} (fct\+Traitement)
@@ -62,6 +62,18 @@ sf\+::\+Vector2f {\bfseries calcul\+Pos} (const \mbox{\hyperlink{class_vecteur2_
 \end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a3f631197b0880c37be1b879b0f84f592}\label{class_fenetre_ecran_a3f631197b0880c37be1b879b0f84f592}} 
+std\+::vector$<$ \mbox{\hyperlink{class_graphe}{Graphe}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}}, \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$ $>$ $\ast$ {\bfseries niveaux}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_af1585f2e758cc15abc9291caba7a0cbd}\label{class_fenetre_ecran_af1585f2e758cc15abc9291caba7a0cbd}} 
+int {\bfseries choix\+Niveau}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_a9f07d3864284bc6fe8f506b30d9906ef}\label{class_fenetre_ecran_a9f07d3864284bc6fe8f506b30d9906ef}} 
+\mbox{\hyperlink{class_planche_sprites}{Planche\+Sprites}} $\ast$ {\bfseries planche}
+\item 
+\mbox{\Hypertarget{class_fenetre_ecran_ae87845902f0c9fb8f6cbcb091062df64}\label{class_fenetre_ecran_ae87845902f0c9fb8f6cbcb091062df64}} 
+std\+::map$<$ int, std\+::vector$<$ \mbox{\hyperlink{class_creature}{Creature}} $\ast$ $>$ $>$ {\bfseries liste\+Creature\+Par\+Niveaux}
 \item 
 \mbox{\Hypertarget{class_fenetre_ecran_a6665b9f790eb76f887bd2850e2b1bed5}\label{class_fenetre_ecran_a6665b9f790eb76f887bd2850e2b1bed5}} 
 \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries direction}

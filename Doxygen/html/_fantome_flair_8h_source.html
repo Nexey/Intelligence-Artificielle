@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Intelligence Artificielle - PacMan:  Fichier source de Ecran/Formes/FantomeFlair.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Intelligence Artificielle - PacMan
+   </div>
+   <div id="projectbrief">Création d&#39;un PacMan en C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_239d87ce9101b63f8d944565a49246da.html">Ecran</a></li><li class="navelem"><a class="el" href="dir_856dd46f3603b52334c80b11d65fd713.html">Formes</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FantomeFlair.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;FantomeAleatoire.h&quot;</span></div><div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_fantome_flair.html">    3</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_fantome_flair.html">FantomeFlair</a> :</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_fantome_aleatoire.html">FantomeAleatoire</a> {</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="class_creature.html">Creature</a> * pacman;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_fantome_flair.html">FantomeFlair</a>(<a class="code" href="class_forme_ecran.html">FormeEcran</a> * infos, <a class="code" href="class_sommet.html">Sommet&lt;FormeEcran&gt;</a>* positionSommet, <span class="keywordtype">int</span> choixNiveau);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_fantome_flair.html">FantomeFlair</a>();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="class_vecteur2_d.html">Vecteur2D</a> selectionDirection();</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="ttc" id="class_creature_html"><div class="ttname"><a href="class_creature.html">Creature</a></div><div class="ttdef"><b>Definition:</b> Creature.h:4</div></div>
+<div class="ttc" id="class_vecteur2_d_html"><div class="ttname"><a href="class_vecteur2_d.html">Vecteur2D</a></div><div class="ttdoc">Vecteurs2D.h.</div><div class="ttdef"><b>Definition:</b> Vecteur2D.h:17</div></div>
+<div class="ttc" id="class_sommet_html"><div class="ttname"><a href="class_sommet.html">Sommet&lt; FormeEcran &gt;</a></div></div>
+<div class="ttc" id="class_fantome_flair_html"><div class="ttname"><a href="class_fantome_flair.html">FantomeFlair</a></div><div class="ttdef"><b>Definition:</b> FantomeFlair.h:3</div></div>
+<div class="ttc" id="class_forme_ecran_html"><div class="ttname"><a href="class_forme_ecran.html">FormeEcran</a></div><div class="ttdef"><b>Definition:</b> FormeEcran.h:4</div></div>
+<div class="ttc" id="class_fantome_aleatoire_html"><div class="ttname"><a href="class_fantome_aleatoire.html">FantomeAleatoire</a></div><div class="ttdef"><b>Definition:</b> FantomeAleatoire.h:3</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Intelligence Artificielle - PacMan:  Fichier source de Experts/Chargement/ChargeurCOR.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Intelligence Artificielle - PacMan
+   </div>
+   <div id="projectbrief">Création d&#39;un PacMan en C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8366571f0038adcafb167536dec1550b.html">Experts</a></li><li class="navelem"><a class="el" href="dir_aa32090eba5c33df9a79daf039e3e12f.html">Chargement</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ChargeurCOR.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;GestionnaireChargement.h&quot;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;./Ecran/Fenetre/FenetreEcran.h&quot;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_chargeur_c_o_r.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chargeur_c_o_r.html">ChargeurCOR</a> :</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_gestionnaire_chargement.html">GestionnaireChargement</a>&lt;T&gt; {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_gestionnaire_chargement.html">GestionnaireChargement&lt;T&gt;</a> * suivant;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">protected</span>:</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::string extension;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    T * resultat;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_fenetre_ecran.html">FenetreEcran</a> * fenetre;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_chargeur_c_o_r.html">ChargeurCOR</a>(<a class="code" href="class_fenetre_ecran.html">FenetreEcran</a> * fenetre, <span class="keyword">const</span> std::string &amp; extension, <a class="code" href="class_gestionnaire_chargement.html">GestionnaireChargement&lt;T&gt;</a> * suivant = NULL) : fenetre(fenetre), suivant(suivant), extension(extension) {}</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_chargeur_c_o_r.html">ChargeurCOR</a>() {}</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> T * construit(<span class="keyword">const</span> std::string &amp; chemin) = 0;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> peutCharger(<span class="keyword">const</span> std::string&amp;) <span class="keyword">const</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    T * charger(<span class="keyword">const</span> std::string&amp;);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="class_chargeur_c_o_r.html">ChargeurCOR&lt;T&gt;::peutCharger</a>(<span class="keyword">const</span> std::string &amp; chemin)<span class="keyword"> const </span>{</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> chemin.substr(chemin.find_last_of(<span class="stringliteral">&quot;.&quot;</span>) + 1) == extension;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">inline</span> T * <a class="code" href="class_chargeur_c_o_r.html">ChargeurCOR&lt;T&gt;::charger</a>(<span class="keyword">const</span> std::string &amp; chemin) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (peutCharger(chemin))</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> construit(chemin);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (suivant != NULL)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> suivant-&gt;charger(chemin);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="ttc" id="class_gestionnaire_chargement_html"><div class="ttname"><a href="class_gestionnaire_chargement.html">GestionnaireChargement</a></div><div class="ttdef"><b>Definition:</b> GestionnaireChargement.h:6</div></div>
+<div class="ttc" id="class_chargeur_c_o_r_html"><div class="ttname"><a href="class_chargeur_c_o_r.html">ChargeurCOR</a></div><div class="ttdef"><b>Definition:</b> ChargeurCOR.h:6</div></div>
+<div class="ttc" id="class_fenetre_ecran_html"><div class="ttname"><a href="class_fenetre_ecran.html">FenetreEcran</a></div><div class="ttdef"><b>Definition:</b> FenetreEcran.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

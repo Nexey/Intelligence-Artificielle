@@ -1,0 +1,80 @@
+\hypertarget{class_a_star_t}{}\section{Référence du modèle de la classe A\+StarT$<$ Graphe, Sommet $>$}
+\label{class_a_star_t}\index{AStarT$<$ Graphe, Sommet $>$@{AStarT$<$ Graphe, Sommet $>$}}
+
+
+suppose que pour tout s sommet de graphe, on a\+: s.\+etat = L\+I\+B\+RE  
+
+
+
+
+{\ttfamily \#include $<$A\+Star\+T.\+h$>$}
+
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_star_t_a57af36028134b9e3cc2bf347a44fabda}\label{class_a_star_t_a57af36028134b9e3cc2bf347a44fabda}} 
+static bool {\bfseries est\+Plus\+Petit\+Ou\+Egal} (const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$sommet1, const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$sommet2)
+\item 
+static bool \mbox{\hyperlink{class_a_star_t_a32cec8b2f83ca9ce7329baaec2dd1a82}{a\+Star1\+Cible}} (\mbox{\hyperlink{class_graphe}{Graphe}} \&graphe, \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$depart, \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$cible, double($\ast$hh)(const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s1, const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s2))
+\begin{DoxyCompactList}\small\item\em recherche dans graphe le plus court chemin de départ à cible par l\textquotesingle{}algo A$\ast$. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$ \mbox{\hyperlink{class_a_star_t_aec39a6d52f7a7941175e246fff59b7f0}{a\+Star}} (\mbox{\hyperlink{class_graphe}{Graphe}} \&graphe, \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$depart, double($\ast$hh)(const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s))
+\begin{DoxyCompactList}\small\item\em recherche dans graphe le plus court chemin de départ à un état final par l\textquotesingle{}algo A$\ast$. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_star_t_aff2a7fd7b3bf9a4974ae34245b0afbef}\label{class_a_star_t_aff2a7fd7b3bf9a4974ae34245b0afbef}} 
+static void {\bfseries mise\+A\+Jour\+Voisin} (\mbox{\hyperlink{class_sommet}{Sommet}} $\ast$v, \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s, const double \&nouveau\+Cout, \mbox{\hyperlink{class_p_element}{P\+Element}}$<$ \mbox{\hyperlink{class_sommet}{Sommet}} $>$ $\ast$\&Ouverts)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$class Graphe, class Sommet$>$\newline
+class A\+Star\+T$<$ Graphe, Sommet $>$}
+
+suppose que pour tout s sommet de graphe, on a\+: s.\+etat = L\+I\+B\+RE 
+
+suppose que les fonctions coût et h sont toujours $>$= 0 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_a_star_t_aec39a6d52f7a7941175e246fff59b7f0}\label{class_a_star_t_aec39a6d52f7a7941175e246fff59b7f0}} 
+\index{AStarT$<$ Graphe, Sommet $>$@{AStarT$<$ Graphe, Sommet $>$}!aStar@{aStar}}
+\index{aStar@{aStar}!AStarT$<$ Graphe, Sommet $>$@{AStarT$<$ Graphe, Sommet $>$}}
+\subsubsection{\texorpdfstring{aStar()}{aStar()}}
+{\footnotesize\ttfamily template$<$class Graphe , class Sommet $>$ \\
+static \mbox{\hyperlink{class_sommet}{Sommet}}$\ast$ \mbox{\hyperlink{class_a_star_t}{A\+StarT}}$<$ \mbox{\hyperlink{class_graphe}{Graphe}}, \mbox{\hyperlink{class_sommet}{Sommet}} $>$\+::a\+Star (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graphe}{Graphe}} \&}]{graphe,  }\item[{\mbox{\hyperlink{class_sommet}{Sommet}} $\ast$}]{depart,  }\item[{double($\ast$)(const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s)}]{hh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+recherche dans graphe le plus court chemin de départ à un état final par l\textquotesingle{}algo A$\ast$. 
+
+en cas de succès, les liens \char`\"{}père\char`\"{} des sommets indiquent le chemin à suivre en partant du sommet-\/cible trouvé vers départ. le père de départ vaut toujours N\+U\+LL en sortie (c\textquotesingle{}est la racine du chemin ou bien encore la fin de la liste chaînée \char`\"{}père\char`\"{})
+
+retourne un pointeur sur le sommet-\/cible trouvé (le 1er sommet rencontré qui satisfait est\+Final()) si succès et N\+U\+LL si échec
+
+suppose que tout sommet s du graphe dispose des attributs suivants publics \+: int etat (peut prendre l\textquotesingle{}une des 3 valeurs suivantes \+: L\+I\+B\+RE, O\+U\+V\+E\+RT ou F\+E\+R\+Mé) pere \+: \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$ pere double c; // coût réel entre départ et s double h; // estimation du coût entre s et cible double g; // g == c+h
+
+suppose que la méthode liste\+Voisins(sommet,graphe) retourne la liste des paires (voisin, coût de l\textquotesingle{}arête sommet-\/voisin)
+
+hh est l\textquotesingle{}heuristique à appliquer entre 1 sommet quelconque du graphe et un état final
+
+bool est\+Final(const Sommet $\ast$ s) est une méthode indiquant si le sommet correspond à un état final \mbox{\Hypertarget{class_a_star_t_a32cec8b2f83ca9ce7329baaec2dd1a82}\label{class_a_star_t_a32cec8b2f83ca9ce7329baaec2dd1a82}} 
+\index{AStarT$<$ Graphe, Sommet $>$@{AStarT$<$ Graphe, Sommet $>$}!aStar1Cible@{aStar1Cible}}
+\index{aStar1Cible@{aStar1Cible}!AStarT$<$ Graphe, Sommet $>$@{AStarT$<$ Graphe, Sommet $>$}}
+\subsubsection{\texorpdfstring{aStar1Cible()}{aStar1Cible()}}
+{\footnotesize\ttfamily template$<$class Graphe , class Sommet $>$ \\
+static bool \mbox{\hyperlink{class_a_star_t}{A\+StarT}}$<$ \mbox{\hyperlink{class_graphe}{Graphe}}, \mbox{\hyperlink{class_sommet}{Sommet}} $>$\+::a\+Star1\+Cible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graphe}{Graphe}} \&}]{graphe,  }\item[{\mbox{\hyperlink{class_sommet}{Sommet}} $\ast$}]{depart,  }\item[{\mbox{\hyperlink{class_sommet}{Sommet}} $\ast$}]{cible,  }\item[{double($\ast$)(const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s1, const \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$s2)}]{hh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+recherche dans graphe le plus court chemin de départ à cible par l\textquotesingle{}algo A$\ast$. 
+
+en cas de succès, les liens \char`\"{}père\char`\"{} des sommets indiquent le chemin à suivre en partant de cible vers départ. le père de départ vaut toujours N\+U\+LL en sortie (c\textquotesingle{}est la racine du chemin ou bien encore la fin de la liste chaînée \char`\"{}père\char`\"{})
+
+retourne vrai si succès et faux si échec
+
+suppose que tout sommet s du graphe dispose des attributs suivants publics \+: int etat (peut prendre l\textquotesingle{}une des 3 valeurs suivantes \+: L\+I\+B\+RE, O\+U\+V\+E\+RT ou F\+E\+R\+Mé) pere \+: \mbox{\hyperlink{class_sommet}{Sommet}} $\ast$ pere double c; // coût réel entre départ et s double h; // estimation du coût entre s et cible double g; // g == c+h
+
+suppose que la méthode liste\+Voisins(sommet,graphe) retourne la liste des paires (voisin, coût de l\textquotesingle{}arête sommet-\/voisin)
+
+hh est l\textquotesingle{}heuristique à appliquer entre 2 sommets quelconques du graphe 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Graphe/A\+Star\+T.\+h\end{DoxyCompactItemize}

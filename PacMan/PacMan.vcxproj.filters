@@ -139,6 +139,24 @@
     <Filter Include="Fichiers sources\Visiteurs">
       <UniqueIdentifier>{6599bf56-1167-4e6a-a106-40f922b8fd4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature">
+      <UniqueIdentifier>{2d8613e4-b1ef-435e-b8af-8880327316be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures">
+      <UniqueIdentifier>{46d467bc-519a-4328-af73-6fb2759f7e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature">
+      <UniqueIdentifier>{f6a1b0d3-9ad5-48a2-a535-af3867a33757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures">
+      <UniqueIdentifier>{ae69d7fc-d8b9-42e5-b291-6ba54aebf4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Textures">
+      <UniqueIdentifier>{b2a9a355-3e8b-48c8-97ae-8826d64567ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Textures">
+      <UniqueIdentifier>{d66eb75f-ed10-4be4-abb8-eff655483c3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\Main.cpp">
@@ -231,17 +249,29 @@
     <ClCompile Include="Ecran\Formes\PacMan.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.cpp">
-      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
-    </ClCompile>
     <ClCompile Include="Ecran\Formes\Fantome.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
-    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.cpp">
-      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\CreatureSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\FantomeAleatoire.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
     <ClCompile Include="Textures\PlancheSprites.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\PacmanSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeAleatoireSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecran\Formes\FantomeFlair.cpp">
+      <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -353,17 +383,29 @@
     <ClInclude Include="Ecran\Formes\PacMan.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
-    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
-    </ClInclude>
     <ClInclude Include="Ecran\Formes\Fantome.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
-    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.h">
-      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets</Filter>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\CreatureSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\FantomeAleatoire.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
     <ClInclude Include="Textures\PlancheSprites.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\PacmanSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeAleatoireSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Formes\FantomeFlair.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

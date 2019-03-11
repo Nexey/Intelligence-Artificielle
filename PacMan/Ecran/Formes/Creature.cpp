@@ -101,6 +101,14 @@ const bool Creature::estImmobile() const {
 	return alpha == 0.f;
 }
 
+const Vecteur2D Creature::getPositionEcran() const {
+	return this->infos->getPositionEcran();
+}
+
 bool Creature::dessiner() {
 	return infos->dessiner();
+}
+
+Creature::operator std::string() const {
+	return "creature";
 }

@@ -39,7 +39,7 @@ bool PlancheSprites::initialiserTextures() {
 }
 
 bool PlancheSprites::chargerSommet() {
-	chargerTexture(areteV, 12u, 0u);
+	chargerTexture(sommet, 12u, 0u);
 	return true;
 }
 

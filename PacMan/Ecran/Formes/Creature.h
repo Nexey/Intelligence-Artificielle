@@ -21,13 +21,13 @@ protected:
 
 	Vecteur2D directionCreature;
 
-	Sommet<FormeEcran> * sommetActuel;
-	Sommet<FormeEcran> * prochainSommet;
-
 	virtual const Vecteur2D selectionDirection() = 0;
 public:
 	Creature(FormeEcran * infos, Sommet<FormeEcran> * positionSommet, int choixNiveau);
 	virtual ~Creature();
+
+	Sommet<FormeEcran> * sommetActuel;
+	Sommet<FormeEcran> * prochainSommet;
 
 	// Déplace la créature jusqu'au prochain point
 	// Actuellement, le déplacement ne peut pas être annulé
@@ -37,5 +37,9 @@ public:
 	// Il faut faire attention à lui mettre à jour sa direction si on veut la faire bouger après cet appel
 	const bool estImmobile() const;
 
+	const Vecteur2D getPositionEcran() const;
+
 	bool dessiner();
+
+	virtual operator std::string() const;
 };

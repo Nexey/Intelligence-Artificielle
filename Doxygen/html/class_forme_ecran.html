@@ -72,30 +72,21 @@ $(function() {
 <div class="title">Référence de la classe FormeEcran</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Graphe d'héritage de FormeEcran:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_forme_ecran.png" usemap="#FormeEcran_map" alt=""/>
-  <map id="FormeEcran_map" name="FormeEcran_map">
-<area href="class_creature.html" alt="Creature" shape="rect" coords="0,56,82,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a719711c110f071c2924fd2a3dc3ae040"><td class="memItemLeft" align="right" valign="top"><a id="a719711c110f071c2924fd2a3dc3ae040"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FormeEcran</b> (sf::Shape *formeSFML, <a class="el" href="class_fenetre_ecran.html">FenetreEcran</a> *fenetre, const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;positionEcran=<a class="el" href="class_vecteur2_d.html">Vecteur2D</a>(0, 0))</td></tr>
-<tr class="separator:a719711c110f071c2924fd2a3dc3ae040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4ddb88988108565c157d0db2ea3936"><td class="memItemLeft" align="right" valign="top"><a id="a8b4ddb88988108565c157d0db2ea3936"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FormeEcran</b> (sf::Sprite *texture, <a class="el" href="class_fenetre_ecran.html">FenetreEcran</a> *fenetre, const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;positionEcran=<a class="el" href="class_vecteur2_d.html">Vecteur2D</a>(0, 0))</td></tr>
+<tr class="separator:a8b4ddb88988108565c157d0db2ea3936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389a4eef0f47f3451440113055453052"><td class="memItemLeft" align="right" valign="top"><a id="a389a4eef0f47f3451440113055453052"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FormeEcran</b> (const <a class="el" href="class_forme_ecran.html">FormeEcran</a> &amp;)</td></tr>
 <tr class="separator:a389a4eef0f47f3451440113055453052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7218febcf2ff9b7881fff962a81d5e9"><td class="memItemLeft" align="right" valign="top"><a id="af7218febcf2ff9b7881fff962a81d5e9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>miseAJourPositionEcran</b> (const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a> &amp;nouvPos)</td></tr>
 <tr class="separator:af7218febcf2ff9b7881fff962a81d5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd24ffecc0acb7f75635dd5a9b96cc63"><td class="memItemLeft" align="right" valign="top"><a id="abd24ffecc0acb7f75635dd5a9b96cc63"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><b>dessine</b> ()</td></tr>
-<tr class="separator:abd24ffecc0acb7f75635dd5a9b96cc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad18791a0647fbad303b35fb893a21ff"><td class="memItemLeft" align="right" valign="top"><a id="aad18791a0647fbad303b35fb893a21ff"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>dessiner</b> ()</td></tr>
+<tr class="separator:aad18791a0647fbad303b35fb893a21ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781177121ce901c848958800e0ce12ec"><td class="memItemLeft" align="right" valign="top"><a id="a781177121ce901c848958800e0ce12ec"></a>
 <a class="el" href="class_fenetre_ecran.html">FenetreEcran</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forme_ecran.html#a781177121ce901c848958800e0ce12ec">getFenetre</a> () const</td></tr>
 <tr class="memdesc:a781177121ce901c848958800e0ce12ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters. <br /></td></tr>
@@ -104,14 +95,14 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><b>dessine</b> ()<
 const <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionEcran</b> () const</td></tr>
 <tr class="separator:a6bf6d1c849fed205f2fc7f1a822ee383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dc759bf4cdbe9a2e679566263284128"><td class="memItemLeft" align="right" valign="top"><a id="a0dc759bf4cdbe9a2e679566263284128"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
 <tr class="separator:a0dc759bf4cdbe9a2e679566263284128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
-<tr class="memitem:ae4802e73968518593b6249ed52c7f42f"><td class="memItemLeft" align="right" valign="top"><a id="ae4802e73968518593b6249ed52c7f42f"></a>
-sf::Shape *&#160;</td><td class="memItemRight" valign="bottom"><b>formeSFML</b></td></tr>
-<tr class="separator:ae4802e73968518593b6249ed52c7f42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff2d2356559ecc65ab475e5928ae1d4"><td class="memItemLeft" align="right" valign="top"><a id="a7ff2d2356559ecc65ab475e5928ae1d4"></a>
+sf::Sprite *&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
+<tr class="separator:a7ff2d2356559ecc65ab475e5928ae1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f01418938b55cdea36396e2d215b4cf"><td class="memItemLeft" align="right" valign="top"><a id="a0f01418938b55cdea36396e2d215b4cf"></a>
 <a class="el" href="class_vecteur2_d.html">Vecteur2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>positionEcran</b></td></tr>
 <tr class="separator:a0f01418938b55cdea36396e2d215b4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>

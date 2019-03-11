@@ -3,29 +3,47 @@
 Graphe d\textquotesingle{}héritage de Creature\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_creature}
+\includegraphics[height=4.000000cm]{class_creature}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_creature_ae6582091f049dd634af356bfa300c79c}\label{class_creature_ae6582091f049dd634af356bfa300c79c}} 
-{\bfseries Creature} (sf\+::\+Shape $\ast$forme\+S\+F\+ML, \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$fenetre, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&position\+Ecran=\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(0, 0))
+\mbox{\Hypertarget{class_creature_a608a3974147b9d6f3c23404aa9b04fa1}\label{class_creature_a608a3974147b9d6f3c23404aa9b04fa1}} 
+{\bfseries Creature} (\mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $\ast$infos, \mbox{\hyperlink{class_sommet}{Sommet}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$position\+Sommet, int choix\+Niveau)
 \item 
 \mbox{\Hypertarget{class_creature_a7c2d848ee2a3cb1f3c91b35a7eb504f6}\label{class_creature_a7c2d848ee2a3cb1f3c91b35a7eb504f6}} 
-bool {\bfseries deplacer} ()
+virtual bool {\bfseries deplacer} ()
 \item 
 \mbox{\Hypertarget{class_creature_aafcbed99d0ee57caff3208c3bac7b400}\label{class_creature_aafcbed99d0ee57caff3208c3bac7b400}} 
 const bool {\bfseries est\+Immobile} () const
+\item 
+\mbox{\Hypertarget{class_creature_a82d323d8dac99f5fd7f3cc1ec5d24348}\label{class_creature_a82d323d8dac99f5fd7f3cc1ec5d24348}} 
+const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries get\+Position\+Ecran} () const
+\item 
+\mbox{\Hypertarget{class_creature_a06f961954c7d9f99022e65e2835d4d52}\label{class_creature_a06f961954c7d9f99022e65e2835d4d52}} 
+bool {\bfseries dessiner} ()
+\item 
+\mbox{\Hypertarget{class_creature_a4c3007058a145a476d38478e949f9763}\label{class_creature_a4c3007058a145a476d38478e949f9763}} 
+virtual {\bfseries operator std\+::string} () const
 \end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_creature_a95ac7239d76b5a5b8eedf13243cb9ec8}\label{class_creature_a95ac7239d76b5a5b8eedf13243cb9ec8}} 
-\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries direction\+Creature}
+\mbox{\Hypertarget{class_creature_a3cb9ad9627ba8e8fe2444431970d16fb}\label{class_creature_a3cb9ad9627ba8e8fe2444431970d16fb}} 
+\mbox{\hyperlink{class_sommet}{Sommet}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$ {\bfseries sommet\+Actuel}
 \item 
-\mbox{\Hypertarget{class_creature_a5266d7ca7642264806e07ea4926442e7}\label{class_creature_a5266d7ca7642264806e07ea4926442e7}} 
-\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries nouvelle\+Position\+Ecran}
+\mbox{\Hypertarget{class_creature_af4d2942744f101712aa86a7c5586fa4d}\label{class_creature_af4d2942744f101712aa86a7c5586fa4d}} 
+\mbox{\hyperlink{class_sommet}{Sommet}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$ {\bfseries prochain\+Sommet}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_creature_ac75bc71239325bc1638097e8d4efebfb}\label{class_creature_ac75bc71239325bc1638097e8d4efebfb}} 
+void {\bfseries mise\+A\+Jour\+Voisins} ()
+\item 
+\mbox{\Hypertarget{class_creature_a80684f45ad41a4c2e280fb5a3c39635b}\label{class_creature_a80684f45ad41a4c2e280fb5a3c39635b}} 
+virtual const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries selection\+Direction} ()=0
 \end{DoxyCompactItemize}
 \subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
@@ -35,6 +53,21 @@ float {\bfseries alpha}
 \item 
 \mbox{\Hypertarget{class_creature_abe23ee5336f9a80a6903e0167f486f41}\label{class_creature_abe23ee5336f9a80a6903e0167f486f41}} 
 float {\bfseries velocite}
+\item 
+\mbox{\Hypertarget{class_creature_ae1ec097ce2cdc2f1905fab7e124234a6}\label{class_creature_ae1ec097ce2cdc2f1905fab7e124234a6}} 
+\mbox{\hyperlink{class_liste}{Liste}}$<$ \mbox{\hyperlink{class_sommet}{Sommet}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$ $>$ $\ast$ {\bfseries liste\+Voisins}
+\item 
+\mbox{\Hypertarget{class_creature_aea271fbbce6ae56810f4688f059d161f}\label{class_creature_aea271fbbce6ae56810f4688f059d161f}} 
+\mbox{\hyperlink{class_iterateur}{Iterateur}}$<$ \mbox{\hyperlink{class_sommet}{Sommet}}$<$ \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $>$ $\ast$ $>$ $\ast$ {\bfseries iterateur\+Voisins}
+\item 
+\mbox{\Hypertarget{class_creature_a12c910da4b2a0771167e93e7a330c8b1}\label{class_creature_a12c910da4b2a0771167e93e7a330c8b1}} 
+int {\bfseries choix\+Niveau}
+\item 
+\mbox{\Hypertarget{class_creature_ad21e81563c17a52f90db8caa0c67b6d1}\label{class_creature_ad21e81563c17a52f90db8caa0c67b6d1}} 
+\mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} $\ast$ {\bfseries infos}
+\item 
+\mbox{\Hypertarget{class_creature_a95ac7239d76b5a5b8eedf13243cb9ec8}\label{class_creature_a95ac7239d76b5a5b8eedf13243cb9ec8}} 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries direction\+Creature}
 \end{DoxyCompactItemize}
 
 

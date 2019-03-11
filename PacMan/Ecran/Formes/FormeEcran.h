@@ -4,10 +4,9 @@
 class FormeEcran {
 	FormeEcran() = delete;
 protected:
-	// Une forme garde un pointeur sur la fenêtre, à voir si ça reste utile ou non
+	// Une forme garde un pointeur sur la fenêtre
 	FenetreEcran * fenetre;
 public:
-	// Pour le moment, gère une forme sfml, mais plus tard ce sera des sprites
 	sf::Sprite * texture;
 	FormeEcran(sf::Sprite * texture, FenetreEcran * fenetre, const Vecteur2D & positionEcran = Vecteur2D(0, 0));
 	FormeEcran(const FormeEcran &);
@@ -25,7 +24,7 @@ public:
 	FenetreEcran * getFenetre() const;
 	const Vecteur2D getPositionEcran() const;
 
-	operator std::string() const;
+	virtual operator std::string() const;
 
 	virtual ~FormeEcran();
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "./Experts/Chargement/ChargeurCOR.h"
 #include "./Experts/Création/Graphe/Sommets/Types de sommets/SommetCOR.h"
-#include "./Experts/Création/Graphe/Sommets/Types de sommets/PacmanSommetCOR.h"
-#include "./Experts/Création/Graphe/Sommets/Types de sommets/FantomeSommetCOR.h"
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/FantomeAleatoireSommetCOR.h"
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/PacmanSommetCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteHorizontaleCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteVerticaleCOR.h"
 #include "./Graphe/Graphe.h"
@@ -28,7 +28,7 @@ inline T * ChargeurLabyrintheCOR<T>::construit(const std::string & chemin) {
 	GestionnaireCreationSommet * expertCreationSommets =
 		new SommetCOR(this->fenetre,
 			new PacmanSommetCOR(this->fenetre,
-				new FantomeSommetCOR(this->fenetre
+				new FantomeAleatoireSommetCOR(this->fenetre
 				)
 			)
 		);

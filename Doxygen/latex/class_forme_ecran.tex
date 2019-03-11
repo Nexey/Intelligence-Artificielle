@@ -1,16 +1,10 @@
 \hypertarget{class_forme_ecran}{}\section{Référence de la classe Forme\+Ecran}
 \label{class_forme_ecran}\index{FormeEcran@{FormeEcran}}
-Graphe d\textquotesingle{}héritage de Forme\+Ecran\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_forme_ecran}
-\end{center}
-\end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_forme_ecran_a719711c110f071c2924fd2a3dc3ae040}\label{class_forme_ecran_a719711c110f071c2924fd2a3dc3ae040}} 
-{\bfseries Forme\+Ecran} (sf\+::\+Shape $\ast$forme\+S\+F\+ML, \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$fenetre, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&position\+Ecran=\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(0, 0))
+\mbox{\Hypertarget{class_forme_ecran_a8b4ddb88988108565c157d0db2ea3936}\label{class_forme_ecran_a8b4ddb88988108565c157d0db2ea3936}} 
+{\bfseries Forme\+Ecran} (sf\+::\+Sprite $\ast$texture, \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$fenetre, const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&position\+Ecran=\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(0, 0))
 \item 
 \mbox{\Hypertarget{class_forme_ecran_a389a4eef0f47f3451440113055453052}\label{class_forme_ecran_a389a4eef0f47f3451440113055453052}} 
 {\bfseries Forme\+Ecran} (const \mbox{\hyperlink{class_forme_ecran}{Forme\+Ecran}} \&)
@@ -18,8 +12,8 @@ Graphe d\textquotesingle{}héritage de Forme\+Ecran\+:\begin{figure}[H]
 \mbox{\Hypertarget{class_forme_ecran_af7218febcf2ff9b7881fff962a81d5e9}\label{class_forme_ecran_af7218febcf2ff9b7881fff962a81d5e9}} 
 void {\bfseries mise\+A\+Jour\+Position\+Ecran} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&nouv\+Pos)
 \item 
-\mbox{\Hypertarget{class_forme_ecran_abd24ffecc0acb7f75635dd5a9b96cc63}\label{class_forme_ecran_abd24ffecc0acb7f75635dd5a9b96cc63}} 
-const bool {\bfseries dessine} ()
+\mbox{\Hypertarget{class_forme_ecran_aad18791a0647fbad303b35fb893a21ff}\label{class_forme_ecran_aad18791a0647fbad303b35fb893a21ff}} 
+const bool {\bfseries dessiner} ()
 \item 
 \mbox{\Hypertarget{class_forme_ecran_a781177121ce901c848958800e0ce12ec}\label{class_forme_ecran_a781177121ce901c848958800e0ce12ec}} 
 \mbox{\hyperlink{class_fenetre_ecran}{Fenetre\+Ecran}} $\ast$ \mbox{\hyperlink{class_forme_ecran_a781177121ce901c848958800e0ce12ec}{get\+Fenetre}} () const
@@ -28,13 +22,13 @@ const bool {\bfseries dessine} ()
 const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries get\+Position\+Ecran} () const
 \item 
 \mbox{\Hypertarget{class_forme_ecran_a0dc759bf4cdbe9a2e679566263284128}\label{class_forme_ecran_a0dc759bf4cdbe9a2e679566263284128}} 
-{\bfseries operator std\+::string} () const
+virtual {\bfseries operator std\+::string} () const
 \end{DoxyCompactItemize}
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_forme_ecran_ae4802e73968518593b6249ed52c7f42f}\label{class_forme_ecran_ae4802e73968518593b6249ed52c7f42f}} 
-sf\+::\+Shape $\ast$ {\bfseries forme\+S\+F\+ML}
+\mbox{\Hypertarget{class_forme_ecran_a7ff2d2356559ecc65ab475e5928ae1d4}\label{class_forme_ecran_a7ff2d2356559ecc65ab475e5928ae1d4}} 
+sf\+::\+Sprite $\ast$ {\bfseries texture}
 \item 
 \mbox{\Hypertarget{class_forme_ecran_a0f01418938b55cdea36396e2d215b4cf}\label{class_forme_ecran_a0f01418938b55cdea36396e2d215b4cf}} 
 \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} {\bfseries position\+Ecran}

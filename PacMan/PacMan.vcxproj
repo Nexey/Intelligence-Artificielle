@@ -22,6 +22,8 @@
     <ClCompile Include="Ecran\Fenetre\FenetreEcran.cpp" />
     <ClCompile Include="Ecran\Formes\Creature.cpp" />
     <ClCompile Include="Ecran\Formes\Fantome.cpp" />
+    <ClCompile Include="Ecran\Formes\FantomeAleatoire.cpp" />
+    <ClCompile Include="Ecran\Formes\FantomeFlair.cpp" />
     <ClCompile Include="Ecran\Formes\FormeEcran.cpp" />
     <ClCompile Include="Ecran\Formes\PacMan.cpp" />
     <ClCompile Include="Experts\Chargement\ChargeurCOR.cpp" />
@@ -33,8 +35,10 @@
     <ClCompile Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.cpp" />
-    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.cpp" />
-    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\CreatureSommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeAleatoireSommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeSommetCOR.cpp" />
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\PacmanSommetCOR.cpp" />
     <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.cpp" />
     <ClCompile Include="Experts\Évènements\EvenementCOR.cpp" />
     <ClCompile Include="Experts\Évènements\Fermeture\FermetureCOR.cpp" />
@@ -58,6 +62,8 @@
     <ClInclude Include="Ecran\Fenetre\FenetreEcran.h" />
     <ClInclude Include="Ecran\Formes\Creature.h" />
     <ClInclude Include="Ecran\Formes\Fantome.h" />
+    <ClInclude Include="Ecran\Formes\FantomeAleatoire.h" />
+    <ClInclude Include="Ecran\Formes\FantomeFlair.h" />
     <ClInclude Include="Ecran\Formes\FormeEcran.h" />
     <ClInclude Include="Ecran\Formes\PacMan.h" />
     <ClInclude Include="Exceptions\Erreur.h" />
@@ -70,8 +76,10 @@
     <ClInclude Include="Experts\Création\Graphe\Arêtes\GestionnaireCreationAretes.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\CreationSommetCOR.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\GestionnaireCreationSommet.h" />
-    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\FantomeSommetCOR.h" />
-    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\PacmanSommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\CreatureSommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeAleatoireSommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeSommetCOR.h" />
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\PacmanSommetCOR.h" />
     <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\SommetCOR.h" />
     <ClInclude Include="Experts\Évènements\EvenementCOR.h" />
     <ClInclude Include="Experts\Évènements\Fermeture\FermetureCOR.h" />

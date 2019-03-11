@@ -7,5 +7,7 @@ public:
 	virtual ~PacMan();
 
 	const Vecteur2D selectionDirection();
+
+	operator std::string() const;
 };
 
