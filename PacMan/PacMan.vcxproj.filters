@@ -273,11 +273,17 @@
     <ClCompile Include="Ecran\Formes\FantomeFlair.cpp">
       <Filter>Fichiers sources\Ecran\Formes</Filter>
     </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteSlashCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteAntiSlashCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClCompile>
+    <ClCompile Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeFlairSommetCOR.cpp">
+      <Filter>Fichiers sources\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
-      <Filter>Fichiers d%27en-tête\Ecran\Fenetre</Filter>
-    </ClInclude>
     <ClInclude Include="Ecran\Formes\FormeEcran.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
     </ClInclude>
@@ -406,6 +412,18 @@
     </ClInclude>
     <ClInclude Include="Ecran\Formes\FantomeFlair.h">
       <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteSlashCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Arêtes\Arêtes orientées\AreteAntiSlashCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Arêtes\Arêtes orientées</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecran\Fenetre\FenetreEcran.h">
+      <Filter>Fichiers d%27en-tête\Ecran\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures\FantomeFlairSommetCOR.h">
+      <Filter>Fichiers d%27en-tête\Experts\Création\Graphe\Sommets\Types de sommets\Sommet avec créature\Créatures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -16,17 +16,30 @@ const Vecteur2D FantomeFlair::selectionDirection() {
 				this->pacman = *it;
 	}
 
-	std::cout << this->directionCreature << std::endl;
+	//std::cout << this->directionCreature << std::endl;
 	Vecteur2D directionAPrendre;
 
 	Vecteur2D coordSommetFantome(this->getPositionEcran());
 	Vecteur2D coordSommetPacman(pacman->getPositionEcran());
 
-	directionAPrendre = coordSommetFantome - coordSommetPacman;
-	if ((directionAPrendre.x != directionAPrendre.y) && ((directionAPrendre.x == 0) || (directionAPrendre.y == 0))) {
+	if (coordSommetFantome != coordSommetPacman)
+		directionAPrendre = coordSommetPacman - coordSommetFantome;
+
+	if (
+		(directionAPrendre.x == directionAPrendre.y) // Le fantome est en diagonale
+		|| (-directionAPrendre.x == directionAPrendre.y) // Le fantome est en diagonale
+		|| (directionAPrendre.x == -directionAPrendre.y) // Le fantome est en diagonale
+		|| (-directionAPrendre.x == -directionAPrendre.y) // Le fantome est en diagonale
+		|| (directionAPrendre.x == 0) || (directionAPrendre.y == 0) // Le fantome est de côté
+		) {
 		// On a potentiellement une vue sur le pacman, il faut donc déduire la direction
 		// TODO : grosse redondance de code ici
 
+		if (directionAPrendre.x != 0) directionAPrendre.x /= std::abs(directionAPrendre.x);
+		if (directionAPrendre.y != 0) directionAPrendre.y /= std::abs(directionAPrendre.y);
+
+
+		/*
 		if (directionAPrendre.x == 0) {
 			// Le fantome est en dessous, il doit monter
 			if (coordSommetFantome.y < coordSommetPacman.y)
@@ -42,10 +55,11 @@ const Vecteur2D FantomeFlair::selectionDirection() {
 			else
 				directionAPrendre.x = -1;
 		}
+		*/
 		this->listeVoisins = this->infos->getFenetre()->niveaux->at(choixNiveau)->voisins(this->sommetActuel);
 		// On a maintenant une direction générale, on va dépiler les voisins en allant toujours dans la direction trouvée
 		Liste<Sommet<FormeEcran>*> voisinsTmp = *this->listeVoisins;
-		Iterateur<Sommet<FormeEcran>*> iterateurVoisinsTmp = voisinsTmp.getIterateur();
+		Iterateur<Sommet<FormeEcran>*> iterateurVoisinsTmp = *voisinsTmp.getIterateur();
 		Sommet<FormeEcran> * tmp = nullptr;
 		bool pacmanTrouve = false, voisinTrouve;
 		Vecteur2D curseur = coordSommetFantome;
@@ -67,12 +81,14 @@ const Vecteur2D FantomeFlair::selectionDirection() {
 			if (tmp->valeur.getPositionEcran() == coordSommetPacman)
 				pacmanTrouve = true;
 			else {
-				voisinsTmp = *this->infos->getFenetre()->niveaux->at(choixNiveau)->voisins(tmp);
-				iterateurVoisinsTmp = voisinsTmp.getIterateur();
+				if (voisinTrouve) {
+					voisinsTmp = *this->infos->getFenetre()->niveaux->at(choixNiveau)->voisins(tmp);
+					iterateurVoisinsTmp = *voisinsTmp.getIterateur();
+				}
 			}
 		}
 		if (pacmanTrouve) return directionAPrendre;
 	}
-	std::cout << "direction random" << std::endl;
+	//std::cout << "direction random" << std::endl;
 	return FantomeAleatoire::selectionDirection();
 }

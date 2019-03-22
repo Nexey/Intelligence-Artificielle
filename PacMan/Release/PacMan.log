@@ -1,7 +1,35 @@
-﻿  Main.cpp
+﻿  FenetreEcran.cpp
+  Creature.cpp
+  Fantome.cpp
+  FantomeAleatoire.cpp
+  FantomeFlair.cpp
+  FormeEcran.cpp
+  PacMan.cpp
+  ChargeurCOR.cpp
+  ChargeurLabyrintheCOR.cpp
+  AreteHorizontaleCOR.cpp
+  AreteVerticaleCOR.cpp
+  CreationArete.cpp
+  GestionnaireCreationAretes.cpp
+  CreationSommetCOR.cpp
+  CreatureSommetCOR.cpp
+  FantomeAleatoireSommetCOR.cpp
+  FantomeSommetCOR.cpp
+  PacmanSommetCOR.cpp
+  SommetCOR.cpp
+  EvenementCOR.cpp
+  Compilation en cours...
+  FermetureCOR.cpp
+  RedimensionCOR.cpp
+  DeplacementToucheCOR.cpp
+  FermetureToucheCOR.cpp
+  ToucheCOR.cpp
+  Graphe.cpp
+  Liste.cpp
+  Main.cpp
   Génération de code en cours
-  0 of 637 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  26 of 1510 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   PacMan.vcxproj -> C:\Users\geels\Documents\GitHub\C++\Intelligence Artificielle\Release\PacMan.exe

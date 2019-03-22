@@ -2,9 +2,12 @@
 #include "./Experts/Chargement/ChargeurCOR.h"
 #include "./Experts/Création/Graphe/Sommets/Types de sommets/SommetCOR.h"
 #include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/FantomeAleatoireSommetCOR.h"
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/FantomeFlairSommetCOR.h"
 #include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/PacmanSommetCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteHorizontaleCOR.h"
 #include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteVerticaleCOR.h"
+#include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteSlashCOR.h"
+#include "./Experts/Création/Graphe/Arêtes/Arêtes orientées/AreteAntiSlashCOR.h"
 #include "./Graphe/Graphe.h"
 #include <fstream>
 #include <algorithm>
@@ -28,7 +31,9 @@ inline T * ChargeurLabyrintheCOR<T>::construit(const std::string & chemin) {
 	GestionnaireCreationSommet * expertCreationSommets =
 		new SommetCOR(this->fenetre,
 			new PacmanSommetCOR(this->fenetre,
-				new FantomeAleatoireSommetCOR(this->fenetre
+				new FantomeAleatoireSommetCOR(this->fenetre,
+					new FantomeFlairSommetCOR(this->fenetre
+					)
 				)
 			)
 		);
@@ -49,15 +54,19 @@ inline T * ChargeurLabyrintheCOR<T>::construit(const std::string & chemin) {
 		}
 	}
 
-	Iterateur<Sommet<FormeEcran>> iterateurListeTemp = niveau->listeSommets.getIterateur();
-	Iterateur<Sommet<FormeEcran>> iterateurSommetGraphe = niveau->listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurListeTemp = *niveau->listeSommets.getIterateur();
+	Iterateur<Sommet<FormeEcran>> iterateurSommetGraphe = *niveau->listeSommets.getIterateur();
 
 	Sommet<FormeEcran> * teteListeSommets;
 	Sommet<FormeEcran> * teteListeTemp;
 
 	GestionnaireCreationAretes * expertCreationAretes =
 		new AreteHorizontaleCOR(this->fenetre,
-			new AreteVerticaleCOR(this->fenetre)
+			new AreteVerticaleCOR(this->fenetre,
+				new AreteSlashCOR(this->fenetre,
+					new AreteAntiSlashCOR(this->fenetre)
+				)
+			)
 		);
 
 	Arete<FormeEcran, FormeEcran> * arete;
@@ -67,7 +76,8 @@ inline T * ChargeurLabyrintheCOR<T>::construit(const std::string & chemin) {
 		while (iterateurListeTemp.aSuivant()) {
 			teteListeTemp = iterateurListeTemp.suivant();
 			if (teteListeTemp != teteListeSommets) {
-				if ((arete = expertCreationAretes->gerer(teteListeSommets, teteListeTemp)) != nullptr)
+				arete = expertCreationAretes->gerer(teteListeSommets, teteListeTemp);
+				if (arete != nullptr)
 					niveau->listeAretes.ajouterElem(*arete);
 			}
 		}

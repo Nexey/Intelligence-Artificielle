@@ -30,7 +30,10 @@ bool PlancheSprites::initialiserTextures() {
 	// On divise la taille en deux
 	demiTaille = taille >> 1;
 
-	ratioSprite =  ((float)ratioFenetre / (float)taille);
+	ratioSprite = ((float)ratioFenetre / (float)taille);
+
+	// DEBUG
+	// ratioSprite = 0.25f;
 
 	chargerCreatures();
 	chargerAretes();
@@ -46,6 +49,8 @@ bool PlancheSprites::chargerSommet() {
 bool PlancheSprites::chargerAretes() {
 	chargerTexture(areteH, 12u, 1u);
 	chargerTexture(areteV, 12u, 3u);
+	chargerTexture(areteSlash, 12u, 4u);
+	chargerTexture(areteAntiSlash, 12u, 2u);
 	return true;
 }
 

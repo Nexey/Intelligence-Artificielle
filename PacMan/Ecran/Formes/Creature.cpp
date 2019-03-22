@@ -32,7 +32,7 @@ bool Creature::deplacer() {
 			miseAJourVoisins();
 
 			// On initialise les voisins du sommet actuel, puis on initialise la direction du PacMan
-			iterateurVoisins = &listeVoisins->getIterateur();
+			iterateurVoisins = listeVoisins->getIterateur();
 			Sommet<FormeEcran> * tmp = nullptr;
 
 			// Quelques variables temporaires pour alléger l'appel aux fonctions
@@ -90,7 +90,7 @@ bool Creature::deplacer() {
 		if (prochainSommet != sommetActuel) {
 			// On augmente son alpha et on met à jour la position du sprite
 			alpha += velocite;
-			infos->miseAJourPositionEcran(sommetActuel->valeur.getPositionEcran() + directionCreature * alpha);
+			infos->miseAJourPositionTexture(sommetActuel->valeur.getPositionEcran() + directionCreature * alpha);
 			return true;
 		}
 	}

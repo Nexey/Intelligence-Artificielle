@@ -1,8 +1,11 @@
 #pragma once
-#include "./Experts/Création/Graphe/Sommets/CreationSommetCOR.h"
-class FantomeSommetCOR :
-	public CreationSommetCOR {
+#include "./Experts/Création/Graphe/Sommets/Types de sommets/Sommet avec créature/Créatures/FantomeSommetCOR.h"
+class FantomeFlairSommetCOR :
+	public FantomeSommetCOR {
 public:
-	FantomeSommetCOR(FenetreEcran * fenetre, GestionnaireCreationSommet * suivant = NULL);
-	virtual ~FantomeSommetCOR();
+	FantomeFlairSommetCOR(FenetreEcran * fenetre, GestionnaireCreationSommet * suivant = NULL);
+
+	virtual Creature * initialiserCreature(Sommet<FormeEcran> * sommet, const Vecteur2D & coords);
+
+	virtual ~FantomeFlairSommetCOR();
 };

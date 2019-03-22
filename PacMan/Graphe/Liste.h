@@ -9,7 +9,7 @@ public:
 	PElement<T> * tete;
 
 	// Génère un itérateur pour parcourir la liste
-	Iterateur<T> getIterateur() const;
+	Iterateur<T> * getIterateur() const;
 
 	// Ajoute un élément au PElement
 	void ajouterElem(T & v) {
@@ -20,8 +20,8 @@ public:
 };
 
 template<class T>
-inline Iterateur<T> Liste<T>::getIterateur() const {
-	return Iterateur<T>(tete);
+inline Iterateur<T> * Liste<T>::getIterateur() const {
+	return new Iterateur<T>(tete);
 }
 
 template<class T>

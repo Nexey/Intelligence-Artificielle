@@ -5,7 +5,5 @@ class AreteVerticaleCOR :
 public:
 	AreteVerticaleCOR(FenetreEcran * fenetre, GestionnaireCreationAretes * suivant = NULL);
 	virtual ~AreteVerticaleCOR();
-
-	Arete<FormeEcran, FormeEcran> * construit(Sommet<FormeEcran> * s1, Sommet<FormeEcran> * s2);
 };
 

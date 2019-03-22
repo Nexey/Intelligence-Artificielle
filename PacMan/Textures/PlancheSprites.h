@@ -36,6 +36,8 @@ public:
 	sf::Sprite sommet,
 		areteH,
 		areteV,
+		areteSlash,
+		areteAntiSlash,
 		pacman,
 		fantomeJ,
 		fantomeB,

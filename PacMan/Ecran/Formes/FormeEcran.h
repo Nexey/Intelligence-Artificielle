@@ -17,6 +17,9 @@ public:
 	// Applique la transformation affine sur les coordonnées de la forme SFML
 	void miseAJourPositionEcran(const Vecteur2D& nouvPos);
 
+	// Applique la transformation affine sur les coordonnées de la texture
+	void miseAJourPositionTexture(const Vecteur2D& nouvPos);
+
 	// Appelle le dessin sur la forme
 	const bool dessiner();
 

@@ -29,10 +29,10 @@ int main() {
 			)
 		);
 
-	fenetre.choixNiveau = 0;
+	fenetre.choixNiveau = 3;
 	fenetre.niveaux->at(fenetre.choixNiveau)->dessine<FenetreEcran>(fenetre);
 
-	//std::cout << *fenetre.niveaux->at(fenetre.choixNiveau) << std::endl;
+	// std::cout << *fenetre.niveaux->at(fenetre.choixNiveau) << std::endl;
 
 	sf::Texture niveauImg;
 	niveauImg.create(fenetre.getLargeur(), fenetre.getHauteur());
@@ -45,17 +45,22 @@ int main() {
 	sf::Sprite niveauSpr(niveauImg);
 	fenetre.clear();
 
+	sf::Clock horlogeDeplacement;
+	sf::Time tempsDeplacement = sf::milliseconds(4);
+
+	sf::Event event;
 	while (fenetre.isOpen()) {
-		sf::Event event;
-		while (fenetre.pollEvent(event)) {
+		while (fenetre.pollEvent(event))
 			experts->gerer(event);
-		}
 
 		fenetre.clear();
 		fenetre.draw(niveauSpr);
 
 		if (fenetre.direction != FenetreEcran::VECTEUR2D_STOP)
-			fenetre.effectuer(&FenetreEcran::deplacer);
+			if (horlogeDeplacement.getElapsedTime() >= tempsDeplacement) {
+				horlogeDeplacement.restart();
+				fenetre.effectuer(&FenetreEcran::deplacer);
+			}
 		fenetre.effectuer(&FenetreEcran::dessiner);
 
 		fenetre.display();

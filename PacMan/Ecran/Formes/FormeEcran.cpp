@@ -2,12 +2,16 @@
 #include "../../Exceptions/Erreur.h"
 
 FormeEcran::FormeEcran(sf::Sprite * texture, FenetreEcran * fenetre, const Vecteur2D & p) : texture(new sf::Sprite(*texture)), fenetre(fenetre), positionEcran(p) {
-	this->miseAJourPositionEcran(positionEcran);
+	this->miseAJourPositionTexture(positionEcran);
 }
 
 FormeEcran::FormeEcran(const FormeEcran & f) : texture(new sf::Sprite(*f.texture)), fenetre(f.fenetre), positionEcran(f.positionEcran) {}
 
 void FormeEcran::miseAJourPositionEcran(const Vecteur2D & nouvPos) {
+	this->positionEcran = nouvPos;
+}
+
+void FormeEcran::miseAJourPositionTexture(const Vecteur2D & nouvPos) {
 	this->texture->setPosition(fenetre->calculPos(nouvPos));
 }
 

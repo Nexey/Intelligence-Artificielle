@@ -6,6 +6,9 @@ SommetCOR::SommetCOR(FenetreEcran * fenetre, GestionnaireCreationSommet * suivan
 	formes.push_back('3');
 	formes.push_back('4');
 	formes.push_back('5');
+	formes.push_back('X');
+	formes.push_back('/');
+	formes.push_back('\\');
 }
 
 Sommet<FormeEcran> * SommetCOR::construit(const char & forme, const Vecteur2D & coords) {
